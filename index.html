@@ -1314,7 +1314,7 @@ h1, h2, h3, h4 { color: var(--text); }
   <div class="legal-modal">
     <button class="legal-modal-close" onclick="document.getElementById('modal-privacy').classList.remove('open')">×</button>
     <h2>Privacy Policy</h2>
-    <p>Last updated: June 2026. This policy applies to aiasset.market and pirate-ai-port.netlify.app ("the Platform").</p>
+    <p>Last updated: June 2026. This policy applies to aiasset.market ("the Platform").</p>
 
     <h3>What we collect</h3>
     <p>When you submit a form on the Platform, we collect the information you provide: asset name, description, contact handle or email, and any details you voluntarily include. We do not collect payment information, browsing data, or any information beyond what you submit.</p>
@@ -2173,7 +2173,7 @@ function showHow(mode) {
   document.getElementById('how-'+mode).classList.add('active');
 }
 
-const APPS_URL = '/submit';
+const APPS_URL = 'https://api.aiasset.market/submit';
 
 // ── Validation ──────────────────────────────────────────────────────────────
 function isValidContact(v) {

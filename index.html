@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="version" content="2026-07-05-i18n">
 <title>AIAsset.Market — List, Request and Operate AI-Native Assets</title>
 <meta name="description" content="Submit AI media assets, content engines, bots, automations and operator-ready AI workflows. Post bounties and join weekly drops.">
 <link rel="canonical" href="https://aiasset.market">
@@ -141,6 +142,10 @@ nav ul a:hover { color: var(--text); }
   margin: 0 auto 40px; line-height: 1.65;
 }
 .hero-sub strong { color: var(--text); }
+.hero-support {
+  font-size: 15px; color: var(--muted); max-width: 620px;
+  margin: -20px auto 40px; line-height: 1.7;
+}
 .hero-cta {
   display: flex; gap: 12px; justify-content: center;
   flex-wrap: wrap; margin-bottom: 56px;
@@ -530,6 +535,22 @@ h1, h2, h3, h4 { color: var(--text); }
 .legal-modal-close:hover { color: var(--text); }
 .gb-r { color: #b91c1c; }
 .score-track { background: rgba(0,0,0,.08); }
+/* New sections light overrides */
+.signal-stat .s-num { color: var(--text); }
+.signal-stat.s-green .s-num { color: var(--green); }
+.signal-stat.s-blue .s-num { color: #2563eb; }
+.sc-name { color: var(--text) !important; }
+.sc-quote { color: var(--text) !important; }
+.ll-name { color: var(--text) !important; }
+.ll-price { color: var(--text) !important; }
+.signal-board-left h3 { color: var(--text) !important; }
+.signals-header h2 { color: var(--text) !important; }
+.signal-board-inner { color: var(--text); }
+.s-lbl { color: var(--muted); }
+.s-tag { color: var(--muted); }
+.sc-role { color: var(--muted); }
+.sc-editorial { color: var(--muted); }
+.ll-tag { color: var(--muted); }
 
 /* Subtle card shadows on light bg */
 .listing-card { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
@@ -551,7 +572,7 @@ h1, h2, h3, h4 { color: var(--text); }
 
 /* Three roles section */
 #roles { background: var(--bg-card2); border-bottom: 1px solid var(--border); }
-.roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.roles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .role-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 28px 24px;
@@ -564,13 +585,149 @@ h1, h2, h3, h4 { color: var(--text); }
 .role-icon { font-size: 36px; line-height: 1; }
 .role-card h3 { font-size: 19px; font-weight: 700; margin: 0; color: var(--text); }
 .role-card p { font-size: 14px; color: var(--muted); line-height: 1.65; flex: 1; }
-@media (max-width: 720px) { .roles-grid { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .roles-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .roles-grid { grid-template-columns: 1fr; } }
 
 /* Weekly drop light theme */
 #weekly-drop { background: rgba(124,58,237,.05); }
 
 /* Pirate grade explainer on light */
 .score-overall { background: rgba(124,58,237,.06); border: 1px solid rgba(124,58,237,.18); }
+
+/* ── SIGNAL BOARD (Market Pulse) ── */
+#signal-board {
+  background: linear-gradient(135deg, rgba(124,58,237,.06) 0%, rgba(37,99,235,.03) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+.signal-board-inner {
+  display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;
+}
+.signal-board-left { flex: 1; min-width: 220px; }
+.signal-board-left .label { margin-bottom: 8px; }
+.signal-board-left h3 {
+  font-size: clamp(18px,2.5vw,24px); font-weight: 800;
+  color: #fff; line-height: 1.2; margin-bottom: 6px;
+}
+.signal-board-left p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.signal-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 2; min-width: 280px;
+}
+.signal-stat {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px 16px; text-align: center;
+  transition: border-color .2s;
+}
+.signal-stat:hover { border-color: var(--border-h); }
+.signal-stat .s-num { font-size: 28px; font-weight: 900; color: #fff; display: block; line-height: 1; margin-bottom: 4px; }
+.signal-stat .s-lbl { font-size: 11px; color: var(--muted); letter-spacing: .5px; display: block; margin-bottom: 8px; }
+.signal-stat .s-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--purple-l); background: rgba(124,58,237,.1);
+  border-radius: 4px; padding: 2px 7px; display: inline-block;
+}
+.signal-stat.s-green .s-num { color: var(--green); }
+.signal-stat.s-green .s-tag { color: var(--green); background: rgba(5,150,105,.1); }
+.signal-stat.s-blue .s-num { color: var(--blue-l); }
+.signal-stat.s-blue .s-tag { color: var(--blue-l); background: rgba(37,99,235,.1); }
+.signal-wanted {
+  flex: 0 0 200px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px;
+}
+.signal-wanted .sw-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.sw-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.sw-bar-wrap { flex: 1; height: 4px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
+.sw-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg,var(--purple),var(--purple-l)); }
+.sw-label { font-size: 11px; color: var(--muted); min-width: 110px; }
+.sw-count { font-size: 11px; font-weight: 700; color: var(--purple-l); flex-shrink: 0; }
+@media(max-width:900px) { .signal-stats { grid-template-columns: repeat(2,1fr); } .signal-wanted { flex: 1 0 100%; } }
+
+/* ── LISTINGS TOOLBAR ── */
+.listings-toolbar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 24px; padding: 14px 18px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.listings-search {
+  flex: 1; min-width: 160px;
+  padding: 9px 14px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--text); font-size: 13px; font-family: inherit;
+}
+.listings-search:focus { outline: none; border-color: var(--border-h); }
+.listings-filter {
+  padding: 9px 12px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--muted); font-size: 13px; font-family: inherit; cursor: pointer;
+}
+.listings-filter:focus { outline: none; border-color: var(--border-h); }
+.view-toggle { display: flex; gap: 4px; flex-shrink: 0; }
+.vt-btn {
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--muted); font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .15s; font-family: inherit;
+}
+.vt-btn.active { background: var(--purple); color: #fff; border-color: var(--purple); }
+.listings-count { font-size: 12px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+
+/* ── LIST VIEW ── */
+.listings-list { display: none; }
+.listings-list.active { display: table; width: 100%; border-collapse: collapse; }
+.ll-head { background: var(--bg-card); }
+.ll-head th {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.ll-row {
+  background: var(--bg-card); border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.ll-row:hover { background: var(--bg-card2); }
+.ll-row td { padding: 12px 14px; font-size: 13px; vertical-align: middle; }
+.ll-name-cell { display: flex; align-items: center; gap: 10px; }
+.ll-icon { font-size: 20px; flex-shrink: 0; }
+.ll-name { font-weight: 700; color: #fff; white-space: nowrap; }
+.ll-tag { font-size: 11px; color: var(--muted); }
+.ll-price { font-size: 14px; font-weight: 800; color: #fff; white-space: nowrap; }
+.ll-score { font-size: 14px; font-weight: 900; color: var(--purple-l); }
+.ll-score-wrap { display: flex; align-items: center; gap: 6px; }
+.ll-score-bar { width: 40px; height: 4px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
+.ll-score-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg,var(--purple),var(--purple-l)); }
+.listings-table-wrap {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  display: none;
+}
+.listings-table-wrap.active { display: block; }
+@media(max-width:600px) { .ll-head th:nth-child(4),.ll-row td:nth-child(4) { display: none; } }
+
+/* ── FOUNDER SIGNALS ── */
+#founder-signals {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+.signals-header { text-align: center; margin-bottom: 36px; }
+.signals-header .label { margin-bottom: 8px; }
+.signals-header h2 { font-size: clamp(22px,3vw,32px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+.signals-header p { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto; }
+.signals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.signal-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: border-color .2s;
+}
+.signal-card:hover { border-color: var(--border-h); }
+.sc-quote { font-size: 14px; color: var(--text); line-height: 1.65; flex: 1; font-style: italic; }
+.sc-quote::before { content: '"'; font-size: 32px; color: var(--purple-l); line-height: .5; display: block; margin-bottom: 8px; font-style: normal; }
+.sc-meta { display: flex; align-items: center; gap: 10px; }
+.sc-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,var(--purple),var(--blue)); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.sc-name { font-size: 12px; font-weight: 700; color: #fff; }
+.sc-role { font-size: 11px; color: var(--muted); }
+.sc-editorial { font-size: 10px; color: var(--muted); opacity: .6; font-style: italic; margin-top: 8px; }
 </style>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"0ef52dc3744a4e498cb345255359a86b"}'></script>
 </head>
@@ -587,6 +744,7 @@ h1, h2, h3, h4 { color: var(--text); }
       <li><a href="#sell" data-i18n="nav.submit">Submit</a></li>
       <li><a href="#bounty" data-i18n="nav.bounty">Bounty</a></li>
       <li><a href="#operator-form" data-i18n="nav.operators">Operators</a></li>
+      <li><a href="#partner-form" data-i18n="nav.partners">Deal Partners</a></li>
       <li><a href="#community" data-i18n="nav.community">Community</a></li>
     </ul>
     <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
@@ -605,66 +763,153 @@ h1, h2, h3, h4 { color: var(--text); }
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-badge">⚡ Weekly Drop #1 · Now open for submissions</div>
-    <h1 class="hero-title">
-      The marketplace<br>
-      for <span class="accent">AI businesses</span>
+    <div class="hero-badge" data-i18n="hero.badge">⚡ Weekly Drop #1 · Now open for submissions</div>
+    <h1 class="hero-title" data-i18n-html="hero.title">
+      The marketplace for AI assets<br><span class="accent">before they become obvious.</span>
     </h1>
-    <p class="hero-sub">
-      Buy, sell and operate AI-native digital assets.<br>
-      <strong>Channels · newsletters · bots · automations · AI personas.</strong>
+    <p class="hero-sub" data-i18n="hero.sub">
+      Buy, sell, request or operate AI-native assets: newsletters, agents, automations, AI media systems, bots, channels and microbusinesses.
+    </p>
+    <p class="hero-support" data-i18n="hero.support">
+      AI builders are creating assets faster than buyers can discover them. AIAsset.Market turns scattered AI projects into structured listings with demand signals, transfer notes, operator fit and risk review.
     </p>
     <div class="hero-cta">
-      <a href="#listings" class="btn btn-primary btn-lg" onclick="logEvent('browse_click')">Browse Assets →</a>
-      <a href="#sell" class="btn btn-outline btn-lg" onclick="logEvent('submit_asset_click')">Submit Your Asset</a>
+      <a href="#listings" class="btn btn-primary btn-lg" onclick="logEvent('browse_click')" data-i18n="hero.btn.browse">Browse Assets →</a>
+      <a href="#sell" class="btn btn-outline btn-lg" onclick="logEvent('grade_click')" data-i18n="hero.btn.submit">Submit Your Asset</a>
+      <a href="#bounty" class="btn btn-outline btn-lg" onclick="logEvent('bounty_click')" data-i18n="hero.btn.bounty">Post a Bounty</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="num">629+</span>
-        <span class="desc">Telegram subscribers</span>
+        <span class="desc" data-i18n="hero.stat.tg">Telegram subscribers</span>
       </div>
       <div class="hero-stat">
-        <span class="num">First 100</span>
-        <span class="desc">free Pirate Grade reviews</span>
+        <span class="num" data-i18n="hero.stat.f100.num">First 100</span>
+        <span class="desc" data-i18n="hero.stat.f100.desc">free Pirate Grade reviews</span>
       </div>
       <div class="hero-stat">
         <span class="num">6</span>
-        <span class="desc">asset categories</span>
+        <span class="desc" data-i18n="hero.stat.cats">asset categories</span>
       </div>
       <div class="hero-stat">
-        <span class="num"><span class="dot-live"></span>Open</span>
-        <span class="desc">accepting submissions</span>
+        <span class="num" data-i18n-html="hero.stat.open.num"><span class="dot-live"></span>Open</span>
+        <span class="desc" data-i18n="hero.stat.open.desc">accepting submissions</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- THREE ROLES -->
+<!-- WHAT IS AN AI ASSET -->
+<section id="what-is" style="background:var(--bg-card);border-bottom:1px solid var(--border);padding:72px 0;">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;">
+      <div class="label" style="text-align:center;margin-bottom:16px;">What counts as an AI asset?</div>
+      <h2 style="font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.2;text-align:center;margin-bottom:16px;">An AI asset is not just a prompt, bot or idea.</h2>
+      <p style="font-size:16px;color:var(--muted);text-align:center;max-width:600px;margin:0 auto 36px;line-height:1.7;">It is a packaged digital system that can be transferred, licensed, sold, operated or improved by someone else.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:36px;">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">📰</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">AI Newsletter</div>
+          <div style="font-size:12px;color:var(--muted);">Content workflow + audience + editorial SOP</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">📡</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">AI Channel</div>
+          <div style="font-size:12px;color:var(--muted);">Telegram/social powered by AI content systems</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">🤖</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">AI Agent</div>
+          <div style="font-size:12px;color:var(--muted);">Repeatable business use case + docs + client niche</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">⚙️</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">Automation</div>
+          <div style="font-size:12px;color:var(--muted);">Lead-gen or ops workflow with SOPs + proven results</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">🎬</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">AI Persona / UGC Pack</div>
+          <div style="font-size:12px;color:var(--muted);">Creator identity, video samples, brand use case</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">🔧</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">No-code SaaS / Microtool</div>
+          <div style="font-size:12px;color:var(--muted);">Live tool with real users + transfer path</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:20px;margin-bottom:8px;">🏭</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;">Content Engine</div>
+          <div style="font-size:12px;color:var(--muted);">Media workflow or automation business with upside</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);text-align:center;line-height:1.7;max-width:580px;margin:0 auto;">If it has a use case, workflow, ownership, transfer path and upside — it can become an asset.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MARKET IS MESSY NOW -->
+<section id="why-now" style="padding:72px 0;">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <div class="label" style="margin-bottom:16px;">Why now</div>
+      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;line-height:1.2;margin-bottom:24px;">Traditional marketplaces weren't built for this.</h2>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:left;margin-bottom:32px;">
+        <p style="font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:16px;">Traditional marketplaces list websites, SaaS tools and domains.</p>
+        <p style="font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:16px;"><strong style="color:var(--text);">AIAsset.Market is built for a newer category:</strong> AI-native assets — agents, automations, AI media systems, synthetic persona packs, newsletters, channels and operator-ready workflows.</p>
+        <p style="font-size:15px;line-height:1.8;color:var(--muted);">Most of them are too small for brokers, too structured for simple directories, and too early for classic startup acquisition platforms. <strong style="color:var(--text);">That is the gap we are building for.</strong></p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
+          <div style="font-size:28px;margin-bottom:8px;">🏛️</div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--muted);">OLD PLATFORMS</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">Websites, SaaS, domains. Minimum revenue requirements. Broker fees.</div>
+        </div>
+        <div style="font-size:24px;display:flex;align-items:center;justify-content:center;">→</div>
+        <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.25);border-radius:12px;padding:20px;text-align:center;">
+          <div style="font-size:28px;margin-bottom:8px;">⚡</div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--purple);">AIASSET.MARKET</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">AI-native assets. Any stage. Structured format. Demand signals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FOUR ROLES -->
 <section id="roles">
   <div class="container" style="padding-top:56px;padding-bottom:56px;">
     <div style="text-align:center;margin-bottom:36px;">
-      <div class="label">Who it's for</div>
-      <h2 style="font-size:clamp(22px,3vw,32px);font-weight:800;line-height:1.2;margin-bottom:8px;">Buy, sell or operate — choose your role</h2>
-      <p style="font-size:15px;color:var(--muted);max-width:480px;margin:0 auto;">Three ways to participate in the AI asset market. One platform.</p>
+      <div class="label" data-i18n="roles.label">Who it's for</div>
+      <h2 style="font-size:clamp(22px,3vw,32px);font-weight:800;line-height:1.2;margin-bottom:8px;" data-i18n="roles.h2">Buy, sell, operate or connect — choose your role</h2>
+      <p style="font-size:15px;color:var(--muted);max-width:540px;margin:0 auto;" data-i18n="roles.sub">Four ways to participate in the AI asset market. One platform.</p>
     </div>
     <div class="roles-grid">
       <div class="role-card">
         <div class="role-icon">🛒</div>
-        <h3>Buyers</h3>
-        <p>Browse AI channels, newsletters, bots and automations. Post a bounty and get matched with sellers who have what you need.</p>
-        <a href="#request-form" class="btn btn-outline btn-sm" style="margin-top:4px;width:fit-content;">Post a Bounty →</a>
+        <h3 data-i18n="roles.buyers.h3">Buyers</h3>
+        <p data-i18n="roles.buyers.p">Browse AI channels, newsletters, bots and automations. Post a bounty and get matched with sellers who have what you need.</p>
+        <a href="#request-form" class="btn btn-outline btn-sm" style="margin-top:4px;width:fit-content;" data-i18n="roles.buyers.btn">Post a Bounty →</a>
       </div>
       <div class="role-card role-card-featured">
         <div class="role-icon">📦</div>
-        <h3>Sellers</h3>
-        <p>List your AI asset and get a free Pirate Grade review. We assess demand, readiness, operator fit, upside and risk — free for the first 100 submissions.</p>
-        <a href="#sell" class="btn btn-primary btn-sm" style="margin-top:4px;width:fit-content;">Submit Asset →</a>
+        <h3 data-i18n="roles.sellers.h3">Sellers</h3>
+        <p data-i18n="roles.sellers.p">List your AI asset and get a free Pirate Grade review. We assess demand, readiness, operator fit, upside and risk — free for the first 100 submissions.</p>
+        <a href="#sell" class="btn btn-primary btn-sm" style="margin-top:4px;width:fit-content;" data-i18n="roles.sellers.btn">Submit Asset →</a>
       </div>
       <div class="role-card">
         <div class="role-icon">⚙️</div>
-        <h3>Operators</h3>
-        <p>Run AI assets without owning them. Your skills are your entry point — no capital required. Compensation agreed directly with the asset owner.</p>
-        <a href="#operator-form" class="btn btn-outline btn-sm" style="margin-top:4px;width:fit-content;">Apply as Operator →</a>
+        <h3 data-i18n="roles.operators.h3">Operators</h3>
+        <p data-i18n="roles.operators.p">Run AI assets without owning them. Your skills are your entry point — no capital required. Compensation agreed directly with the asset owner.</p>
+        <a href="#operator-form" class="btn btn-outline btn-sm" style="margin-top:4px;width:fit-content;" data-i18n="roles.operators.btn">Apply as Operator →</a>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🤝</div>
+        <h3 data-i18n="roles.partners.h3">Deal Partners</h3>
+        <p data-i18n="roles.partners.p">Know founders, builders or buyers? Bring qualified AI asset opportunities. Case-by-case rewards may apply when real accepted leads or deals close.</p>
+        <a href="#partner-form" class="btn btn-outline btn-sm" style="margin-top:4px;width:fit-content;" data-i18n="roles.partners.btn">Apply as Deal Partner →</a>
       </div>
     </div>
   </div>
@@ -676,7 +921,7 @@ h1, h2, h3, h4 { color: var(--text); }
 <section id="weekly-drop" style="background:rgba(124,58,237,0.07);border-bottom:1px solid rgba(124,58,237,0.2);padding:18px 0;">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
     <div>
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple-l);margin-bottom:4px;">📋 WEEKLY DROP #1</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple-l);margin-bottom:4px;" data-i18n="weekly.label">📋 WEEKLY DROP #1</div>
       <p style="font-size:15px;color:var(--text);font-weight:600;margin:0;" data-i18n="weekly.title">Weekly Drop #1 is now being curated.</p>
       <p style="font-size:13px;color:var(--muted);margin:2px 0 0;" data-i18n="weekly.sub">Submit an AI asset, post a bounty or apply as operator to be included.</p>
     </div>
@@ -692,81 +937,105 @@ h1, h2, h3, h4 { color: var(--text); }
     <div class="section-h">
       <div class="label" data-i18n="how.label">How it works</div>
       <h2 data-i18n="how.h2">How AIAsset.Market works</h2>
-      <p data-i18n="how.p">Three roles. One exchange. Submit an asset, post a bounty, or apply to operate.</p>
+      <p data-i18n-html="how.p">Four roles. One exchange. Submit an asset, post a bounty, apply to operate, or bring a deal.</p>
     </div>
 
     <div class="how-tabs">
       <button class="how-tab active" onclick="showHow('buy')" data-i18n="how.tab.buy">🏴 For Buyers</button>
       <button class="how-tab" onclick="showHow('sell')" data-i18n="how.tab.sell">📦 For Sellers</button>
       <button class="how-tab" onclick="showHow('manage')" data-i18n="how.tab.manage">⚓ For Operators</button>
+      <button class="how-tab" onclick="showHow('partner')" data-i18n="how.tab.partner">🤝 For Deal Partners</button>
     </div>
 
     <div id="how-buy" class="how-panel active">
       <div class="how-step">
-        <div class="step-n">Step 01</div>
-        <h4>Browse or post a bounty</h4>
-        <p>Browse listed assets or post a bounty — tell us what you're looking for and we'll source it.</p>
+        <div class="step-n" data-i18n="step.01">Step 01</div>
+        <h4 data-i18n="how.buy.s1.h">Browse or post a bounty</h4>
+        <p data-i18n="how.buy.s1.p">Browse listed assets or post a bounty — tell us what you're looking for and we'll source it.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 02</div>
-        <h4>Request details</h4>
-        <p>Send an inquiry. We connect you with the seller and share what was reviewed vs. what is seller-reported.</p>
+        <div class="step-n" data-i18n="step.02">Step 02</div>
+        <h4 data-i18n="how.buy.s2.h">Request details</h4>
+        <p data-i18n="how.buy.s2.p">Send an inquiry. We connect you with the seller and share what was reviewed vs. what is seller-reported.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 03</div>
-        <h4>Understand the asset</h4>
-        <p>Review the Asset Grade, risk labels, transfer notes and evidence status. We map scenarios — we don't guarantee outcomes.</p>
+        <div class="step-n" data-i18n="step.03">Step 03</div>
+        <h4 data-i18n="how.buy.s3.h">Understand the asset</h4>
+        <p data-i18n="how.buy.s3.p">Review the Asset Grade, risk labels, transfer notes and evidence status. We map scenarios — we don't guarantee outcomes.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 04</div>
-        <h4>Agree terms directly</h4>
-        <p>Buyer and seller agree terms directly. We facilitate the intro. Due diligence and agreements are between the parties.</p>
+        <div class="step-n" data-i18n="step.04">Step 04</div>
+        <h4 data-i18n="how.buy.s4.h">Agree terms directly</h4>
+        <p data-i18n="how.buy.s4.p">Buyer and seller agree terms directly. We facilitate the intro. Due diligence and agreements are between the parties.</p>
       </div>
     </div>
 
     <div id="how-sell" class="how-panel">
       <div class="how-step">
-        <div class="step-n">Step 01</div>
-        <h4>Submit your asset</h4>
-        <p>Fill the short form: name, category, description, contact. Optional details help us review faster.</p>
+        <div class="step-n" data-i18n="step.01">Step 01</div>
+        <h4 data-i18n="how.sell.s1.h">Submit your asset</h4>
+        <p data-i18n="how.sell.s1.p">Fill the short form: name, category, description, contact. Optional details help us review faster.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 02</div>
-        <h4>Get your Asset Grade</h4>
-        <p>Receive an honest assessment across 5 dimensions. See where your asset stands — and what to add or improve to move the grade up.</p>
+        <div class="step-n" data-i18n="step.02">Step 02</div>
+        <h4 data-i18n="how.sell.s2.h">Get your Asset Grade</h4>
+        <p data-i18n="how.sell.s2.p">Receive an honest assessment across 5 dimensions. See where your asset stands — and what to add or improve to move the grade up.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 03</div>
-        <h4>Publish on your terms</h4>
-        <p>Choose your visibility: public listing, private intro only, anonymous, or flagged for operators. You control who finds you and how.</p>
+        <div class="step-n" data-i18n="step.03">Step 03</div>
+        <h4 data-i18n="how.sell.s3.h">Publish on your terms</h4>
+        <p data-i18n="how.sell.s3.p">Choose your visibility: public listing, private intro only, anonymous, or flagged for operators. You control who finds you and how.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 04</div>
-        <h4>Direct discovery</h4>
-        <p>Buyers, operators and the community discover your listing. Deal terms are set directly between parties — we provide the format and trust layer, not a managed broker service.</p>
+        <div class="step-n" data-i18n="step.04">Step 04</div>
+        <h4 data-i18n="how.sell.s4.h">Direct discovery</h4>
+        <p data-i18n="how.sell.s4.p">Buyers, operators and the community discover your listing. Deal terms are set directly between parties — we provide the format and trust layer, not a managed broker service.</p>
       </div>
     </div>
 
     <div id="how-manage" class="how-panel">
       <div class="how-step">
-        <div class="step-n">Step 01</div>
-        <h4>Apply as operator</h4>
-        <p>Tell us your skills, platforms, weekly capacity and experience with AI assets.</p>
+        <div class="step-n" data-i18n="step.01">Step 01</div>
+        <h4 data-i18n="how.manage.s1.h">Apply as operator</h4>
+        <p data-i18n="how.manage.s1.p">Tell us your skills, platforms, weekly capacity and experience with AI assets.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 02</div>
-        <h4>Get matched</h4>
-        <p>We match you with assets that need operators. Asset owners flag listings with operator-needed status.</p>
+        <div class="step-n" data-i18n="step.02">Step 02</div>
+        <h4 data-i18n="how.manage.s2.h">Get matched</h4>
+        <p data-i18n="how.manage.s2.p">We match you with assets that need operators. Asset owners flag listings with operator-needed status.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 03</div>
-        <h4>Agree terms</h4>
-        <p>Compensation model, scope of work, and reporting cadence agreed directly with the asset owner.</p>
+        <div class="step-n" data-i18n="step.03">Step 03</div>
+        <h4 data-i18n="how.manage.s3.h">Agree terms</h4>
+        <p data-i18n="how.manage.s3.p">Compensation model, scope of work, and reporting cadence agreed directly with the asset owner.</p>
       </div>
       <div class="how-step">
-        <div class="step-n">Step 04</div>
-        <h4>Run the asset</h4>
-        <p>You operate. Owner keeps equity. No capital required — skills and capacity are your entry.</p>
+        <div class="step-n" data-i18n="step.04">Step 04</div>
+        <h4 data-i18n="how.manage.s4.h">Run the asset</h4>
+        <p data-i18n="how.manage.s4.p">You operate. Owner keeps equity. No capital required — skills and capacity are your entry.</p>
+      </div>
+    </div>
+
+    <div id="how-partner" class="how-panel">
+      <div class="how-step">
+        <div class="step-n" data-i18n="step.01">Step 01</div>
+        <h4 data-i18n="how.partner.s1.h">Apply as Deal Partner</h4>
+        <p data-i18n="how.partner.s1.p">Tell us where you have access — business clubs, founder communities, Telegram groups, AI networks. We review partner applications manually.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n" data-i18n="step.02">Step 02</div>
+        <h4 data-i18n="how.partner.s2.h">Bring qualified opportunities</h4>
+        <p data-i18n="how.partner.s2.p">Introduce AI asset sellers, buyers, operators, or bounty requests. Every lead is reviewed manually — we need a real source, not a rumour.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n" data-i18n="step.03">Step 03</div>
+        <h4 data-i18n="how.partner.s3.h">We qualify and follow up</h4>
+        <p data-i18n="how.partner.s3.p">We review each lead, verify it, and move it through the pipeline. You stay informed at key milestones.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n" data-i18n="step.04">Step 04</div>
+        <h4 data-i18n="how.partner.s4.h">Case-by-case reward if a deal closes</h4>
+        <p data-i18n="how.partner.s4.p">If a qualified lead you brought results in an accepted submission or closed deal, a founder-approved reward may apply. Not guaranteed. Agreed case by case.</p>
       </div>
     </div>
   </div>
@@ -792,6 +1061,66 @@ h1, h2, h3, h4 { color: var(--text); }
   Statuses: New / Review / Needs Info / Approved / Listed / Rejected
   Fields: pirate_grade | verification_status | main_risk | verdict | next_step
 -->
+<!-- SIGNAL BOARD -->
+<section id="signal-board">
+  <div class="container">
+    <div class="signal-board-inner">
+      <div class="signal-board-left">
+        <div class="label" data-i18n="signal.label">Early demand map</div>
+        <h3 data-i18n="signal.h3">Example demand signals</h3>
+        <p data-i18n="signal.p">Example categories until verified buyer bounties are published. Post a real bounty to appear here.</p>
+      </div>
+      <div class="signal-stats">
+        <div class="signal-stat">
+          <span class="s-num">4</span>
+          <span class="s-lbl" data-i18n="signal.stat1.lbl">Bounty ideas</span>
+          <span class="s-tag" data-i18n="signal.stat1.tag">[EXAMPLE]</span>
+        </div>
+        <div class="signal-stat s-green">
+          <span class="s-num">100</span>
+          <span class="s-lbl" data-i18n="signal.stat2.lbl">Free reviews left</span>
+          <span class="s-tag" data-i18n="signal.stat2.tag">First batch</span>
+        </div>
+        <div class="signal-stat s-blue">
+          <span class="s-num">6</span>
+          <span class="s-lbl" data-i18n="signal.stat3.lbl">Asset categories</span>
+          <span class="s-tag" data-i18n="signal.stat3.tag">All AI-native</span>
+        </div>
+        <div class="signal-stat">
+          <span class="s-num" data-i18n-html="signal.stat4.num"><span class="dot-live"></span>Open</span>
+          <span class="s-lbl" data-i18n="signal.stat4.lbl">Weekly Drop #1</span>
+          <span class="s-tag" data-i18n="signal.stat4.tag">Submit now</span>
+        </div>
+      </div>
+      <div class="signal-wanted">
+        <div class="sw-title" data-i18n="signal.wanted.title">Example bounty ideas</div>
+        <div class="sw-item">
+          <span class="sw-label" data-i18n="signal.w1">AI Telegram channel</span>
+          <div class="sw-bar-wrap"><div class="sw-bar" style="width:100%"></div></div>
+          <span class="sw-count" style="font-size:10px;opacity:.6">[IDEA]</span>
+        </div>
+        <div class="sw-item">
+          <span class="sw-label" data-i18n="signal.w2">AI Newsletter</span>
+          <div class="sw-bar-wrap"><div class="sw-bar" style="width:75%"></div></div>
+          <span class="sw-count" style="font-size:10px;opacity:.6">[IDEA]</span>
+        </div>
+        <div class="sw-item">
+          <span class="sw-label" data-i18n="signal.w3">Lead-gen automation</span>
+          <div class="sw-bar-wrap"><div class="sw-bar" style="width:60%"></div></div>
+          <span class="sw-count" style="font-size:10px;opacity:.6">[IDEA]</span>
+        </div>
+        <div class="sw-item">
+          <span class="sw-label" data-i18n="signal.w4">UGC AI persona</span>
+          <div class="sw-bar-wrap"><div class="sw-bar" style="width:45%"></div></div>
+          <span class="sw-count" style="font-size:10px;opacity:.6">[IDEA]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <!-- LISTINGS -->
 <section id="listings" class="section">
   <div class="container">
@@ -801,8 +1130,35 @@ h1, h2, h3, h4 { color: var(--text); }
       <p data-i18n="listings.p">See what can be listed, requested or operated.</p>
       <p style="font-size:12px;color:var(--muted);margin-top:8px;" data-i18n="listings.disclaimer">These examples show the format of AI-native asset listings. They are not active sales unless marked otherwise.</p>
     </div>
-    <div class="listings-grid" id="listings-grid">
-      <p style="color:var(--muted);text-align:center;grid-column:1/-1;padding:40px 0;">Loading listings…</p>
+    <div class="listings-toolbar">
+      <input type="search" class="listings-search" id="listings-search" oninput="applyListingsFilters()" data-i18n-ph="listings.search.ph" placeholder="Search assets…">
+      <select class="listings-filter" id="listings-type-filter" onchange="applyListingsFilters()">
+        <option value="" data-i18n="filter.all">All types</option>
+        <option value="sale" data-i18n="filter.sale">For sale</option>
+        <option value="license" data-i18n="filter.license">License</option>
+        <option value="management" data-i18n="filter.management">Operator</option>
+        <option value="bounty" data-i18n="filter.bounty">Bounty</option>
+      </select>
+      <div class="view-toggle">
+        <button class="vt-btn active" id="vt-grid" onclick="setListingsView('grid')" title="Grid view">⊞</button>
+        <button class="vt-btn" id="vt-list" onclick="setListingsView('list')" title="List view">≡</button>
+      </div>
+      <span class="listings-count" id="listings-count"></span>
+    </div>
+    <div class="listings-grid" id="listings-grid"></div>
+    <div class="listings-table-wrap" id="listings-table-wrap">
+      <table class="listings-list" id="listings-list">
+        <thead class="ll-head">
+          <tr>
+            <th data-i18n="list.col.asset">Asset</th>
+            <th data-i18n="list.col.price">Price</th>
+            <th data-i18n="list.col.type">Type</th>
+            <th data-i18n="list.col.score">Score</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="listings-list-body"></tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -814,37 +1170,37 @@ h1, h2, h3, h4 { color: var(--text); }
   <div class="container">
     <div class="section-h">
       <div class="label" data-i18n="grade.label">Pirate Grade</div>
-      <h2 data-i18n="grade.h2">How we evaluate every submission</h2>
+      <h2 data-i18n="grade.h2">Most AI projects are not assets yet. Pirate Grade shows what is missing.</h2>
       <p data-i18n="grade.p">5 dimensions. Honest assessment. We review claims and map scenarios — we do not guarantee outcomes.</p>
     </div>
     <div class="score-explainer">
       <div class="se-card">
-        <div class="se-name">📡 Demand Signal</div>
-        <div class="se-desc">Are there signs someone wants this? Existing audience, buyer requests, search demand, proven use case.</div>
+        <div class="se-name" data-i18n="grade.dim1.name">📡 Demand Signal</div>
+        <div class="se-desc" data-i18n="grade.dim1.desc">Are there signs someone wants this? Existing audience, buyer requests, search demand, proven use case.</div>
       </div>
       <div class="se-card">
-        <div class="se-name">📦 Asset Readiness</div>
-        <div class="se-desc">Is it already an asset or still an idea? Launched, documented, transferable — vs. rough prototype.</div>
+        <div class="se-name" data-i18n="grade.dim2.name">📦 Asset Readiness</div>
+        <div class="se-desc" data-i18n="grade.dim2.desc">Is it already an asset or still an idea? Launched, documented, transferable — vs. rough prototype.</div>
       </div>
       <div class="se-card">
-        <div class="se-name">🧑‍✈️ Operator Fit</div>
-        <div class="se-desc">Can someone else run it without the founder? Clear SOP, low specialist dependency, documented workflow.</div>
+        <div class="se-name" data-i18n="grade.dim3.name">🧑‍✈️ Operator Fit</div>
+        <div class="se-desc" data-i18n="grade.dim3.desc">Can someone else run it without the founder? Clear SOP, low specialist dependency, documented workflow.</div>
       </div>
       <div class="se-card">
-        <div class="se-name">🚀 Upside Paths</div>
-        <div class="se-desc">What scenarios could make it more valuable? Market opportunity, monetization levers, growth options.</div>
+        <div class="se-name" data-i18n="grade.dim4.name">🚀 Upside Paths</div>
+        <div class="se-desc" data-i18n="grade.dim4.desc">What scenarios could make it more valuable? Market opportunity, monetization levers, growth options.</div>
       </div>
       <div class="se-card">
-        <div class="se-name">🛡️ Risk &amp; Proof</div>
-        <div class="se-desc">What is claimed vs. reviewed. Platform risk, legal exposure, ownership verification, transfer feasibility.</div>
+        <div class="se-name" data-i18n="grade.dim5.name">🛡️ Risk &amp; Proof</div>
+        <div class="se-desc" data-i18n="grade.dim5.desc">What is claimed vs. reviewed. Platform risk, legal exposure, ownership verification, transfer feasibility.</div>
       </div>
     </div>
     <div class="grade-badges">
-      <span class="grade-badge gb-a" data-i18n="grade.a">A — Strong</span>
-      <span class="grade-badge gb-b" data-i18n="grade.b">B — Interesting</span>
-      <span class="grade-badge gb-c" data-i18n="grade.c">C — Early</span>
-      <span class="grade-badge gb-d" data-i18n="grade.d">D — Not Ready</span>
-      <span class="grade-badge gb-r" data-i18n="grade.r">✕ Reject</span>
+      <span class="grade-badge gb-a" data-i18n="grade.a">A — Transferable asset</span>
+      <span class="grade-badge gb-b" data-i18n="grade.b">B — Promising asset</span>
+      <span class="grade-badge gb-c" data-i18n="grade.c">C — Early project</span>
+      <span class="grade-badge gb-d" data-i18n="grade.d">D — Not ready</span>
+      <span class="grade-badge gb-r" data-i18n="grade.r">✕ Reject — unsafe / fake / non-transferable</span>
     </div>
     <p style="text-align:center; font-size:13px; color:var(--muted); margin-top:20px; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.6;" data-i18n="grade.note">Grade is not fixed. Sellers can improve their Pirate Grade by adding transfer notes, upside paths, operator SOPs or verified evidence. It reflects what you document and share.</p>
     <p style="text-align:center; font-size:12px; color:var(--muted); opacity:0.7; margin-top:8px;" data-i18n="grade.byline">Pirate Grade is the editorial review label by Pirate AI Port — the community behind AIAsset.Market.</p>
@@ -852,8 +1208,8 @@ h1, h2, h3, h4 { color: var(--text); }
       <div class="warning-box">
         <div class="warning-box-icon">⚠️</div>
         <div class="warning-box-text">
-          <h3>Evidence reviewed ≠ guaranteed outcome.</h3>
-          <p>Evidence Reviewed means selected materials were checked against available sources. It does not guarantee future performance, monetization, traffic, platform stability or transfer success. All numbers are seller-reported unless explicitly marked as reviewed. We review claims and map scenarios — we do not guarantee outcomes.</p>
+          <h3 data-i18n="grade.warning.h">Evidence reviewed ≠ guaranteed outcome.</h3>
+          <p data-i18n="grade.warning.p">Evidence Reviewed means selected materials were checked against available sources. It does not guarantee future performance, monetization, traffic, platform stability or transfer success. All numbers are seller-reported unless explicitly marked as reviewed. We review claims and map scenarios — we do not guarantee outcomes.</p>
         </div>
       </div>
     </div>
@@ -885,6 +1241,19 @@ h1, h2, h3, h4 { color: var(--text); }
   </div>
 </section>
 
+<!-- BUILT AN AI PROJECT? -->
+<section id="builder-cta" style="background:linear-gradient(135deg,rgba(124,58,237,0.08) 0%,rgba(37,99,235,0.06) 100%);border-top:1px solid rgba(124,58,237,0.2);border-bottom:1px solid rgba(124,58,237,0.2);padding:64px 0;">
+  <div class="container">
+    <div style="max-width:680px;margin:0 auto;text-align:center;">
+      <div style="font-size:32px;margin-bottom:16px;">🏴</div>
+      <h2 style="font-size:clamp(22px,3.5vw,36px);font-weight:800;line-height:1.2;margin-bottom:16px;">Built an AI project but don't know what to do with it?</h2>
+      <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:32px;">Built a bot, automation, AI channel, mini-SaaS or content system? Don't let it die in your folder. Submit it for a free Pirate Grade and see if it can become an asset someone can buy, license or operate.</p>
+      <a href="#sell" class="btn btn-primary btn-lg" onclick="logEvent('builder_cta_click')">Get Free Pirate Grade →</a>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">Free for first 100 submissions. No commitment required.</p>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
 
 <!-- SELL / EARLY BUILDER PROGRAM -->
@@ -905,7 +1274,45 @@ h1, h2, h3, h4 { color: var(--text); }
         </ul>
       </div>
       <div>
-        <div class="form-card" id="submit-form">
+        <!-- FAST SUBMIT -->
+        <div class="form-card" id="fast-submit-form" style="margin-bottom:16px;border:2px solid rgba(124,58,237,0.3);background:rgba(124,58,237,0.04);">
+          <h3 style="margin-bottom:4px;">⚡ Fast Submit</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">3 fields. We'll reach out with next steps.</p>
+          <div class="form-success" id="fast-submit-success"></div>
+          <div class="form-error-box" id="fast-submit-errors"></div>
+          <form id="form-fast-submit" onsubmit="handleForm(event,'fast_submit')" novalidate>
+            <input type="hidden" name="_form_loaded" value="">
+            <div class="hp-field" aria-hidden="true">
+              <input type="text" name="hp_website" tabindex="-1" autocomplete="off" value="">
+            </div>
+            <div class="form-row">
+              <label>What did you build? *</label>
+              <input name="asset_name" type="text" placeholder="e.g. AI Telegram bot for crypto signals" required>
+            </div>
+            <div class="form-row">
+              <label>Link (Gumroad, GitHub, landing page)</label>
+              <input name="link" type="text" placeholder="https://...">
+            </div>
+            <div class="form-row">
+              <label>Telegram or email *</label>
+              <input name="contact" type="text" placeholder="@username or email@..." required>
+            </div>
+            <div class="form-row">
+              <label>What are you looking for? *</label>
+              <select name="listing_preference" required>
+                <option value="">Select…</option>
+                <option>Just want a free Pirate Grade</option>
+                <option>Looking for a buyer</option>
+                <option>Looking for an operator</option>
+                <option>Open to any option</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;margin-top:4px;">Get Free Pirate Grade →</button>
+          </form>
+        </div>
+        <!-- ADVANCED FORM -->
+        <div style="text-align:center;font-size:12px;color:var(--muted);margin-bottom:12px;cursor:pointer;" onclick="document.getElementById('submit-form').style.display='block';this.style.display='none';">▼ Advanced details (optional)</div>
+        <div class="form-card" id="submit-form" style="display:none;">
           <h3 data-i18n="sell.form.h3">Submit Your Asset</h3>
           <div class="form-success" id="submit-success"></div>
           <div class="form-error-box" id="submit-errors"></div>
@@ -1188,48 +1595,206 @@ h1, h2, h3, h4 { color: var(--text); }
 
 <hr class="divider">
 
+<!-- DEAL PARTNER APPLICATION -->
+<section id="partner-form" class="section-sm">
+  <div class="container">
+    <div class="two-col">
+      <div class="tc-text">
+        <div class="label" data-i18n="partner.label">Deal Partners</div>
+        <h2 data-i18n="partner.h2">Bring AI asset opportunities.</h2>
+        <p data-i18n="partner.p">AIAsset.Market works with scouts, deal connectors, community partners and business-club members who can introduce qualified AI asset sellers, buyers, operators and bounty requests.</p>
+        <ul>
+          <li data-i18n="partner.li1">Know a founder sitting on an AI channel or newsletter? Bring the intro.</li>
+          <li data-i18n="partner.li2">Know a buyer looking for an AI tool or content engine? Connect them.</li>
+          <li data-i18n="partner.li3">Know operators looking for assets to run? We want to hear.</li>
+          <li data-i18n="partner.li4">Case-by-case rewards may apply when real accepted leads or deals close. Not guaranteed. Founder-approved.</li>
+        </ul>
+        <p style="font-size:13px;color:var(--muted);margin-top:16px;" data-i18n="partner.disclaimer">Rewards are case-by-case and not guaranteed. This is not a passive income scheme, investment opportunity, or multi-level program.</p>
+      </div>
+      <div>
+        <div class="form-card">
+          <h3 data-i18n="partner.form.h3">Apply as Deal Partner</h3>
+          <div class="form-success" id="partner-success"></div>
+          <div class="form-error-box" id="partner-errors"></div>
+          <form id="form-partner" onsubmit="handleForm(event,'partner')" novalidate>
+            <input type="hidden" name="_form_loaded" value="">
+            <div class="hp-field" aria-hidden="true">
+              <input type="text" name="hp_website" tabindex="-1" autocomplete="off" value="">
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.name.lbl">Your name *</label>
+              <input name="name" type="text" placeholder="Name or handle" data-i18n-ph="partner.f.name.lbl" required>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.email.lbl">Email *</label>
+              <input name="email" type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.contact.lbl">Telegram / X / LinkedIn *</label>
+              <input name="contact" type="text" placeholder="@username or profile URL" data-i18n-ph="partner.f.contact.ph" required>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.role.lbl">Preferred role</label>
+              <select name="preferred_role">
+                <option value="">Select…</option>
+                <option>Scout</option>
+                <option>Deal Partner / Connector</option>
+                <option>Community Ambassador</option>
+                <option>Operator Recruiter</option>
+                <option>Media / Newsletter Partner</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.access.lbl">Where do you have access?</label>
+              <select name="access_channels">
+                <option value="">Select primary…</option>
+                <option>Business clubs</option>
+                <option>Telegram groups / communities</option>
+                <option>Founder / startup communities</option>
+                <option>Investor groups</option>
+                <option>AI builders / developers</option>
+                <option>No-code communities</option>
+                <option>Agency networks</option>
+                <option>Newsletter communities</option>
+                <option>Multiple / other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.leads.lbl">What kind of leads can you bring? *</label>
+              <textarea name="lead_types" placeholder="Describe the type of AI assets, buyers, or operators you have access to. Be specific." data-i18n-ph="partner.f.leads.ph" required></textarea>
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.profiles.lbl">Public profile links</label>
+              <input name="public_profiles" type="text" placeholder="Telegram channel, LinkedIn, website, etc." data-i18n-ph="partner.f.profiles.ph">
+            </div>
+            <div class="form-row">
+              <label data-i18n="partner.f.notes.lbl">Notes</label>
+              <textarea name="notes" placeholder="Anything else we should know" data-i18n-ph="partner.f.notes.ph"></textarea>
+            </div>
+            <div class="form-row">
+              <label style="display:flex;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;">
+                <input name="consent" type="checkbox" required style="margin-top:3px;flex-shrink:0;">
+                <span data-i18n="partner.f.consent">I understand rewards are case-by-case and not guaranteed. *</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;" data-i18n="partner.f.btn">Apply as Deal Partner →</button>
+            <p class="form-note" data-i18n="partner.f.note">We review applications manually and reach out with next steps.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PARTNER LEAD SUBMISSION -->
+<section id="partner-lead-form" class="section-sm" style="background:var(--bg-card2);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="label" data-i18n="partner_lead.label">Already a Deal Partner?</div>
+      <h2 data-i18n="partner_lead.h2">Submit a Partner Lead</h2>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto;" data-i18n="partner_lead.p">Have a specific lead to submit? Fill in the details below. Source URL required — no source, no review.</p>
+    </div>
+    <div style="max-width:560px;margin:0 auto;">
+      <div class="form-card">
+        <div class="form-success" id="partner-lead-success"></div>
+        <div class="form-error-box" id="partner-lead-errors"></div>
+        <form id="form-partner-lead" onsubmit="handleForm(event,'partner_lead')" novalidate>
+          <input type="hidden" name="_form_loaded" value="">
+          <div class="hp-field" aria-hidden="true">
+            <input type="text" name="hp_website" tabindex="-1" autocomplete="off" value="">
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.contact.lbl">Your name / contact *</label>
+            <input name="partner_contact" type="text" placeholder="@username or email" data-i18n-ph="partner_lead.f.contact.ph" required>
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.type.lbl">Lead type *</label>
+            <select name="lead_type" required>
+              <option value="">Select…</option>
+              <option>Seller (AI asset owner)</option>
+              <option>Buyer / Bounty request</option>
+              <option>Operator</option>
+              <option>Community / Media</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.name.lbl">Lead name / description *</label>
+            <input name="lead_name" type="text" placeholder="Name of person, channel, asset, or opportunity" data-i18n-ph="partner_lead.f.name.ph" required>
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.url.lbl">Lead source URL *</label>
+            <input name="lead_source_url" type="text" placeholder="https:// — direct link to verify this lead" data-i18n-ph="partner_lead.f.url.ph" required>
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.method.lbl">Lead contact method</label>
+            <input name="lead_contact_method" type="text" placeholder="Telegram DM / email / web form / LinkedIn" data-i18n-ph="partner_lead.f.method.ph">
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.why.lbl">Why relevant *</label>
+            <textarea name="why_relevant" placeholder="Why is this a qualified opportunity for AIAsset.Market?" data-i18n-ph="partner_lead.f.why.ph" required></textarea>
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.proof.lbl">Proof of activity</label>
+            <input name="proof_of_activity" type="text" placeholder="Subscriber count, recent post date, sales page, etc." data-i18n-ph="partner_lead.f.proof.ph">
+          </div>
+          <div class="form-row">
+            <label data-i18n="partner_lead.f.notes.lbl">Notes</label>
+            <textarea name="notes" placeholder="Anything else we should know" data-i18n-ph="partner_lead.f.notes.ph"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline" style="width:100%;justify-content:center;padding:13px;" data-i18n="partner_lead.f.btn">Submit Lead for Review →</button>
+          <p class="form-note" data-i18n="partner_lead.f.note">All leads are reviewed manually. Source URL is required for qualification.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <!-- COMMUNITY -->
 <section id="community" class="section-sm">
   <div class="container">
     <div class="section-h">
       <div class="label" data-i18n="community.label">Community</div>
-      <h2 data-i18n="community.h2">Join the community behind AIAsset.Market</h2>
+      <h2 data-i18n="community.h2">Join the people mapping the AI asset market before it becomes crowded.</h2>
       <p data-i18n="community.p">Builders, buyers and operators who take AI assets seriously. Editorial channel by Pirate AI Port — no hype, no passive income promises.</p>
     </div>
     <div class="community-grid">
       <div class="comm-item">
-        <div class="c-tag">Daily</div>
-        <div class="c-name">🏴 Asset of the Day</div>
-        <div class="c-desc">One real AI asset breakdown — signals, transfer notes, Pirate Grade, honest verdict.</div>
+        <div class="c-tag" data-i18n="community.item1.tag">Daily</div>
+        <div class="c-name" data-i18n="community.item1.name">🏴 Asset of the Day</div>
+        <div class="c-desc" data-i18n="community.item1.desc">One real AI asset breakdown — signals, transfer notes, Pirate Grade, honest verdict.</div>
       </div>
       <div class="comm-item">
-        <div class="c-tag">Weekly</div>
-        <div class="c-name">📋 Weekly Drop</div>
-        <div class="c-desc">Selected AI assets and bounties. Express interest, make an offer, apply as operator.</div>
+        <div class="c-tag" data-i18n="community.item2.tag">Weekly</div>
+        <div class="c-name" data-i18n="community.item2.name">📋 Weekly Drop</div>
+        <div class="c-desc" data-i18n="community.item2.desc">Selected AI assets and bounties. Express interest, make an offer, apply as operator.</div>
       </div>
       <div class="comm-item">
-        <div class="c-tag">Weekly</div>
-        <div class="c-name">⚔️ Build or Buy?</div>
-        <div class="c-desc">Honest breakdown. When to launch from scratch vs. explore an existing asset.</div>
+        <div class="c-tag" data-i18n="community.item3.tag">Weekly</div>
+        <div class="c-name" data-i18n="community.item3.name">⚔️ Build or Buy?</div>
+        <div class="c-desc" data-i18n="community.item3.desc">Honest breakdown. When to launch from scratch vs. explore an existing asset.</div>
       </div>
       <div class="comm-item">
-        <div class="c-tag">Weekly</div>
-        <div class="c-name">💀 Dead Asset Autopsy</div>
-        <div class="c-desc">What killed it. Bans, no monetization, founder dependency — learn from failures.</div>
+        <div class="c-tag" data-i18n="community.item4.tag">Weekly</div>
+        <div class="c-name" data-i18n="community.item4.name">💀 Dead Asset Autopsy</div>
+        <div class="c-desc" data-i18n="community.item4.desc">What killed it. Bans, no monetization, founder dependency — learn from failures.</div>
       </div>
       <div class="comm-item">
-        <div class="c-tag">Weekly</div>
-        <div class="c-name">🎯 Bounty Board Update</div>
-        <div class="c-desc">Active buyer requests. Build or source exactly what the market is asking for.</div>
+        <div class="c-tag" data-i18n="community.item5.tag">Weekly</div>
+        <div class="c-name" data-i18n="community.item5.name">🎯 Bounty Board Update</div>
+        <div class="c-desc" data-i18n="community.item5.desc">Active buyer requests. Build or source exactly what the market is asking for.</div>
       </div>
       <div class="comm-item">
-        <div class="c-tag">Monthly</div>
-        <div class="c-name">🗺️ Market Map</div>
-        <div class="c-desc">Hot categories, cooling niches, where the real deal activity is happening this month.</div>
+        <div class="c-tag" data-i18n="community.item6.tag">Monthly</div>
+        <div class="c-name" data-i18n="community.item6.name">🗺️ Market Map</div>
+        <div class="c-desc" data-i18n="community.item6.desc">Hot categories, cooling niches, where the real deal activity is happening this month.</div>
       </div>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <a href="https://t.me/Pirate_AI" target="_blank" class="btn btn-primary btn-lg" data-i18n="community.btn">Join @Pirate_AI on Telegram →</a>
+      <a href="https://t.me/Pirate_AI" target="_blank" class="btn btn-primary btn-lg" data-i18n="community.btn">Join the AI Asset Market Map →</a>
       <p style="font-size:13px; color:var(--muted); margin-top:12px;" data-i18n="community.note">Free. No spam. Real content from day one.</p>
     </div>
   </div>
@@ -1285,6 +1850,52 @@ h1, h2, h3, h4 { color: var(--text); }
             <p class="form-note" data-i18n="f.watchlist.note">Free. No spam. We reach out when relevant assets or drops match your interests.</p>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER SIGNALS -->
+<section id="founder-signals">
+  <div class="container">
+    <div class="signals-header">
+      <div class="label" data-i18n="signals.label">Founder Signals</div>
+      <h2 data-i18n="signals.h2">What builders say about the problem</h2>
+      <p data-i18n="signals.p">These are real problems AI builders face. Not paid endorsements — editorial observations from the market.</p>
+    </div>
+    <div class="signals-grid">
+      <div class="signal-card">
+        <div class="sc-quote" data-i18n="signals.q1">I built an AI newsletter that runs itself — 3,800 subscribers, 42% open rate. No idea how to value it or find the right buyer without getting lowballed.</div>
+        <div class="sc-meta">
+          <div class="sc-avatar">✉️</div>
+          <div>
+            <div class="sc-name" data-i18n="signals.q1.name">Newsletter founder</div>
+            <div class="sc-role" data-i18n="signals.q1.role">AI media · 11 months running</div>
+          </div>
+        </div>
+        <div class="sc-editorial" data-i18n="signals.editorial">Editorial observation · Not a verified testimonial</div>
+      </div>
+      <div class="signal-card">
+        <div class="sc-quote" data-i18n="signals.q2">I want to run an AI asset — I have automation skills, marketing background. But every platform wants me to buy the business outright. I just want to operate.</div>
+        <div class="sc-meta">
+          <div class="sc-avatar">⚙️</div>
+          <div>
+            <div class="sc-name" data-i18n="signals.q2.name">Automation specialist</div>
+            <div class="sc-role" data-i18n="signals.q2.role">No-code · n8n · Make</div>
+          </div>
+        </div>
+        <div class="sc-editorial" data-i18n="signals.editorial">Editorial observation · Not a verified testimonial</div>
+      </div>
+      <div class="signal-card">
+        <div class="sc-quote" data-i18n="signals.q3">I'm looking for an AI Telegram channel in crypto/trading niche — minimum 2K subscribers, real audience, automated content. I have the budget. Just can't find a trustworthy place to look.</div>
+        <div class="sc-meta">
+          <div class="sc-avatar">🏴</div>
+          <div>
+            <div class="sc-name" data-i18n="signals.q3.name">Buyer · crypto niche</div>
+            <div class="sc-role" data-i18n="signals.q3.role">Budget up to $3,000</div>
+          </div>
+        </div>
+        <div class="sc-editorial" data-i18n="signals.editorial">Editorial observation · Not a verified testimonial</div>
       </div>
     </div>
   </div>
@@ -1397,16 +2008,19 @@ en: {
   'nav.browse':'Browse','nav.categories':'Categories','nav.how':'How It Works',
   'nav.submit':'Submit','nav.bounty':'Bounty','nav.operators':'Operators',
   'nav.community':'Community','nav.cta':'Submit Your Asset →',
-  'hero.badge':'AIAsset.Market · AI-native asset exchange',
+  'hero.badge':'⚡ Weekly Drop #1 · Now open for submissions',
   'hero.focus':'Starting with AI media, content engines, AI personas, Telegram/newsletter assets and operator-ready workflows.',
-  'hero.title':'The exchange<br>for <span class="accent">AI-native</span><br><span class="dim">digital assets.</span>',
-  'hero.sub':'List, request and operate AI-native assets.<br><strong>Not a template store. Not a course. Not passive income.</strong><br>Sellers publish using our standards. Buyers discover. Operators connect.<br>You own your asset — we provide the format, grade and visibility.',
-  'hero.btn.browse':'Browse example listings ↓','hero.btn.submit':'Submit AI Asset →','hero.btn.bounty':'Post a Bounty','hero.btn.operator':'Apply as Operator',
+  'hero.title':'The marketplace for AI assets<br><span class="accent">before they become obvious.</span>',
+  'hero.sub':'Buy, sell, request or operate AI-native assets: newsletters, agents, automations, AI media systems, bots, channels and microbusinesses.',
+  'hero.support':'AI builders are creating assets faster than buyers can discover them. AIAsset.Market turns scattered AI projects into structured listings with demand signals, transfer notes, operator fit and risk review.',
+  'hero.btn.browse':'Browse Assets →','hero.btn.submit':'Submit Your Asset','hero.btn.bounty':'Post a Bounty','hero.btn.operator':'Apply as Operator',
   'hero.stat1.desc':'asset categories','hero.stat2.num':'Open','hero.stat2.desc':'for submissions',
+  'hero.stat.tg':'Telegram subscribers','hero.stat.f100.num':'First 100','hero.stat.f100.desc':'free Pirate Grade reviews',
+  'hero.stat.cats':'asset categories','hero.stat.open.num':'<span class="dot-live"></span>Open','hero.stat.open.desc':'accepting submissions',
   'hero.stat3.num':'Pirate Grade','hero.stat3.desc':'A–D editorial review',
   'hero.stat4.num':'Manual','hero.stat4.desc':'editorial review',
   'how.label':'How it works','how.h2':'How AIAsset.Market works',
-  'how.p':'Three roles. One exchange. Submit an asset, post a bounty, or apply to operate.',
+  'how.p':'Four roles. One exchange. Submit an asset, post a bounty, apply to operate, or bring a deal.',
   'how.tab.buy':'🏴 For Buyers','how.tab.sell':'📦 For Sellers','how.tab.manage':'⚓ For Operators',
   'cats.label':'Asset Categories','cats.h2':'What we review',
   'cats.p':'Five starting categories. More open as submissions come in.',
@@ -1492,10 +2106,12 @@ en: {
   'f.watchlist.btn':'Join Watchlist →',
   'f.watchlist.note':'Free. No spam. We reach out when relevant assets or drops match your interests.',
   'success.watchlist':'✓ You\'re on the watchlist. We\'ll reach out when relevant assets or drops match your interests.',
+  'weekly.label':'📋 WEEKLY DROP #1',
   'weekly.title':'Weekly Drop #1 is now being curated.',
   'weekly.sub':'Submit an AI asset, post a bounty or apply as operator to be included.',
   'weekly.cta':'Submit for Weekly Drop #1 →',
   'footer.disclaimer':'AIAsset.Market by Pirate AI Port does not provide investment, financial or legal advice. Listings may contain seller-reported data. Evidence review means selected materials were reviewed; it does not guarantee future performance, monetization, traffic, platform stability or transfer success. Buyers and sellers are responsible for their own due diligence and agreements. Past signals, usage, traffic or monetization claims do not guarantee future outcomes. AIAsset.Market is not a securities exchange and does not list securities or investment products.',
+  'card.upside':'🚀 Upside Paths:','card.transfer':'📦 Transfer Notes:',
   'card.monetization':'Claimed Monetization','card.audience':'Audience',
   'card.costs':'Monthly Costs','card.age':'Asset Age',
   'card.asking':'asking price','card.op_arr':'operator arrangement',
@@ -1508,22 +2124,124 @@ en: {
   'success.bounty':'✓ Bounty received. We screen responses and reach out if we find a match.',
   'success.operator':'✓ Application received. We review operators and reach out when suitable assets become available.',
   'val.required':'is required','val.contact':'Contact must be a Telegram @handle or valid email',
+  'roles.label':"Who it's for",'roles.h2':'Buy, sell, operate or connect — choose your role','roles.sub':'Four ways to participate in the AI asset market. One platform.',
+  'roles.buyers.h3':'Buyers','roles.buyers.p':'Browse AI channels, newsletters, bots and automations. Post a bounty and get matched with sellers who have what you need.','roles.buyers.btn':'Post a Bounty →',
+  'roles.sellers.h3':'Sellers','roles.sellers.p':'List your AI asset and get a free Pirate Grade review. We assess demand, readiness, operator fit, upside and risk — free for the first 100 submissions.','roles.sellers.btn':'Submit Asset →',
+  'roles.operators.h3':'Operators','roles.operators.p':'Run AI assets without owning them. Your skills are your entry point — no capital required. Compensation agreed directly with the asset owner.','roles.operators.btn':'Apply as Operator →',
+  'roles.partners.h3':'Deal Partners','roles.partners.p':'Know founders, builders or buyers? Bring qualified AI asset opportunities. Case-by-case rewards may apply when real accepted leads or deals close.','roles.partners.btn':'Apply as Deal Partner →',
+  'nav.partners':'Deal Partners','how.tab.partner':'🤝 For Deal Partners',
+  'how.buy.s1.h':'Browse or post a bounty','how.buy.s1.p':"Browse listed assets or post a bounty — tell us what you're looking for and we'll source it.",
+  'how.buy.s2.h':'Request details','how.buy.s2.p':'Send an inquiry. We connect you with the seller and share what was reviewed vs. what is seller-reported.',
+  'how.buy.s3.h':'Understand the asset','how.buy.s3.p':"Review the Asset Grade, risk labels, transfer notes and evidence status. We map scenarios — we don't guarantee outcomes.",
+  'how.buy.s4.h':'Agree terms directly','how.buy.s4.p':'Buyer and seller agree terms directly. We facilitate the intro. Due diligence and agreements are between the parties.',
+  'how.sell.s1.h':'Submit your asset','how.sell.s1.p':'Fill the short form: name, category, description, contact. Optional details help us review faster.',
+  'how.sell.s2.h':'Get your Asset Grade','how.sell.s2.p':'Receive an honest assessment across 5 dimensions. See where your asset stands — and what to add or improve to move the grade up.',
+  'how.sell.s3.h':'Publish on your terms','how.sell.s3.p':'Choose your visibility: public listing, private intro only, anonymous, or flagged for operators. You control who finds you and how.',
+  'how.sell.s4.h':'Direct discovery','how.sell.s4.p':'Buyers, operators and the community discover your listing. Deal terms are set directly between parties — we provide the format and trust layer, not a managed broker service.',
+  'how.manage.s1.h':'Apply as operator','how.manage.s1.p':'Tell us your skills, platforms, weekly capacity and experience with AI assets.',
+  'how.manage.s2.h':'Get matched','how.manage.s2.p':'We match you with assets that need operators. Asset owners flag listings with operator-needed status.',
+  'how.manage.s3.h':'Agree terms','how.manage.s3.p':'Compensation model, scope of work, and reporting cadence agreed directly with the asset owner.',
+  'how.manage.s4.h':'Run the asset','how.manage.s4.p':'You operate. Owner keeps equity. No capital required — skills and capacity are your entry.',
+  'how.partner.s1.h':'Apply as Deal Partner','how.partner.s1.p':'Tell us where you have access — business clubs, founder communities, Telegram groups, AI networks. We review partner applications manually.',
+  'how.partner.s2.h':'Bring qualified opportunities','how.partner.s2.p':"Introduce AI asset sellers, buyers, operators, or bounty requests. Every lead is reviewed manually — we need a real source, not a rumour.",
+  'how.partner.s3.h':'We qualify and follow up','how.partner.s3.p':'We review each lead, verify it, and move it through the pipeline. You stay informed at key milestones.',
+  'how.partner.s4.h':'Case-by-case reward if a deal closes','how.partner.s4.p':'If a qualified lead you brought results in an accepted submission or closed deal, a founder-approved reward may apply. Not guaranteed. Agreed case by case.',
+  'grade.dim1.name':'📡 Demand Signal','grade.dim1.desc':'Are there signs someone wants this? Existing audience, buyer requests, search demand, proven use case.',
+  'grade.dim2.name':'📦 Asset Readiness','grade.dim2.desc':'Is it already an asset or still an idea? Launched, documented, transferable — vs. rough prototype.',
+  'grade.dim3.name':'🧑‍✈️ Operator Fit','grade.dim3.desc':'Can someone else run it without the founder? Clear SOP, low specialist dependency, documented workflow.',
+  'grade.dim4.name':'🚀 Upside Paths','grade.dim4.desc':'What scenarios could make it more valuable? Market opportunity, monetization levers, growth options.',
+  'grade.dim5.name':'🛡️ Risk & Proof','grade.dim5.desc':'What is claimed vs. reviewed. Platform risk, legal exposure, ownership verification, transfer feasibility.',
+  'grade.warning.h':'Evidence reviewed ≠ guaranteed outcome.',
+  'grade.warning.p':'Evidence Reviewed means selected materials were checked against available sources. It does not guarantee future performance, monetization, traffic, platform stability or transfer success. All numbers are seller-reported unless explicitly marked as reviewed. We review claims and map scenarios — we do not guarantee outcomes.',
+  'grade.a.short':'Strong','grade.b.short':'Interesting','grade.c.short':'Early','grade.d.short':'Not Ready',
+  'grade.bounty.label':'🎯 Bounty Request','grade.bounty.note':'Example buyer request','grade.demo.note':'Demo listing',
+  'partner.label':'Deal Partners','partner.h2':'Bring AI asset opportunities.',
+  'partner.p':'AIAsset.Market works with scouts, deal connectors, community partners and business-club members who can introduce qualified AI asset sellers, buyers, operators and bounty requests.',
+  'partner.li1':'Know a founder sitting on an AI channel or newsletter? Bring the intro.',
+  'partner.li2':'Know a buyer looking for an AI tool or content engine? Connect them.',
+  'partner.li3':'Know operators looking for assets to run? We want to hear.',
+  'partner.li4':'Case-by-case rewards may apply when real accepted leads or deals close. Not guaranteed. Founder-approved.',
+  'partner.disclaimer':'Rewards are case-by-case and not guaranteed. This is not a passive income scheme, investment opportunity, or multi-level program.',
+  'partner.form.h3':'Apply as Deal Partner',
+  'partner.f.name.lbl':'Your name *','partner.f.email.lbl':'Email *','partner.f.contact.lbl':'Telegram / X / LinkedIn *','partner.f.contact.ph':'@username or profile URL',
+  'partner.f.role.lbl':'Preferred role','partner.f.access.lbl':'Where do you have access?',
+  'partner.f.leads.lbl':'What kind of leads can you bring? *','partner.f.leads.ph':'Describe the type of AI assets, buyers, or operators you have access to. Be specific.',
+  'partner.f.profiles.lbl':'Public profile links','partner.f.profiles.ph':'Telegram channel, LinkedIn, website, etc.',
+  'partner.f.notes.lbl':'Notes','partner.f.notes.ph':'Anything else we should know',
+  'partner.f.consent':'I understand rewards are case-by-case and not guaranteed. *',
+  'partner.f.btn':'Apply as Deal Partner →','partner.f.note':'We review applications manually and reach out with next steps.',
+  'success.partner':'Thanks — your Deal Partner application was received. We review partner applications manually.',
+  'partner_lead.label':'Already a Deal Partner?','partner_lead.h2':'Submit a Partner Lead',
+  'partner_lead.p':'Have a specific lead to submit? Fill in the details below. Source URL required — no source, no review.',
+  'partner_lead.f.contact.lbl':'Your name / contact *','partner_lead.f.contact.ph':'@username or email',
+  'partner_lead.f.type.lbl':'Lead type *',
+  'partner_lead.f.name.lbl':'Lead name / description *','partner_lead.f.name.ph':'Name of person, channel, asset, or opportunity',
+  'partner_lead.f.url.lbl':'Lead source URL *','partner_lead.f.url.ph':'https:// — direct link to verify this lead',
+  'partner_lead.f.method.lbl':'Lead contact method','partner_lead.f.method.ph':'Telegram DM / email / web form / LinkedIn',
+  'partner_lead.f.why.lbl':'Why relevant *','partner_lead.f.why.ph':'Why is this a qualified opportunity for AIAsset.Market?',
+  'partner_lead.f.proof.lbl':'Proof of activity','partner_lead.f.proof.ph':'Subscriber count, recent post date, sales page, etc.',
+  'partner_lead.f.notes.lbl':'Notes','partner_lead.f.notes.ph':'Anything else we should know',
+  'partner_lead.f.btn':'Submit Lead for Review →','partner_lead.f.note':'All leads are reviewed manually. Source URL is required for qualification.',
+  'success.partner_lead':'Thanks — lead received for review.',
+  'community.item1.tag':'Daily','community.item1.name':'🏴 Asset of the Day','community.item1.desc':'One real AI asset breakdown — signals, transfer notes, Pirate Grade, honest verdict.',
+  'community.item2.tag':'Weekly','community.item2.name':'📋 Weekly Drop','community.item2.desc':'Selected AI assets and bounties. Express interest, make an offer, apply as operator.',
+  'community.item3.tag':'Weekly','community.item3.name':'⚔️ Build or Buy?','community.item3.desc':'Honest breakdown. When to launch from scratch vs. explore an existing asset.',
+  'community.item4.tag':'Weekly','community.item4.name':'💀 Dead Asset Autopsy','community.item4.desc':'What killed it. Bans, no monetization, founder dependency — learn from failures.',
+  'community.item5.tag':'Weekly','community.item5.name':'🎯 Bounty Board Update','community.item5.desc':'Active buyer requests. Build or source exactly what the market is asking for.',
+  'community.item6.tag':'Monthly','community.item6.name':'🗺️ Market Map','community.item6.desc':'Hot categories, cooling niches, where the real deal activity is happening this month.',
+  'cats.count':'Active category',
+  'cat.1.name':'AI Telegram Channels','cat.1.desc':'Automated niche channels with AI content pipelines. Audience, transfer notes and operator fit assessed.',
+  'cat.2.name':'AI Personas & Content Systems','cat.2.desc':'AI-driven personas, content engines, UGC creators and synthetic media. Identity, pipeline, audience and operator fit reviewed.',
+  'cat.3.name':'AI Media & Newsletters','cat.3.desc':'Niche newsletters, content sites and AI-generated media brands. Subscriber base, engagement and transfer path assessed.',
+  'cat.4.name':'AI Bots & Agents','cat.4.desc':'Functional bots and AI agents with documented logic, use cases and transfer instructions.',
+  'cat.5.name':'Automations & Workflows','cat.5.desc':'n8n, Make, Zapier and custom automation stacks. Documented, exportable, with SOP.',
+  'cat.6.name':'No-Code SaaS & Tools','cat.6.desc':'No-code tools with defined use case, existing users and clear transfer path. Operator-ready reviewed.',
+  'bounty.1.title':'AI Telegram channel — crypto / trading niche','bounty.1.meta':'5K+ subscribers · automated content · transfer notes required','bounty.1.budget':'up to $3,000',
+  'bounty.2.title':'AI UGC creator for wellness / beauty brand','bounty.2.meta':'Ready for brand campaigns · Instagram + TikTok','bounty.2.budget':'up to $1,500',
+  'bounty.3.title':'AI leadgen automation — real estate niche','bounty.3.meta':'Working pipeline · full SOP · operator-ready','bounty.3.budget':'up to $2,500',
+  'bounty.4.title':'AI newsletter — SaaS / founders niche','bounty.4.meta':'2K+ subscribers · documented workflow · transferable','bounty.4.budget':'up to $4,000',
+  'step.01':'Step 01','step.02':'Step 02','step.03':'Step 03','step.04':'Step 04',
+  'hero.btn.grade':'Get Free Pirate Grade →',
+  'signal.label':'Early demand map','signal.h3':'Example demand signals',
+  'signal.p':'Example categories until verified buyer bounties are published. Post a real bounty to appear here.',
+  'signal.stat1.lbl':'Bounty ideas','signal.stat1.tag':'[EXAMPLE]',
+  'signal.stat2.lbl':'Free reviews left','signal.stat2.tag':'First batch',
+  'signal.stat3.lbl':'Asset categories','signal.stat3.tag':'All AI-native',
+  'signal.stat4.num':'<span class="dot-live"></span>Open',
+  'signal.stat4.lbl':'Weekly Drop #1','signal.stat4.tag':'Submit now',
+  'signal.wanted.title':'Example bounty ideas',
+  'signal.w1':'AI Telegram channel','signal.w2':'AI Newsletter','signal.w3':'Lead-gen automation','signal.w4':'UGC AI persona',
+  'listings.search.ph':'Search assets…',
+  'filter.all':'All types','filter.sale':'For sale','filter.license':'License','filter.management':'Operator','filter.bounty':'Bounty',
+  'list.col.asset':'Asset','list.col.price':'Price','list.col.type':'Type','list.col.score':'Score',
+  'signals.label':'Founder Signals','signals.h2':'What builders say about the problem',
+  'signals.p':'These are real problems AI builders face. Not paid endorsements — editorial observations from the market.',
+  'signals.q1':'I built an AI newsletter that runs itself — 3,800 subscribers, 42% open rate. No idea how to value it or find the right buyer without getting lowballed.',
+  'signals.q1.name':'Newsletter founder','signals.q1.role':'AI media · 11 months running',
+  'signals.q2':'I want to run an AI asset — I have automation skills, marketing background. But every platform wants me to buy the business outright. I just want to operate.',
+  'signals.q2.name':'Automation specialist','signals.q2.role':'No-code · n8n · Make',
+  'signals.q3':'I\'m looking for an AI Telegram channel in crypto/trading niche — minimum 2K subscribers, real audience, automated content. I have the budget. Just can\'t find a trustworthy place to look.',
+  'signals.q3.name':'Buyer · crypto niche','signals.q3.role':'Budget up to $3,000',
+  'signals.editorial':'Editorial observation · Not a verified testimonial',
 },
 ru: {
-  'nav.browse':'Листинги','nav.categories':'Категории','nav.how':'Как это работает',
-  'nav.submit':'Подать','nav.bounty':'Баунти','nav.operators':'Операторы',
+  'nav.browse':'Активы','nav.categories':'Категории','nav.how':'Как это работает',
+  'nav.submit':'Подать','nav.bounty':'Запросы','nav.operators':'Операторы',
   'nav.community':'Сообщество','nav.cta':'Подать актив →',
-  'hero.badge':'AIAsset.Market · биржа AI-активов',
+  'hero.badge':'⚡ Weekly Drop #1 · Открыт приём заявок',
   'hero.focus':'Начинаем с AI-медиа, контент-движков, AI-персон, Telegram/рассылок и автоматизированных воркфлоу.',
-  'hero.title':'Биржа<br><span class="accent">AI-активов</span><br><span class="dim">нового поколения.</span>',
-  'hero.sub':'Листинг, запросы и управление AI-нативными активами.<br><strong>Не шаблоны. Не курсы. Без обещаний пассивного дохода.</strong><br>Продавцы публикуют по нашим стандартам. Покупатели находят. Операторы подключаются.<br>Актив остаётся вашим — мы даём формат, оценку и видимость.',
-  'hero.btn.browse':'Смотреть примеры листингов ↓','hero.btn.submit':'Подать AI-актив →','hero.btn.bounty':'Разместить баунти','hero.btn.operator':'Стать оператором',
-  'hero.stat1.desc':'категории активов','hero.stat2.num':'Открыто','hero.stat2.desc':'для заявок',
+  'hero.title':'Маркетплейс AI-активов<br><span class="accent">до того как это стало очевидным.</span>',
+  'hero.sub':'Покупай, продавай, запрашивай или управляй AI-нативными активами: рассылки, агенты, автоматизации, AI-медиасистемы, боты, каналы и микробизнесы.',
+  'hero.support':'AI-строители создают активы быстрее, чем покупатели успевают их найти. AIAsset.Market превращает разрозненные AI-проекты в структурированные листинги с сигналами спроса, заметками о передаче и оценкой оператора.',
+  'hero.btn.browse':'Смотреть активы →','hero.btn.submit':'Подать актив','hero.btn.bounty':'Разместить запрос','hero.btn.operator':'Стать оператором',
+  'hero.stat1.desc':'категорий активов','hero.stat2.num':'Открыто','hero.stat2.desc':'приём заявок',
+  'hero.stat.tg':'подписчиков Telegram','hero.stat.f100.num':'Первые 100','hero.stat.f100.desc':'бесплатных оценок Pirate Grade',
+  'hero.stat.cats':'категорий активов','hero.stat.open.num':'<span class="dot-live"></span>Открыто','hero.stat.open.desc':'приём заявок',
   'hero.stat3.num':'Pirate Grade','hero.stat3.desc':'редакционная оценка A–D',
   'hero.stat4.num':'Ручная','hero.stat4.desc':'редакционная проверка',
   'how.label':'Как это работает','how.h2':'Как работает AIAsset.Market',
-  'how.p':'Три роли. Одна биржа. Подай актив, опубликуй баунти или подай заявку как оператор.',
-  'how.tab.buy':'🏴 Покупателям','how.tab.sell':'📦 Продавцам','how.tab.manage':'⚓ Операторам',
+  'how.p':'Выберите свою роль: <strong>Покупатель</strong> — ищет готовый AI-актив. <strong>Продавец</strong> — у вас есть AI-проект и вы хотите продать или найти оператора. <strong>Оператор</strong> — специалист, который ведёт чужой актив без покупки. <strong>Партнёр по сделке</strong> — знаете нужных людей и приводите их к нам.',
+  'how.tab.buy':'🏴 Я ищу актив','how.tab.sell':'📦 У меня есть актив','how.tab.manage':'⚓ Хочу управлять активом',
   'cats.label':'Категории активов','cats.h2':'Что мы проверяем',
   'cats.p':'Пять стартовых категорий. Больше открывается по мере заявок.',
   'listings.label':'Примеры активов','listings.h2':'Примеры активов',
@@ -1535,13 +2253,13 @@ ru: {
   'grade.d':'D — Не готов','grade.r':'✕ Отклонён',
   'grade.note':'Оценка не окончательна. Продавцы могут улучшить Pirate Grade, добавив трансферные заметки, пути роста, SOP для оператора или подтверждённые данные.',
   'grade.byline':'Pirate Grade — редакционная оценка от Pirate AI Port, сообщества за AIAsset.Market.',
-  'bounty.label':'Доска баунти','bounty.h2':'Расскажите, какой AI-актив вам нужен.',
-  'bounty.p':'Опубликуйте баунти. Продавцы и строители видят запрос и могут откликнуться. Мы проверяем респондентов перед любым знакомством.',
+  'bounty.label':'Запросы от покупателей','bounty.h2':'Расскажите, какой AI-актив вам нужен.',
+  'bounty.p':'Запрос — это способ сообщить рынку, что именно вы ищете. Разместите запрос, и продавцы с подходящим активом сами выйдут на вас. Мы проверяем всех откликнувшихся перед любым знакомством.',
   'bounty.li1':'Выберите видимость: публично, анонимно или только для приватных интро',
   'bounty.li2':'Строители и продавцы присылают реальные предложения',
   'bounty.li3':'Мы проверяем всех откликнувшихся перед интро',
   'bounty.li4':'Никаких обязательств до подписания сделки',
-  'bounty.btn':'Опубликовать баунти →',
+  'bounty.btn':'Разместить запрос →',
   'sell.label':'Программа ранних строителей',
   'sell.h2':'Превратите свой AI-проект в структурированный листинг — на ваших условиях.',
   'sell.p1':'Мы даём строителям стандарты, формат и видимость для листинга AI-активов. Для первых 100 заявок — проверка и Pirate Grade бесплатно.',
@@ -1569,21 +2287,21 @@ ru: {
   'f.sell.btn':'Подать на бесплатную проверку →',
   'f.sell.note':'Бесплатно. Без предоплаты. Отобранные заявки проверяются вручную — мы пишем, если ваш проект подходит.',
   'request.label':'Запрос актива','request.h2':'Расскажите, что вы ищете.',
-  'request.p1':'Не нашли нужное? Опубликуйте баунти. Продавцы и строители видят запрос и присылают предложения.',
-  'request.p2':'Активные баунти видит наше сообщество — так нужный строитель вас найдёт.',
+  'request.p1':'Не нашли нужное? Разместите запрос. Продавцы и создатели видят его и присылают предложения.',
+  'request.p2':'Активные запросы видит наше сообщество — так нужный создатель вас найдёт.',
   'request.li1':'Никаких обязательств до подписания сделки',
   'request.li2':'Контакт остаётся приватным, пока вы сами не решите поделиться',
   'request.li3':'Мы проверяем всех откликнувшихся перед интро','request.li4':'Бесплатно',
-  'f.bounty.h3':'Опубликовать баунти','f.bounty.what.lbl':'Что вы ищете? *',
+  'f.bounty.h3':'Разместить запрос на покупку','f.bounty.what.lbl':'Что вы ищете? *',
   'f.bounty.what.ph':'напр. AI Telegram-канал о крипто/трейдинге, 5K+ подписчиков, автоматизированный, бюджет ~$2K',
   'f.budget.lbl':'Бюджет *','f.budget.ph':'напр. $500 – $2,000',
   'f.operator.lbl':'Нужен оператор? *','f.visibility.lbl':'Видимость',
   'f.vis.public':'Публично — видят продавцы и строители',
   'f.vis.anonymous':'Анонимно — моя личность скрыта',
   'f.vis.private':'Приватно — только интро, без публичного листинга',
-  'f.bounty.btn':'Опубликовать баунти →','f.bounty.note':'Бесплатно. Мы проверяем всех откликнувшихся перед любым интро.',
+  'f.bounty.btn':'Разместить запрос →','f.bounty.note':'Бесплатно. Мы проверяем всех откликнувшихся перед любым знакомством.',
   'op.label':'Стать оператором','op.h2':'Управляйте AI-активами. Без вложений.',
-  'op.p':'Мы подбираем операторов к активам по навыкам и возможностям. Капитал не нужен — ваш вход это навыки и время.',
+  'op.p':'Оператор — это специалист, который ведёт чужой AI-актив без его покупки. Владелец сохраняет актив, оператор получает вознаграждение за навыки и работу. Капитал не нужен — ваш вход это опыт и время.',
   'op.li1':'Подбор под ваши точные навыки',
   'op.li2':'Модель вознаграждения — напрямую с владельцем актива',
   'op.li3':'Условия — между оператором и владельцем, мы обеспечиваем знакомство',
@@ -1601,17 +2319,19 @@ ru: {
   'watchlist.label':'Следите за новостями','watchlist.h2':'Войдите в список ожидания.',
   'watchlist.p':'Получайте уведомления, когда появляются подходящие активы и дропы. Без спама — только релевантное.',
   'watchlist.li1':'Уведомления о Weekly Drop','watchlist.li2':'Новые активы в вашей категории',
-  'watchlist.li3':'Совпадения баунти для продавцов и строителей','watchlist.li4':'Бесплатно. Отписка в любой момент.',
+  'watchlist.li3':'Уведомления о запросах покупателей в вашей нише','watchlist.li4':'Бесплатно. Отписка в любой момент.',
   'f.watchlist.h3':'Войти в список ожидания','f.watchlist.role.lbl':'Ваша роль *',
   'f.watchlist.interest.lbl':'Что вас интересует? (опционально)',
   'f.watchlist.interest.ph':'напр. AI Telegram-каналы, автоматизации, конкретные ниши…',
   'f.watchlist.btn':'Войти в список →',
   'f.watchlist.note':'Бесплатно. Без спама. Пишем, когда появляются подходящие активы или дропы.',
   'success.watchlist':'✓ Вы в списке ожидания. Напишем, когда появятся подходящие активы или дропы.',
+  'weekly.label':'📋 ДАЙДЖЕСТ #1',
   'weekly.title':'Weekly Drop #1 уже формируется.',
-  'weekly.sub':'Подайте AI-актив, опубликуйте баунти или подайте заявку оператора — чтобы попасть в выпуск.',
+  'weekly.sub':'Weekly Drop — это еженедельный дайджест отобранных AI-активов: листинги с оценками, запросы покупателей и возможности для операторов. Подайте AI-актив, разместите запрос или подайте заявку оператора — чтобы попасть в первый выпуск.',
   'weekly.cta':'Отправить для Weekly Drop #1 →',
   'footer.disclaimer':'AIAsset.Market by Pirate AI Port не предоставляет инвестиционных, финансовых или юридических консультаций. Листинги могут содержать данные со слов продавца. Проверка материалов не гарантирует будущую доходность, монетизацию, трафик, стабильность платформы или успех передачи. Покупатели и продавцы несут ответственность за собственную проверку и соглашения. AIAsset.Market не является биржей ценных бумаг.',
+  'card.upside':'🚀 Пути роста:','card.transfer':'📦 Трансферные заметки:',
   'card.monetization':'Заявленная монетизация','card.audience':'Аудитория',
   'card.costs':'Расходы/месяц','card.age':'Возраст актива',
   'card.asking':'цена продажи','card.op_arr':'условия оператора',
@@ -1621,24 +2341,126 @@ ru: {
   'dt.sale':'Продажа','dt.license':'Лицензия','dt.management':'Нужен оператор','dt.partnership':'Партнёрство','dt.bounty':'Запрос покупателя',
   'loading.listings':'Загрузка листингов…','form.sending':'Отправка…',
   'success.submit':'✓ Принято. Мы вручную отбираем заявки и пишем, если ваш проект подходит. Мы можем запросить безопасное подтверждение. Мы никогда не запрашиваем пароли, API-ключи, токены или личные данные клиентов.',
-  'success.bounty':'✓ Баунти принят. Мы проверяем отклики и пишем, если найдём совпадение.',
+  'success.bounty':'✓ Запрос принят. Мы проверяем отклики и пишем, если найдём подходящий вариант.',
   'success.operator':'✓ Заявка принята. Мы проверяем операторов и пишем, когда появится подходящий актив.',
   'val.required':'обязательное поле','val.contact':'Контакт должен быть Telegram @handle или email',
+  'roles.label':'Для кого','roles.h2':'Купить, продать, управлять или соединить — выберите роль','roles.sub':'Четыре способа участвовать в рынке AI-активов. Одна платформа.',
+  'roles.buyers.h3':'Покупатели','roles.buyers.p':'Вы ищете готовый AI-актив — Telegram-канал, рассылку, бота, автоматизацию. Просматривайте листинги или разместите запрос — и продавцы с нужным активом сами выйдут на вас.','roles.buyers.btn':'Разместить запрос →',
+  'roles.sellers.h3':'Продавцы','roles.sellers.p':'У вас есть AI-проект — канал, бот, рассылка или воркфлоу — и вы хотите его продать или найти оператора. Листингуйте и получите бесплатную оценку Pirate Grade по 5 параметрам.','roles.sellers.btn':'Подать актив →',
+  'roles.operators.h3':'Операторы','roles.operators.p':'Оператор ведёт AI-актив без его покупки. Если у вас есть навыки (SMM, автоматизация, контент, боты) — это ваш вход. Вознаграждение договаривается напрямую с владельцем.','roles.operators.btn':'Стать оператором →',
+  'roles.partners.h3':'Партнёры по сделкам','roles.partners.p':'Партнёр — это коннектор. Знаете основателей с AI-проектами, покупателей или операторов? Приводите их к нам. Вознаграждение — поштучно при закрытии реальных принятых сделок.','roles.partners.btn':'Стать партнёром →',
+  'nav.partners':'Партнёры','how.tab.partner':'🤝 Знаю людей — хочу стать партнёром',
+  'how.buy.s1.h':'Просматривайте или размещайте запрос','how.buy.s1.p':'Просматривайте объявления или разместите запрос — укажите, что ищете, и мы найдём.',
+  'how.buy.s2.h':'Запросить детали','how.buy.s2.p':'Отправьте запрос. Мы соединим вас с продавцом и покажем, что проверено, а что со слов продавца.',
+  'how.buy.s3.h':'Изучите актив','how.buy.s3.p':'Изучите Asset Grade, метки рисков, трансферные заметки и статус подтверждений. Мы анализируем сценарии — не гарантируем результат.',
+  'how.buy.s4.h':'Согласуйте условия напрямую','how.buy.s4.p':'Покупатель и продавец согласовывают условия напрямую. Мы обеспечиваем знакомство. Due diligence — между сторонами.',
+  'how.sell.s1.h':'Подайте актив','how.sell.s1.p':'Заполните короткую форму: название, категория, описание, контакт. Доп. детали ускоряют проверку.',
+  'how.sell.s2.h':'Получите Asset Grade','how.sell.s2.p':'Получите честную оценку по 5 измерениям. Узнайте, где стоит ваш актив — и что добавить или улучшить.',
+  'how.sell.s3.h':'Публикуйте на своих условиях','how.sell.s3.p':'Выберите видимость: публичный листинг, только приватное интро, анонимно или для операторов. Вы контролируете, кто вас находит.',
+  'how.sell.s4.h':'Прямое обнаружение','how.sell.s4.p':'Покупатели, операторы и сообщество находят ваш листинг. Условия сделки — напрямую между сторонами. Мы даём формат и доверие, а не брокерский сервис.',
+  'how.manage.s1.h':'Подайте заявку оператора','how.manage.s1.p':'Расскажите о навыках, платформах, недельной нагрузке и опыте с AI-активами.',
+  'how.manage.s2.h':'Получите совпадение','how.manage.s2.p':'Мы подбираем вас к активам, которым нужны операторы. Владельцы помечают листинги статусом «нужен оператор».',
+  'how.manage.s3.h':'Согласуйте условия','how.manage.s3.p':'Модель вознаграждения, объём работ и периодичность отчётности — напрямую с владельцем актива.',
+  'how.manage.s4.h':'Управляйте активом','how.manage.s4.p':'Вы управляете. Владелец сохраняет долю. Без вложений — навыки и время — ваш вход.',
+  'how.partner.s1.h':'Подайте заявку партнёра','how.partner.s1.p':'Расскажите, к чему у вас есть доступ — бизнес-клубы, сообщества основателей, Telegram-группы, AI-сети. Рассматриваем заявки вручную.',
+  'how.partner.s2.h':'Приводите квалифицированные возможности','how.partner.s2.p':'Знакомьте с продавцами, покупателями, операторами. Каждый лид проверяется вручную — нужна реальная ссылка-источник.',
+  'how.partner.s3.h':'Мы квалифицируем и ведём','how.partner.s3.p':'Мы проверяем каждый лид, верифицируем его и двигаем по пайплайну. Вы получаете обновления на ключевых этапах.',
+  'how.partner.s4.h':'Вознаграждение при закрытии сделки','how.partner.s4.p':'Если приведённый лид приводит к принятой заявке или закрытой сделке, может применяться вознаграждение, утверждённое основателем. Не гарантировано. Согласовывается поштучно.',
+  'grade.dim1.name':'📡 Сигнал спроса','grade.dim1.desc':'Есть ли признаки, что кто-то хочет это? Существующая аудитория, запросы покупателей, поисковый спрос, доказанный юзкейс.',
+  'grade.dim2.name':'📦 Готовность актива','grade.dim2.desc':'Это уже актив или ещё идея? Запущен, задокументирован, передаётся — или грубый прототип.',
+  'grade.dim3.name':'🧑‍✈️ Пригодность оператора','grade.dim3.desc':'Может ли кто-то другой вести без основателя? Чёткий SOP, низкая зависимость от специалиста, задокументированный воркфлоу.',
+  'grade.dim4.name':'🚀 Пути роста','grade.dim4.desc':'Какие сценарии могут сделать его более ценным? Рыночные возможности, рычаги монетизации, варианты роста.',
+  'grade.dim5.name':'🛡️ Риск и доказательства','grade.dim5.desc':'Что заявлено vs. что проверено. Платформенный риск, юридические риски, верификация владения, реализуемость трансфера.',
+  'grade.warning.h':'Проверенные свидетельства ≠ гарантированный результат.',
+  'grade.warning.p':'Проверенные свидетельства означают, что отдельные материалы были проверены по доступным источникам. Это не гарантирует будущую доходность, монетизацию, трафик, стабильность платформы или успех передачи. Все цифры — со слов продавца, если явно не отмечено как проверенные. Мы проверяем заявления и анализируем сценарии — мы не гарантируем результаты.',
+  'grade.a.short':'Сильный','grade.b.short':'Интересный','grade.c.short':'Ранний','grade.d.short':'Не готов',
+  'grade.bounty.label':'🎯 Запрос покупателя','grade.bounty.note':'Пример запроса покупателя','grade.demo.note':'Демо-листинг',
+  'partner.label':'Партнёры по сделкам','partner.h2':'Приводите возможности по AI-активам.',
+  'partner.p':'Партнёр по сделке (Deal Partner) — это коннектор: тот, кто знает продавцов, покупателей или операторов AI-активов и может познакомить их с нами. Мы работаем со скаутами, коннекторами, членами бизнес-клубов и участниками AI-сообществ.',
+  'partner.li1':'Знаете основателя с AI-каналом или рассылкой? Сделайте интро.',
+  'partner.li2':'Знаете покупателя, ищущего AI-инструмент или контент-движок? Соедините их.',
+  'partner.li3':'Знаете операторов, ищущих активы для управления? Дайте знать.',
+  'partner.li4':'Вознаграждение — поштучно при закрытии реальных принятых сделок. Не гарантировано. Утверждается основателем.',
+  'partner.disclaimer':'Вознаграждения поштучны и не гарантированы. Это не схема пассивного дохода, инвестиционная возможность или многоуровневая программа.',
+  'partner.form.h3':'Подать заявку партнёра',
+  'partner.f.name.lbl':'Ваше имя *','partner.f.email.lbl':'Email *','partner.f.contact.lbl':'Telegram / X / LinkedIn *','partner.f.contact.ph':'@username или ссылка на профиль',
+  'partner.f.role.lbl':'Предпочтительная роль','partner.f.access.lbl':'К чему у вас есть доступ?',
+  'partner.f.leads.lbl':'Какие лиды вы можете привести? *','partner.f.leads.ph':'Опишите тип AI-активов, покупателей или операторов, к которым у вас есть доступ. Конкретнее.',
+  'partner.f.profiles.lbl':'Публичные ссылки на профили','partner.f.profiles.ph':'Telegram-канал, LinkedIn, сайт и т.д.',
+  'partner.f.notes.lbl':'Заметки','partner.f.notes.ph':'Что ещё мы должны знать',
+  'partner.f.consent':'Я понимаю, что вознаграждения поштучны и не гарантированы. *',
+  'partner.f.btn':'Подать заявку партнёра →','partner.f.note':'Мы проверяем заявки вручную и пишем со следующими шагами.',
+  'success.partner':'Спасибо — ваша заявка партнёра принята. Мы проверяем заявки вручную.',
+  'partner_lead.label':'Уже партнёр?','partner_lead.h2':'Подать лид партнёра',
+  'partner_lead.p':'Есть конкретный лид? Заполните детали ниже. URL источника обязателен — без источника нет проверки.',
+  'partner_lead.f.contact.lbl':'Ваше имя / контакт *','partner_lead.f.contact.ph':'@username или email',
+  'partner_lead.f.type.lbl':'Тип лида *',
+  'partner_lead.f.name.lbl':'Название / описание лида *','partner_lead.f.name.ph':'Имя человека, канала, актива или возможности',
+  'partner_lead.f.url.lbl':'URL источника лида *','partner_lead.f.url.ph':'https:// — прямая ссылка для верификации лида',
+  'partner_lead.f.method.lbl':'Метод контакта с лидом','partner_lead.f.method.ph':'Telegram DM / email / веб-форма / LinkedIn',
+  'partner_lead.f.why.lbl':'Почему актуально *','partner_lead.f.why.ph':'Почему это квалифицированная возможность для AIAsset.Market?',
+  'partner_lead.f.proof.lbl':'Доказательство активности','partner_lead.f.proof.ph':'Количество подписчиков, дата последнего поста, страница продаж и т.д.',
+  'partner_lead.f.notes.lbl':'Заметки','partner_lead.f.notes.ph':'Что ещё мы должны знать',
+  'partner_lead.f.btn':'Отправить лид на проверку →','partner_lead.f.note':'Все лиды проверяются вручную. URL источника обязателен для квалификации.',
+  'success.partner_lead':'Спасибо — лид получен для проверки.',
+  'community.item1.tag':'Ежедневно','community.item1.name':'🏴 Актив дня','community.item1.desc':'Один реальный AI-актив в деталях — сигналы, трансферные заметки, Pirate Grade, честный вердикт.',
+  'community.item2.tag':'Еженедельно','community.item2.name':'📋 Weekly Drop','community.item2.desc':'Отобранные AI-активы и баунти. Выразите интерес, сделайте предложение, подайте заявку оператора.',
+  'community.item3.tag':'Еженедельно','community.item3.name':'⚔️ Строить или купить?','community.item3.desc':'Честный разбор. Когда запускать с нуля vs. исследовать существующий актив.',
+  'community.item4.tag':'Еженедельно','community.item4.name':'💀 Вскрытие мёртвого актива','community.item4.desc':'Что убило. Баны, нет монетизации, зависимость от основателя — учитесь на провалах.',
+  'community.item5.tag':'Еженедельно','community.item5.name':'🎯 Обновление доски баунти','community.item5.desc':'Активные запросы покупателей. Стройте или ищите именно то, что спрашивает рынок.',
+  'community.item6.tag':'Ежемесячно','community.item6.name':'🗺️ Карта рынка','community.item6.desc':'Горячие категории, остывающие ниши, где реальная сделочная активность этого месяца.',
+  'cats.count':'Активная категория',
+  'cat.1.name':'AI Telegram-каналы','cat.1.desc':'Автоматизированные нишевые каналы с AI-контент-пайплайнами. Аудитория, трансферные заметки и соответствие оператору проверяются.',
+  'cat.2.name':'AI-персоны и контент-системы','cat.2.desc':'AI-персоны, контент-движки, UGC-создатели и синтетические медиа. Идентичность, пайплайн, аудитория и соответствие оператору проверяются.',
+  'cat.3.name':'AI-медиа и рассылки','cat.3.desc':'Нишевые рассылки, контент-сайты и AI-медиа-бренды. Подписная база, вовлечённость и путь передачи проверяются.',
+  'cat.4.name':'AI-боты и агенты','cat.4.desc':'Функциональные боты и AI-агенты с задокументированной логикой, юзкейсами и инструкциями по передаче.',
+  'cat.5.name':'Автоматизации и воркфлоу','cat.5.desc':'n8n, Make, Zapier и кастомные стеки автоматизации. Задокументированы, экспортируемы, с SOP.',
+  'cat.6.name':'No-Code SaaS и инструменты','cat.6.desc':'No-code инструменты с определённым юзкейсом, существующими пользователями и чётким путём передачи. Проверяется готовность оператора.',
+  'bounty.1.title':'AI Telegram-канал — крипто / трейдинг','bounty.1.meta':'5K+ подписчиков · автоматизированный контент · трансферные заметки обязательны','bounty.1.budget':'до $3,000',
+  'bounty.2.title':'AI UGC-создатель для велнес / бьюти бренда','bounty.2.meta':'Готов для брендовых кампаний · Instagram + TikTok','bounty.2.budget':'до $1,500',
+  'bounty.3.title':'AI автоматизация лидогенерации — ниша недвижимости','bounty.3.meta':'Рабочий пайплайн · полный SOP · готов к оператору','bounty.3.budget':'до $2,500',
+  'bounty.4.title':'AI рассылка — SaaS / ниша основателей','bounty.4.meta':'2K+ подписчиков · задокументированный воркфлоу · передаётся','bounty.4.budget':'до $4,000',
+  'step.01':'Шаг 01','step.02':'Шаг 02','step.03':'Шаг 03','step.04':'Шаг 04',
+  'card.upside':'🚀 Потенциал роста:','card.transfer':'📦 Что передаётся покупателю:',
+  'hero.btn.grade':'Получить Pirate Grade →',
+  'signal.label':'Карта спроса','signal.h3':'Примеры сигналов спроса',
+  'signal.p':'Примеры категорий — до появления верифицированных запросов покупателей. Опубликуй реальный запрос, чтобы появиться здесь.',
+  'signal.stat1.lbl':'Идеи запросов','signal.stat1.tag':'[ПРИМЕР]',
+  'signal.stat2.lbl':'Бесплатных оценок осталось','signal.stat2.tag':'Первая волна',
+  'signal.stat3.lbl':'Категорий активов','signal.stat3.tag':'Только AI-нативные',
+  'signal.stat4.num':'<span class="dot-live"></span>Открыто',
+  'signal.stat4.lbl':'Weekly Drop #1','signal.stat4.tag':'Подать сейчас',
+  'signal.wanted.title':'Примеры запросов покупателей',
+  'signal.w1':'AI Telegram-канал','signal.w2':'AI-рассылка','signal.w3':'Автоматизация лидогенерации','signal.w4':'UGC AI-персона',
+  'listings.search.ph':'Поиск активов…',
+  'filter.all':'Все типы','filter.sale':'На продажу','filter.license':'Лицензия','filter.management':'Оператор','filter.bounty':'Запрос',
+  'list.col.asset':'Актив','list.col.price':'Цена','list.col.type':'Тип','list.col.score':'Оценка',
+  'signals.label':'Сигналы основателей','signals.h2':'О чём говорят строители AI-активов',
+  'signals.p':'Это реальные проблемы, с которыми сталкиваются AI-основатели. Не платные отзывы — редакционные наблюдения с рынка.',
+  'signals.q1':'Я построил AI-рассылку, которая работает сама — 3 800 подписчиков, 42% open rate. Понятия не имею, как её оценить и найти правильного покупателя.',
+  'signals.q1.name':'Основатель рассылки','signals.q1.role':'AI-медиа · 11 месяцев работы',
+  'signals.q2':'Хочу управлять AI-активом — у меня есть навыки автоматизации и маркетинга. Но каждая платформа требует купить бизнес целиком. Хочу просто работать оператором.',
+  'signals.q2.name':'Специалист по автоматизации','signals.q2.role':'No-code · n8n · Make',
+  'signals.q3':'Ищу AI Telegram-канал в нише крипто/трейдинг — минимум 2K реальных подписчиков, автоматизированный контент. Бюджет есть. Просто не могу найти надёжное место.',
+  'signals.q3.name':'Покупатель · крипто-ниша','signals.q3.role':'Бюджет до $3,000',
+  'signals.editorial':'Редакционное наблюдение · Не верифицированный отзыв',
 },
 es: {
   'nav.browse':'Explorar','nav.categories':'Categorías','nav.how':'Cómo funciona',
   'nav.submit':'Publicar','nav.bounty':'Bounty','nav.operators':'Operadores',
   'nav.community':'Comunidad','nav.cta':'Publicar activo →',
-  'hero.badge':'AIAsset.Market · exchange de activos de IA',
+  'hero.badge':'⚡ Weekly Drop #1 · Abierto para envíos',
   'hero.focus':'Comenzando con medios de IA, motores de contenido, personas de IA, activos de Telegram/newsletter y flujos de trabajo listos para operar.',
-  'hero.title':'El exchange<br>de activos<br><span class="accent">nativos de IA.</span>',
-  'hero.sub':'Lista, solicita y opera activos nativos de IA.<br><strong>No es una tienda de plantillas. No son cursos. Sin promesas de ingresos pasivos.</strong><br>Los vendedores publican con nuestros estándares. Los compradores descubren. Los operadores conectan.<br>Tú posees el activo — nosotros ponemos el formato, la nota y la visibilidad.',
-  'hero.btn.browse':'Ver ejemplos de listados ↓','hero.btn.submit':'Publicar activo de IA →','hero.btn.bounty':'Publicar bounty','hero.btn.operator':'Aplicar como operador',
+  'hero.title':'Activos AI-nativos,<br><span class="accent">revisados y conectados.</span>',
+  'hero.sub':'Lista, solicita u opera newsletters, bots, canales, automatizaciones y medios AI.',
+  'hero.btn.browse':'Ver activos →','hero.btn.submit':'Enviar activo','hero.btn.bounty':'Publicar bounty','hero.btn.operator':'Aplicar como operador',
+  'hero.stat.tg':'suscriptores Telegram','hero.stat.f100.num':'Primeros 100','hero.stat.f100.desc':'revisiones Pirate Grade gratis',
+  'hero.stat.cats':'categorías de activos','hero.stat.open.num':'<span class="dot-live"></span>Abierto','hero.stat.open.desc':'aceptando envíos',
   'hero.stat1.desc':'categorías de activos','hero.stat2.num':'Abierto','hero.stat2.desc':'para publicaciones',
   'hero.stat3.num':'Pirate Grade','hero.stat3.desc':'revisión editorial A–D',
   'hero.stat4.num':'Manual','hero.stat4.desc':'revisión editorial',
   'how.label':'Cómo funciona','how.h2':'Cómo funciona AIAsset.Market',
-  'how.p':'Tres roles. Un exchange. Publica un activo, crea un bounty o aplica como operador.',
+  'how.p':'Cuatro roles. Un exchange. Publica un activo, crea un bounty, opera uno o trae un trato.',
   'how.tab.buy':'🏴 Para compradores','how.tab.sell':'📦 Para vendedores','how.tab.manage':'⚓ Para operadores',
   'cats.label':'Categorías de activos','cats.h2':'Qué revisamos',
   'cats.p':'Cinco categorías iniciales. Más se abren a medida que llegan publicaciones.',
@@ -1724,10 +2546,12 @@ es: {
   'f.watchlist.btn':'Unirse a la lista →',
   'f.watchlist.note':'Gratis. Sin spam. Te contactamos cuando haya activos o drops relevantes.',
   'success.watchlist':'✓ Estás en la lista de espera. Te contactaremos cuando haya activos o drops relevantes.',
+  'weekly.label':'📋 WEEKLY DROP #1',
   'weekly.title':'Weekly Drop #1 está siendo curado.',
   'weekly.sub':'Envía un activo de IA, publica un bounty o aplica como operador para ser incluido.',
   'weekly.cta':'Enviar para Weekly Drop #1 →',
   'footer.disclaimer':'AIAsset.Market by Pirate AI Port no proporciona asesoramiento de inversión, financiero o legal. Los listados pueden contener datos reportados por el vendedor. La revisión de evidencia no garantiza rendimiento futuro, monetización, tráfico, estabilidad de plataforma o éxito en la transferencia. Compradores y vendedores son responsables de su propia diligencia debida y acuerdos.',
+  'card.upside':'🚀 Trayectorias:','card.transfer':'📦 Notas de Transferencia:',
   'card.monetization':'Monetización declarada','card.audience':'Audiencia',
   'card.costs':'Costos mensuales','card.age':'Antigüedad',
   'card.asking':'precio de venta','card.op_arr':'acuerdo de operador',
@@ -1740,6 +2564,105 @@ es: {
   'success.bounty':'✓ Bounty recibido. Filtramos respuestas y te contactamos si encontramos un match.',
   'success.operator':'✓ Solicitud recibida. Revisamos operadores y te contactamos cuando haya activos disponibles.',
   'val.required':'es requerido','val.contact':'El contacto debe ser un @handle de Telegram o email válido',
+  'roles.label':'Para quién es','roles.h2':'Compra, vende, opera o conecta — elige tu rol','roles.sub':'Cuatro formas de participar en el mercado de activos de IA. Una plataforma.',
+  'roles.buyers.h3':'Compradores','roles.buyers.p':'Explora canales de IA, newsletters, bots y automatizaciones. Publica un bounty y conéctate con vendedores que tienen lo que necesitas.','roles.buyers.btn':'Publicar Bounty →',
+  'roles.sellers.h3':'Vendedores','roles.sellers.p':'Lista tu activo de IA y recibe una revisión Pirate Grade gratis. Evaluamos demanda, preparación, idoneidad para operador, potencial y riesgo — gratis para las primeras 100 publicaciones.','roles.sellers.btn':'Publicar Activo →',
+  'roles.operators.h3':'Operadores','roles.operators.p':'Opera activos de IA sin poseerlos. Tus habilidades son tu punto de entrada — sin capital requerido. Compensación acordada directamente con el dueño.','roles.operators.btn':'Aplicar como Operador →',
+  'roles.partners.h3':'Deal Partners','roles.partners.p':'¿Conoces fundadores, constructores o compradores? Trae oportunidades calificadas. Recompensas caso a caso si se cierran tratos reales aceptados.','roles.partners.btn':'Aplicar como Deal Partner →',
+  'nav.partners':'Deal Partners','how.tab.partner':'🤝 Para Deal Partners',
+  'how.buy.s1.h':'Explorar o publicar un bounty','how.buy.s1.p':'Explora activos listados o publica un bounty — dinos qué buscas y lo conseguiremos.',
+  'how.buy.s2.h':'Solicitar detalles','how.buy.s2.p':'Envía una consulta. Te conectamos con el vendedor y compartimos lo revisado vs. lo reportado por el vendedor.',
+  'how.buy.s3.h':'Entender el activo','how.buy.s3.p':'Revisa el Asset Grade, etiquetas de riesgo, notas de transferencia y estado de evidencia. Mapeamos escenarios — no garantizamos resultados.',
+  'how.buy.s4.h':'Acordar términos directamente','how.buy.s4.p':'Comprador y vendedor acuerdan términos directamente. Facilitamos la intro. La diligencia debida es entre las partes.',
+  'how.sell.s1.h':'Publicar tu activo','how.sell.s1.p':'Rellena el formulario corto: nombre, categoría, descripción, contacto. Los detalles opcionales ayudan a revisar más rápido.',
+  'how.sell.s2.h':'Obtener tu Asset Grade','how.sell.s2.p':'Recibe una evaluación honesta en 5 dimensiones. Ve dónde está tu activo — y qué agregar o mejorar para subir la calificación.',
+  'how.sell.s3.h':'Publicar en tus términos','how.sell.s3.p':'Elige tu visibilidad: listado público, solo intro privada, anónimo o para operadores. Controlas quién te encuentra y cómo.',
+  'how.sell.s4.h':'Descubrimiento directo','how.sell.s4.p':'Compradores, operadores y la comunidad descubren tu listado. Los términos se acuerdan directamente — nosotros ponemos el formato y la capa de confianza.',
+  'how.manage.s1.h':'Aplicar como operador','how.manage.s1.p':'Dinos tus habilidades, plataformas, capacidad semanal y experiencia con activos de IA.',
+  'how.manage.s2.h':'Ser emparejado','how.manage.s2.p':'Te emparejamos con activos que necesitan operadores. Los dueños marcan listados con estado "operador buscado".',
+  'how.manage.s3.h':'Acordar términos','how.manage.s3.p':'Modelo de compensación, alcance del trabajo y cadencia de reportes acordados directamente con el dueño del activo.',
+  'how.manage.s4.h':'Operar el activo','how.manage.s4.p':'Tú operas. El dueño mantiene la propiedad. Sin capital requerido — habilidades y capacidad son tu entrada.',
+  'how.partner.s1.h':'Aplicar como Deal Partner','how.partner.s1.p':'Dinos dónde tienes acceso — clubs de negocios, comunidades de fundadores, grupos Telegram, redes de IA. Revisamos aplicaciones manualmente.',
+  'how.partner.s2.h':'Traer oportunidades calificadas','how.partner.s2.p':'Presenta vendedores, compradores, operadores o solicitudes de bounty de activos de IA. Cada lead se revisa manualmente — necesitamos una fuente real.',
+  'how.partner.s3.h':'Calificamos y hacemos seguimiento','how.partner.s3.p':'Revisamos cada lead, lo verificamos y lo movemos por el pipeline. Te informamos en los hitos clave.',
+  'how.partner.s4.h':'Recompensa caso a caso si se cierra un trato','how.partner.s4.p':'Si un lead calificado resulta en una publicación aceptada o trato cerrado, puede aplicar una recompensa aprobada por el fundador. No garantizada. Acordada caso a caso.',
+  'grade.dim1.name':'📡 Señal de Demanda','grade.dim1.desc':'¿Hay señales de que alguien quiere esto? Audiencia existente, solicitudes de compradores, demanda de búsqueda, caso de uso probado.',
+  'grade.dim2.name':'📦 Preparación del Activo','grade.dim2.desc':'¿Ya es un activo o todavía una idea? Lanzado, documentado, transferible — vs. prototipo en bruto.',
+  'grade.dim3.name':'🧑‍✈️ Idoneidad para Operador','grade.dim3.desc':'¿Puede alguien más gestionarlo sin el fundador? SOP claro, baja dependencia de especialistas, flujo documentado.',
+  'grade.dim4.name':'🚀 Trayectorias de Crecimiento','grade.dim4.desc':'¿Qué escenarios podrían hacerlo más valioso? Oportunidad de mercado, palancas de monetización, opciones de crecimiento.',
+  'grade.dim5.name':'🛡️ Riesgo y Prueba','grade.dim5.desc':'Qué se afirma vs. qué fue revisado. Riesgo de plataforma, exposición legal, verificación de propiedad, viabilidad de transferencia.',
+  'grade.warning.h':'Evidencia revisada ≠ resultado garantizado.',
+  'grade.warning.p':'Evidencia Revisada significa que se comprobaron materiales seleccionados contra fuentes disponibles. No garantiza rendimiento futuro, monetización, tráfico, estabilidad de plataforma o éxito en la transferencia. Todos los números son reportados por el vendedor salvo indicación contraria. Revisamos afirmaciones y mapeamos escenarios — no garantizamos resultados.',
+  'grade.a.short':'Fuerte','grade.b.short':'Interesante','grade.c.short':'Temprano','grade.d.short':'No Listo',
+  'grade.bounty.label':'🎯 Solicitud de compra','grade.bounty.note':'Solicitud de compra de ejemplo','grade.demo.note':'Listado demo',
+  'partner.label':'Deal Partners','partner.h2':'Trae oportunidades de activos de IA.',
+  'partner.p':'AIAsset.Market trabaja con scouts, brokers, conectores de comunidades y miembros de clubs de negocios que pueden presentar vendedores, compradores, operadores y solicitudes de bounty calificados.',
+  'partner.li1':'¿Conoces a un fundador con un canal de IA o newsletter? Haz la introducción.',
+  'partner.li2':'¿Conoces a un comprador que busca una herramienta de IA o motor de contenido? Conéctalos.',
+  'partner.li3':'¿Conoces operadores que buscan activos para gestionar? Queremos saber.',
+  'partner.li4':'Pueden aplicarse recompensas caso a caso cuando se cierran tratos reales aceptados. No garantizado. Aprobado por el fundador.',
+  'partner.disclaimer':'Las recompensas son caso a caso y no están garantizadas. Esto no es un esquema de ingresos pasivos, oportunidad de inversión o programa multinivel.',
+  'partner.form.h3':'Aplicar como Deal Partner',
+  'partner.f.name.lbl':'Tu nombre *','partner.f.email.lbl':'Email *','partner.f.contact.lbl':'Telegram / X / LinkedIn *','partner.f.contact.ph':'@usuario o URL de perfil',
+  'partner.f.role.lbl':'Rol preferido','partner.f.access.lbl':'¿Dónde tienes acceso?',
+  'partner.f.leads.lbl':'¿Qué tipo de leads puedes traer? *','partner.f.leads.ph':'Describe el tipo de activos de IA, compradores u operadores a los que tienes acceso. Sé específico.',
+  'partner.f.profiles.lbl':'Enlaces de perfil público','partner.f.profiles.ph':'Canal de Telegram, LinkedIn, sitio web, etc.',
+  'partner.f.notes.lbl':'Notas','partner.f.notes.ph':'Algo más que debamos saber',
+  'partner.f.consent':'Entiendo que las recompensas son caso a caso y no están garantizadas. *',
+  'partner.f.btn':'Aplicar como Deal Partner →','partner.f.note':'Revisamos aplicaciones manualmente y te contactamos con los próximos pasos.',
+  'success.partner':'Gracias — tu solicitud de Deal Partner fue recibida. Revisamos las solicitudes manualmente.',
+  'partner_lead.label':'¿Ya eres Deal Partner?','partner_lead.h2':'Enviar un Lead de Partner',
+  'partner_lead.p':'¿Tienes un lead específico que enviar? Rellena los detalles. URL de fuente requerida — sin fuente, sin revisión.',
+  'partner_lead.f.contact.lbl':'Tu nombre / contacto *','partner_lead.f.contact.ph':'@usuario o email',
+  'partner_lead.f.type.lbl':'Tipo de lead *',
+  'partner_lead.f.name.lbl':'Nombre / descripción del lead *','partner_lead.f.name.ph':'Nombre de persona, canal, activo u oportunidad',
+  'partner_lead.f.url.lbl':'URL fuente del lead *','partner_lead.f.url.ph':'https:// — enlace directo para verificar este lead',
+  'partner_lead.f.method.lbl':'Método de contacto del lead','partner_lead.f.method.ph':'Telegram DM / email / formulario web / LinkedIn',
+  'partner_lead.f.why.lbl':'Por qué es relevante *','partner_lead.f.why.ph':'¿Por qué es una oportunidad calificada para AIAsset.Market?',
+  'partner_lead.f.proof.lbl':'Prueba de actividad','partner_lead.f.proof.ph':'Recuento de suscriptores, fecha de publicación reciente, página de ventas, etc.',
+  'partner_lead.f.notes.lbl':'Notas','partner_lead.f.notes.ph':'Algo más que debamos saber',
+  'partner_lead.f.btn':'Enviar Lead para Revisión →','partner_lead.f.note':'Todos los leads se revisan manualmente. URL de fuente requerida para calificación.',
+  'success.partner_lead':'Gracias — lead recibido para revisión.',
+  'community.item1.tag':'Diario','community.item1.name':'🏴 Activo del Día','community.item1.desc':'Un desglose real de un activo de IA — señales, notas de transferencia, Pirate Grade, veredicto honesto.',
+  'community.item2.tag':'Semanal','community.item2.name':'📋 Weekly Drop','community.item2.desc':'Activos de IA y bounties seleccionados. Expresa interés, haz una oferta, aplica como operador.',
+  'community.item3.tag':'Semanal','community.item3.name':'⚔️ ¿Construir o Comprar?','community.item3.desc':'Desglose honesto. Cuándo lanzar desde cero vs. explorar un activo existente.',
+  'community.item4.tag':'Semanal','community.item4.name':'💀 Autopsia de Activo Muerto','community.item4.desc':'Qué lo mató. Baneos, sin monetización, dependencia del fundador — aprende de los fracasos.',
+  'community.item5.tag':'Semanal','community.item5.name':'🎯 Actualización del Bounty Board','community.item5.desc':'Solicitudes activas de compradores. Construye o consigue exactamente lo que pide el mercado.',
+  'community.item6.tag':'Mensual','community.item6.name':'🗺️ Mapa del Mercado','community.item6.desc':'Categorías calientes, nichos que se enfrían, dónde está la actividad real este mes.',
+  'cats.count':'Categoría activa',
+  'cat.1.name':'Canales de Telegram de IA','cat.1.desc':'Canales de nicho automatizados con pipelines de contenido de IA. Audiencia, notas de transferencia e idoneidad para operador evaluadas.',
+  'cat.2.name':'Personas de IA y Sistemas de Contenido','cat.2.desc':'Personas de IA, motores de contenido, creadores UGC y medios sintéticos. Identidad, pipeline, audiencia e idoneidad para operador revisados.',
+  'cat.3.name':'Medios de IA y Newsletters','cat.3.desc':'Newsletters de nicho, sitios de contenido y marcas de medios generadas por IA. Base de suscriptores, engagement y ruta de transferencia evaluados.',
+  'cat.4.name':'Bots y Agentes de IA','cat.4.desc':'Bots funcionales y agentes de IA con lógica documentada, casos de uso e instrucciones de transferencia.',
+  'cat.5.name':'Automatizaciones y Flujos de Trabajo','cat.5.desc':'Stacks de automatización n8n, Make, Zapier y personalizados. Documentados, exportables, con SOP.',
+  'cat.6.name':'SaaS y Herramientas No-Code','cat.6.desc':'Herramientas no-code con caso de uso definido, usuarios existentes y ruta de transferencia clara. Idoneidad para operador revisada.',
+  'bounty.1.title':'Canal Telegram de IA — nicho cripto / trading','bounty.1.meta':'5K+ suscriptores · contenido automatizado · notas de transferencia requeridas','bounty.1.budget':'hasta $3,000',
+  'bounty.2.title':'Creador UGC de IA para marca de bienestar / belleza','bounty.2.meta':'Listo para campañas de marca · Instagram + TikTok','bounty.2.budget':'hasta $1,500',
+  'bounty.3.title':'Automatización de leadgen de IA — nicho de bienes raíces','bounty.3.meta':'Pipeline funcional · SOP completo · listo para operador','bounty.3.budget':'hasta $2,500',
+  'bounty.4.title':'Newsletter de IA — nicho SaaS / fundadores','bounty.4.meta':'2K+ suscriptores · flujo documentado · transferible','bounty.4.budget':'hasta $4,000',
+  'step.01':'Paso 01','step.02':'Paso 02','step.03':'Paso 03','step.04':'Paso 04',
+  'hero.btn.grade':'Obtener Pirate Grade gratis →',
+  'signal.label':'Pulso del mercado','signal.h3':'Señales de demanda en vivo',
+  'signal.p':'Qué buscan los compradores. Qué se está construyendo. Qué necesitan los operadores — ahora mismo.',
+  'signal.stat1.lbl':'Bounties activos de compradores','signal.stat1.tag':'Solicitudes en vivo',
+  'signal.stat2.lbl':'Revisiones gratis restantes','signal.stat2.tag':'Primer lote',
+  'signal.stat3.lbl':'Categorías de activos','signal.stat3.tag':'Solo AI-nativos',
+  'signal.stat4.num':'<span class="dot-live"></span>Abierto',
+  'signal.stat4.lbl':'Weekly Drop #1','signal.stat4.tag':'Enviar ahora',
+  'signal.wanted.title':'Más buscado por compradores',
+  'signal.w1':'Canal AI de Telegram','signal.w2':'Newsletter de IA','signal.w3':'Automatización leadgen','signal.w4':'Persona UGC de IA',
+  'listings.search.ph':'Buscar activos…',
+  'filter.all':'Todos','filter.sale':'En venta','filter.license':'Licencia','filter.management':'Operador','filter.bounty':'Bounty',
+  'list.col.asset':'Activo','list.col.price':'Precio','list.col.type':'Tipo','list.col.score':'Puntuación',
+  'signals.label':'Señales de fundadores','signals.h2':'Lo que dicen los constructores de activos de IA',
+  'signals.p':'Estos son problemas reales que enfrentan los constructores de IA. No son testimonios pagados — observaciones editoriales del mercado.',
+  'signals.q1':'Construí un newsletter de IA que se gestiona solo — 3,800 suscriptores, 42% de tasa de apertura. No tengo idea de cómo valorarlo o encontrar el comprador adecuado.',
+  'signals.q1.name':'Fundador de newsletter','signals.q1.role':'AI media · 11 meses funcionando',
+  'signals.q2':'Quiero operar un activo de IA — tengo habilidades de automatización y marketing. Pero cada plataforma quiere que compre el negocio completo. Solo quiero operar.',
+  'signals.q2.name':'Especialista en automatización','signals.q2.role':'No-code · n8n · Make',
+  'signals.q3':'Busco un canal de Telegram de IA en nicho crypto/trading — mínimo 2K suscriptores reales, contenido automatizado. Tengo el presupuesto. Simplemente no encuentro un lugar confiable.',
+  'signals.q3.name':'Comprador · nicho crypto','signals.q3.role':'Presupuesto hasta $3,000',
+  'signals.editorial':'Observación editorial · No es un testimonio verificado',
 },
 zh: {
   'nav.browse':'浏览','nav.categories':'分类','nav.how':'运作方式',
@@ -1754,7 +2677,7 @@ zh: {
   'hero.stat3.num':'Pirate Grade','hero.stat3.desc':'A–D编辑评审',
   'hero.stat4.num':'人工','hero.stat4.desc':'编辑审核',
   'how.label':'运作方式','how.h2':'AIAsset.Market 如何运作',
-  'how.p':'三种角色。一个交易所。提交资产、发布悬赏或申请成为运营者。',
+  'how.p':'四种角色。一个交易所。提交资产、发布悬赏、申请运营或带来交易。',
   'how.tab.buy':'🏴 买家','how.tab.sell':'📦 卖家','how.tab.manage':'⚓ 运营者',
   'cats.label':'资产类别','cats.h2':'我们审核什么',
   'cats.p':'五个初始类别。随着提交量增加，更多类别将开放。',
@@ -1840,10 +2763,12 @@ zh: {
   'f.watchlist.btn':'加入观察列表 →',
   'f.watchlist.note':'免费。无垃圾信息。当有相关资产或空投时我们会联系您。',
   'success.watchlist':'✓ 您已加入观察列表。当有相关资产或空投时我们会联系您。',
+  'weekly.label':'📋 WEEKLY DROP #1',
   'weekly.title':'Weekly Drop #1 正在策划中。',
   'weekly.sub':'提交AI资产、发布悬赏或申请成为运营者以被纳入。',
   'weekly.cta':'为 Weekly Drop #1 提交 →',
   'footer.disclaimer':'AIAsset.Market by Pirate AI Port不提供投资、财务或法律建议。上架信息可能包含卖家自报数据。证据审核意味着审核了部分材料；不保证未来业绩、变现、流量、平台稳定性或转让成功。买卖双方须自行尽职调查并签署协议。',
+  'card.upside':'🚀 增值路径:','card.transfer':'📦 转让说明:',
   'card.monetization':'声称的变现','card.audience':'受众',
   'card.costs':'每月费用','card.age':'资产年龄',
   'card.asking':'要价','card.op_arr':'运营者安排',
@@ -1856,6 +2781,111 @@ zh: {
   'success.bounty':'✓ 悬赏已收到。我们筛选回应，如果找到匹配，我们会联系您。',
   'success.operator':'✓ 申请已收到。我们审核运营者，当有合适资产时联系您。',
   'val.required':'为必填项','val.contact':'联系方式必须是Telegram @handle或有效的电子邮件',
+  'roles.label':'适用对象','roles.h2':'买入、出售、运营或连接 — 选择您的角色','roles.sub':'四种参与AI资产市场的方式。一个平台。',
+  'roles.buyers.h3':'买家','roles.buyers.p':'浏览AI频道、新闻订阅、机器人和自动化工具。发布悬赏，与有您所需资源的卖家匹配。','roles.buyers.btn':'发布悬赏 →',
+  'roles.sellers.h3':'卖家','roles.sellers.p':'上架您的AI资产并获得免费Pirate Grade审核。我们评估需求、准备度、运营者适配性、潜力和风险 — 前100个提交免费。','roles.sellers.btn':'提交资产 →',
+  'roles.operators.h3':'运营者','roles.operators.p':'无需拥有AI资产即可运营。您的技能是入场券 — 无需资本。报酬直接与资产所有者商议。','roles.operators.btn':'申请成为运营者 →',
+  'roles.partners.h3':'交易合作伙伴','roles.partners.p':'认识创始人、构建者或买家？带来合格机会。如果真实的被接受线索或交易成交，可能获得逐案奖励。','roles.partners.btn':'申请成为交易合作伙伴 →',
+  'nav.partners':'交易合作伙伴','how.tab.partner':'🤝 交易合作伙伴',
+  'how.buy.s1.h':'浏览或发布悬赏','how.buy.s1.p':'浏览上架资产或发布悬赏 — 告诉我们您需要什么，我们会帮您寻找。',
+  'how.buy.s2.h':'请求详情','how.buy.s2.p':'发送询问。我们将您与卖家连接，并说明哪些内容经过审核，哪些是卖家自报。',
+  'how.buy.s3.h':'了解资产','how.buy.s3.p':'查看资产评级、风险标签、转让说明和证据状态。我们分析场景 — 不保证结果。',
+  'how.buy.s4.h':'直接商议条款','how.buy.s4.p':'买卖双方直接商议条款。我们促成引荐。尽职调查和协议由双方负责。',
+  'how.sell.s1.h':'提交您的资产','how.sell.s1.p':'填写简短表单：名称、类别、描述、联系方式。可选详情有助于加快审核。',
+  'how.sell.s2.h':'获得资产评级','how.sell.s2.p':'在5个维度上获得诚实评估。了解您的资产现状 — 以及需要添加或改进什么来提高评级。',
+  'how.sell.s3.h':'按您的条款发布','how.sell.s3.p':'选择可见性：公开上架、仅私下引荐、匿名或向运营者开放。您控制谁能找到您以及如何找到。',
+  'how.sell.s4.h':'直接发现','how.sell.s4.p':'买家、运营者和社区发现您的上架。交易条款由双方直接确定 — 我们提供格式和信任层，而非经纪服务。',
+  'how.manage.s1.h':'申请成为运营者','how.manage.s1.p':'告诉我们您的技能、平台、每周可用时间和AI资产经验。',
+  'how.manage.s2.h':'获得匹配','how.manage.s2.p':'我们将您与需要运营者的资产匹配。资产所有者将上架标记为"寻找运营者"状态。',
+  'how.manage.s3.h':'商议条款','how.manage.s3.p':'报酬模式、工作范围和报告频率直接与资产所有者商议。',
+  'how.manage.s4.h':'运营资产','how.manage.s4.p':'您来运营。所有者保留股权。无需资本 — 技能和能力是您的入场券。',
+  'how.partner.s1.h':'申请成为交易合作伙伴','how.partner.s1.p':'告诉我们您能接触到什么 — 商业俱乐部、创始人社区、Telegram群组、AI网络。我们人工审核合作伙伴申请。',
+  'how.partner.s2.h':'带来合格机会','how.partner.s2.p':'介绍AI资产卖家、买家、运营者或悬赏请求。每个线索都经过人工审核 — 我们需要真实来源，而非道听途说。',
+  'how.partner.s3.h':'我们审核并跟进','how.partner.s3.p':'我们审核每个线索，验证它，并推动其在流程中前进。您在关键节点获得更新。',
+  'how.partner.s4.h':'交易成交时的逐案奖励','how.partner.s4.p':'如果您带来的合格线索促成了被接受的提交或成交的交易，可能获得创始人批准的奖励。不保证。逐案商议。',
+  'grade.dim1.name':'📡 需求信号','grade.dim1.desc':'是否有人想要的迹象？现有受众、买家请求、搜索需求、经证实的用例。',
+  'grade.dim2.name':'📦 资产准备度','grade.dim2.desc':'它已经是资产还是只是个想法？已上线、已记录、可转让 — 还是粗糙的原型。',
+  'grade.dim3.name':'🧑‍✈️ 运营者适配性','grade.dim3.desc':'没有创始人，别人能运营吗？清晰的SOP、低专家依赖性、文档化工作流程。',
+  'grade.dim4.name':'🚀 增值路径','grade.dim4.desc':'哪些场景能使其更有价值？市场机会、变现杠杆、增长选项。',
+  'grade.dim5.name':'🛡️ 风险与证明','grade.dim5.desc':'声明的内容vs.审核的内容。平台风险、法律风险、所有权验证、转让可行性。',
+  'grade.warning.h':'证据审核 ≠ 保证结果。',
+  'grade.warning.p':'证据审核意味着部分材料经过核实。不保证未来业绩、变现、流量、平台稳定性或转让成功。所有数字均为卖家自报，除非明确标记为已审核。我们审核声明并分析场景 — 我们不保证结果。',
+  'grade.a.short':'强','grade.b.short':'有趣','grade.c.short':'早期','grade.d.short':'未准备好',
+  'grade.bounty.label':'🎯 买家请求','grade.bounty.note':'示例买家请求','grade.demo.note':'演示上架',
+  'partner.label':'交易合作伙伴','partner.h2':'带来AI资产机会。',
+  'partner.p':'AIAsset.Market与侦察者、经纪人、社区连接者和商业俱乐部成员合作，他们可以介绍合格的AI资产卖家、买家、运营者和悬赏请求。',
+  'partner.li1':'认识一位拥有AI频道或新闻订阅的创始人？做个引荐。',
+  'partner.li2':'认识一位寻找AI工具或内容引擎的买家？连接他们。',
+  'partner.li3':'认识寻找资产运营的运营者？我们想听。',
+  'partner.li4':'当真实接受的线索或交易成交时，可能逐案适用奖励。不保证。创始人批准。',
+  'partner.disclaimer':'奖励逐案且不保证。这不是被动收入计划、投资机会或多级计划。',
+  'partner.form.h3':'申请成为交易合作伙伴',
+  'partner.f.name.lbl':'您的姓名 *','partner.f.email.lbl':'电子邮件 *','partner.f.contact.lbl':'Telegram / X / LinkedIn *','partner.f.contact.ph':'@用户名或个人资料链接',
+  'partner.f.role.lbl':'首选角色','partner.f.access.lbl':'您能接触到哪些资源？',
+  'partner.f.leads.lbl':'您能带来什么类型的线索？ *','partner.f.leads.ph':'描述您能接触到的AI资产、买家或运营者类型。请具体说明。',
+  'partner.f.profiles.lbl':'公开资料链接','partner.f.profiles.ph':'Telegram频道、LinkedIn、网站等',
+  'partner.f.notes.lbl':'备注','partner.f.notes.ph':'还有什么我们应该知道的',
+  'partner.f.consent':'我了解奖励是逐案的且不保证。 *',
+  'partner.f.btn':'申请成为交易合作伙伴 →','partner.f.note':'我们人工审核申请并联系您说明后续步骤。',
+  'success.partner':'感谢 — 您的交易合作伙伴申请已收到。我们人工审核合作伙伴申请。',
+  'partner_lead.label':'已经是交易合作伙伴？','partner_lead.h2':'提交合作伙伴线索',
+  'partner_lead.p':'有具体线索要提交？填写以下详情。来源URL必填 — 没有来源，没有审核。',
+  'partner_lead.f.contact.lbl':'您的姓名/联系方式 *','partner_lead.f.contact.ph':'@用户名或邮箱',
+  'partner_lead.f.type.lbl':'线索类型 *',
+  'partner_lead.f.name.lbl':'线索名称/描述 *','partner_lead.f.name.ph':'人名、频道、资产或机会名称',
+  'partner_lead.f.url.lbl':'线索来源URL *','partner_lead.f.url.ph':'https:// — 用于验证此线索的直接链接',
+  'partner_lead.f.method.lbl':'线索联系方式','partner_lead.f.method.ph':'Telegram DM / 邮件 / 网页表单 / LinkedIn',
+  'partner_lead.f.why.lbl':'为什么相关 *','partner_lead.f.why.ph':'为什么这对AIAsset.Market是合格机会？',
+  'partner_lead.f.proof.lbl':'活动证明','partner_lead.f.proof.ph':'订阅者数量、最近发帖日期、销售页面等',
+  'partner_lead.f.notes.lbl':'备注','partner_lead.f.notes.ph':'还有什么我们应该知道的',
+  'partner_lead.f.btn':'提交线索供审核 →','partner_lead.f.note':'所有线索均人工审核。资格认定需要来源URL。',
+  'success.partner_lead':'感谢 — 线索已收到待审核。',
+  'community.item1.tag':'每日','community.item1.name':'🏴 每日资产','community.item1.desc':'一个真实AI资产的详细分析 — 信号、转让说明、Pirate Grade、诚实评估。',
+  'community.item2.tag':'每周','community.item2.name':'📋 Weekly Drop','community.item2.desc':'精选AI资产和悬赏。表达兴趣、出价、申请成为运营者。',
+  'community.item3.tag':'每周','community.item3.name':'⚔️ 构建还是购买？','community.item3.desc':'诚实分析。何时从头开始 vs. 探索现有资产。',
+  'community.item4.tag':'每周','community.item4.name':'💀 死亡资产解剖','community.item4.desc':'是什么导致失败。封禁、无变现、创始人依赖 — 从失败中学习。',
+  'community.item5.tag':'每周','community.item5.name':'🎯 悬赏板更新','community.item5.desc':'活跃买家请求。构建或寻找市场需要的确切内容。',
+  'community.item6.tag':'每月','community.item6.name':'🗺️ 市场地图','community.item6.desc':'热门类别、正在降温的利基市场、本月真实交易活动所在。',
+  'cats.count':'活跃类别',
+  'cat.1.name':'AI Telegram频道','cat.1.desc':'带有AI内容流程的自动化利基频道。受众、转让说明和运营者适配性已评估。',
+  'cat.2.name':'AI角色与内容系统','cat.2.desc':'AI驱动的角色、内容引擎、UGC创作者和合成媒体。身份、流程、受众和运营者适配性已审核。',
+  'cat.3.name':'AI媒体与新闻订阅','cat.3.desc':'利基新闻订阅、内容网站和AI生成媒体品牌。订阅基础、参与度和转让路径已评估。',
+  'cat.4.name':'AI机器人与代理','cat.4.desc':'具有文档化逻辑、用例和转让说明的功能性机器人和AI代理。',
+  'cat.5.name':'自动化与工作流程','cat.5.desc':'n8n、Make、Zapier和自定义自动化堆栈。文档化、可导出、含SOP。',
+  'cat.6.name':'无代码SaaS与工具','cat.6.desc':'具有明确用例、现有用户和清晰转让路径的无代码工具。运营者就绪已审核。',
+  'bounty.1.title':'AI Telegram频道 — 加密/交易利基','bounty.1.meta':'5K+订阅者 · 自动化内容 · 需要转让说明','bounty.1.budget':'最高$3,000',
+  'bounty.2.title':'美容/健康品牌的AI UGC创作者','bounty.2.meta':'准备好品牌活动 · Instagram + TikTok','bounty.2.budget':'最高$1,500',
+  'bounty.3.title':'AI线索生成自动化 — 房地产利基','bounty.3.meta':'工作流程 · 完整SOP · 运营者就绪','bounty.3.budget':'最高$2,500',
+  'bounty.4.title':'AI新闻订阅 — SaaS/创始人利基','bounty.4.meta':'2K+订阅者 · 文档化工作流程 · 可转让','bounty.4.budget':'最高$4,000',
+  'step.01':'第01步','step.02':'第02步','step.03':'第03步','step.04':'第04步',
+  'hero.badge':'⚡ Weekly Drop #1 · 现在接受提交',
+  'hero.title':'AI原生资产，<br><span class="accent">评估与匹配。</span>',
+  'hero.sub':'上架、申请或运营AI新闻、机器人、频道、自动化和AI媒体资产。',
+  'hero.btn.browse':'浏览资产 →','hero.btn.submit':'提交资产',
+  'hero.btn.grade':'获取免费 Pirate Grade →',
+  'hero.stat.tg':'Telegram订阅者','hero.stat.f100.num':'前100名','hero.stat.f100.desc':'免费Pirate Grade评审',
+  'hero.stat.cats':'资产类别','hero.stat.open.num':'<span class="dot-live"></span>开放','hero.stat.open.desc':'接受提交',
+  'signal.label':'市场脉搏','signal.h3':'实时需求信号',
+  'signal.p':'买家想要什么。正在构建什么。运营者在寻找什么 — 就在现在。',
+  'signal.stat1.lbl':'活跃买家悬赏','signal.stat1.tag':'实时请求',
+  'signal.stat2.lbl':'剩余免费评审','signal.stat2.tag':'首批',
+  'signal.stat3.lbl':'资产类别','signal.stat3.tag':'全AI原生',
+  'signal.stat4.num':'<span class="dot-live"></span>开放',
+  'signal.stat4.lbl':'Weekly Drop #1','signal.stat4.tag':'立即提交',
+  'signal.wanted.title':'买家最想要的',
+  'signal.w1':'AI Telegram频道','signal.w2':'AI新闻订阅','signal.w3':'线索生成自动化','signal.w4':'UGC AI角色',
+  'listings.search.ph':'搜索资产…',
+  'filter.all':'所有类型','filter.sale':'出售','filter.license':'授权','filter.management':'运营者','filter.bounty':'悬赏',
+  'list.col.asset':'资产','list.col.price':'价格','list.col.type':'类型','list.col.score':'评分',
+  'signals.label':'创始人信号','signals.h2':'AI资产构建者说的话',
+  'signals.p':'这些是AI构建者面临的真实问题。不是付费推荐 — 来自市场的编辑观察。',
+  'signals.q1':'我建了一个自动运营的AI新闻订阅 — 3,800订阅者，42%打开率。完全不知道如何估值或找到合适的买家。',
+  'signals.q1.name':'新闻订阅创始人','signals.q1.role':'AI媒体 · 运营11个月',
+  'signals.q2':'我想运营一个AI资产 — 我有自动化技能和营销背景。但每个平台都要求我直接购买整个业务。我只想做运营者。',
+  'signals.q2.name':'自动化专家','signals.q2.role':'No-code · n8n · Make',
+  'signals.q3':'我在寻找加密/交易领域的AI Telegram频道 — 至少2K真实订阅者，自动化内容。我有预算。就是找不到可信赖的地方。',
+  'signals.q3.name':'买家 · 加密领域','signals.q3.role':'预算最高$3,000',
+  'signals.editorial':'编辑观察 · 非经验证的推荐',
 },
 };
 
@@ -1889,43 +2919,92 @@ function setLang(lang) {
     b.classList.toggle('active', b.dataset.lang === lang));
   renderCategories();
   renderBounties();
-  if (_listingsData) {
-    document.getElementById('listings-grid').innerHTML = _listingsData.map(renderCard).join('');
+  const grid = document.getElementById('listings-grid');
+  if (grid && grid.children.length > 0) {
+    loadListings();
   }
 }
 
 // ── Category data ──────────────────────────────────────────────────────────
 const CATS = [
-  { icon:'📡', name:'AI Telegram Channels',
-    desc:'Automated niche channels with AI content pipelines. Audience, transfer notes and operator fit assessed.',
-    count:'Active category', range:'$300 – $15,000', href:'#listings' },
-  { icon:'🎭', name:'AI Personas & Content Systems',
-    desc:'AI-driven personas, content engines, UGC creators and synthetic media. Identity, pipeline, audience and operator fit reviewed.',
-    count:'Active category', range:'$500 – $12,000', href:'#listings' },
-  { icon:'📰', name:'AI Media & Newsletters',
-    desc:'Niche newsletters, content sites and AI-generated media brands. Subscriber base, engagement and transfer path assessed.',
-    count:'Active category', range:'$500 – $18,000', href:'#listings' },
-  { icon:'🤖', name:'AI Bots & Agents',
-    desc:'Functional bots and AI agents with documented logic, use cases and transfer instructions.',
-    count:'Active category', range:'$200 – $8,000', href:'#listings' },
-  { icon:'⚙️', name:'Automations & Workflows',
-    desc:'n8n, Make, Zapier and custom automation stacks. Documented, exportable, with SOP.',
-    count:'Active category', range:'$300 – $10,000', href:'#listings' },
-  { icon:'🔧', name:'No-Code SaaS & Tools',
-    desc:'No-code tools with defined use case, existing users and clear transfer path. Operator-ready reviewed.',
-    count:'Active category', range:'$500 – $20,000', href:'#listings' },
+  { icon:'📡', nameKey:'cat.1.name', descKey:'cat.1.desc', range:'$300 – $15,000', href:'#listings' },
+  { icon:'🎭', nameKey:'cat.2.name', descKey:'cat.2.desc', range:'$500 – $12,000', href:'#listings' },
+  { icon:'📰', nameKey:'cat.3.name', descKey:'cat.3.desc', range:'$500 – $18,000', href:'#listings' },
+  { icon:'🤖', nameKey:'cat.4.name', descKey:'cat.4.desc', range:'$200 – $8,000', href:'#listings' },
+  { icon:'⚙️', nameKey:'cat.5.name', descKey:'cat.5.desc', range:'$300 – $10,000', href:'#listings' },
+  { icon:'🔧', nameKey:'cat.6.name', descKey:'cat.6.desc', range:'$500 – $20,000', href:'#listings' },
 ];
 
 // ── Bounty data ────────────────────────────────────────────────────────────
 const BOUNTIES = [
-  { icon:'📡', title:'AI Telegram channel — crypto / trading niche',
-    meta:'5K+ subscribers · automated content · transfer notes required', budget:'up to $3,000' },
-  { icon:'🎬', title:'AI UGC creator for wellness / beauty brand',
-    meta:'Ready for brand campaigns · Instagram + TikTok', budget:'up to $1,500' },
-  { icon:'⚙️', title:'AI leadgen automation — real estate niche',
-    meta:'Working pipeline · full SOP · operator-ready', budget:'up to $2,500' },
-  { icon:'📰', title:'AI newsletter — SaaS / founders niche',
-    meta:'2K+ subscribers · documented workflow · transferable', budget:'up to $4,000' },
+  { icon:'📡', titleKey:'bounty.1.title', metaKey:'bounty.1.meta', budgetKey:'bounty.1.budget' },
+  { icon:'🎬', titleKey:'bounty.2.title', metaKey:'bounty.2.meta', budgetKey:'bounty.2.budget' },
+  { icon:'⚙️', titleKey:'bounty.3.title', metaKey:'bounty.3.meta', budgetKey:'bounty.3.budget' },
+  { icon:'📰', titleKey:'bounty.4.title', metaKey:'bounty.4.meta', budgetKey:'bounty.4.budget' },
+];
+
+// ── Hardcoded fallback listings (Russian) ─────────────────────────────────
+const FALLBACK_LISTINGS_RU = [
+  { id:'ai-tools-radar', name:'AI Tools Radar',
+    tagline:'AI Telegram-канал · Автоматизированный контент-пайплайн',
+    category:'ai-telegram-channel', deal_type:'sale', asking_price:'$3,200',
+    monthly_revenue:'$480/мес (со слов продавца)', monthly_costs:'$85/мес',
+    verified_status:'revenue', is_demo:true,
+    short_description:'Полностью автоматизированный Telegram-канал: AI-фильтрация новостей из 15 источников, ежедневные посты, еженедельный дайджест. Построен на n8n + OpenRouter. Владелец тратит менее 20 мин/день на модерацию.',
+    upside_paths:'Расширение спонсорства до 3–5 слотов/неделю. Платная Telegram-группа как апсейл. Кросс-постинг в X/LinkedIn для роста охвата.',
+    transfer_notes:'Полный экспорт n8n-воркфлоу включён. API-ключи и список источников передаются. Доступен 30-дневный период онбординга.',
+    metrics:{ subscribers:'12 400', asset_age:'8 месяцев' },
+    scores:{ traffic:4, revenue:3, automation:4, transferability:5, risk:3, operator:5, growth:3, overall:74 } },
+  { id:'sofia-wellness-ai', name:'Sofia Wellness AI Creator',
+    tagline:'Синтетическая UGC-персона · Контент-библия, визуальный стиль, пайплайн коротких видео',
+    category:'ai-ugc-creator', deal_type:'license', asking_price:'$1,800',
+    monthly_revenue:'— (до запуска)', monthly_costs:'$120/мес',
+    verified_status:'basic', is_demo:true,
+    short_description:'Полная AI-персона: визуальная идентичность, голосовая библия, 30 UGC-видео (wellness-ниша), питч-дек для брендов, пайплайн контент-автоматизации. Готова для брендовых кампаний.',
+    upside_paths:'Партнёрства с брендами за $500–$2,000 за кампанию. Лицензирование в дополнительные вертикали (фитнес, бьюти). Расширение на TikTok + Reels.',
+    transfer_notes:'Полный пакет актива: библиотека промптов, голосовой профиль, шаблоны видео, контент-SOP. Лицензиат получает эксклюзивные права в выбранной нише.',
+    metrics:{ subscribers:'До запуска', asset_age:'2 месяца' },
+    scores:{ traffic:1, revenue:1, automation:4, transferability:5, risk:4, operator:4, growth:4, overall:57 } },
+  { id:'founder-ai-weekly', name:'Founder AI Weekly',
+    tagline:'Рассылка · AI-воркфлоу контента · Спонсорские слоты · Редакционный SOP',
+    category:'ai-niche-media', deal_type:'sale', asking_price:'$6,400',
+    monthly_revenue:'$640/мес (со слов продавца)', monthly_costs:'$180/мес',
+    verified_status:'revenue', is_demo:true,
+    short_description:'Еженедельная рассылка для основателей и операторов. 3 800 подписчиков, 42% open rate. Доход от спонсоров + партнёрок. Контент на 80% AI-генерируется, редактируется за 2 ч/неделю. Полный редакционный SOP включён.',
+    upside_paths:'Рост до 10K подписчиков через реферальный цикл. Добавить платный уровень или сообщество. Увеличить спонсорские слоты с 1 до 3 за выпуск.',
+    transfer_notes:'Трансфер Beehiiv-аккаунта включён. Шаблоны контента, контакты спонсоров и редакционный календарь на 6 месяцев. Аудитория подтверждена через скриншоты open rate.',
+    metrics:{ subscribers:'3 800', asset_age:'11 месяцев' },
+    scores:{ traffic:3, revenue:4, automation:3, transferability:4, risk:4, operator:4, growth:4, overall:77 } },
+  { id:'bounty-trading-channel', name:'Ищу: AI-канал в нише трейдинга',
+    tagline:'Запрос покупателя · Ниша: трейдинг/крипто · Нужен оператор · Бюджет указан',
+    category:'ai-bounty', deal_type:'bounty', asking_price:'Бюджет: до $3,000',
+    monthly_revenue:'— (запрос покупателя)', monthly_costs:'—',
+    verified_status:'basic', is_demo:true,
+    short_description:'Ищу готовый AI Telegram-канал о трейдинге или крипто-сигналах. Минимум 80% автоматизации, 2K+ подписчиков, чёткая периодичность публикаций. Открыт к операторской схеме если нужно управление.',
+    upside_paths:'Покупатель открыт к модели оператор + revenue share при активном управлении. Бюджет гибкий для качественного актива с реальной аудиторией.',
+    transfer_notes:'Требуется: трансфер прав на контент или admin-доступ. Без накрученных подписчиков. Готов верифицировать статистику через Telegram Analytics до сделки.',
+    metrics:{ subscribers:'Нужно 2 000+', asset_age:'Активен 3+ месяцев' },
+    scores:{ traffic:0, revenue:0, automation:0, transferability:0, risk:0, operator:0, growth:0, overall:0 } },
+  { id:'real-estate-ai-leadflow', name:'Real Estate AI Leadflow',
+    tagline:'AI-автоматизация · Агентства недвижимости · B2B-ретейнеры',
+    category:'ai-leadgen', deal_type:'sale', asking_price:'$9,500',
+    monthly_revenue:'$1,200/мес (со слов продавца)', monthly_costs:'$240/мес',
+    verified_status:'revenue', is_demo:true,
+    short_description:'Полный AI-пайплайн лидогенерации: скрапинг LinkedIn, AI-квалификация, автоматизированный аутрич, доставка в Telegram. 2 клиента на ретейнере. Полностью задокументированный SOP с чеклистом онбординга.',
+    upside_paths:'Добавить 2–3 клиента на ретейнер по той же цене. Расширить на ипотечных брокеров. Белый лейбл как агентский сервис.',
+    transfer_notes:'Полный экспорт n8n/Make-воркфлоу. Контракты с клиентами и документы онбординга включены. Продавец доступен для 2-недельной передачи. Оба клиента открыты к трансферу.',
+    metrics:{ subscribers:'2 клиента', asset_age:'6 месяцев' },
+    scores:{ traffic:2, revenue:5, automation:4, transferability:3, risk:3, operator:3, growth:4, overall:72 } },
+  { id:'support-bot-small-shops', name:'Бот поддержки для малого бизнеса',
+    tagline:'AI-бот поддержки · FAQ-база · Документы передачи · Чеклист оператора',
+    category:'ai-bot-agent', deal_type:'management', asking_price:'Revenue share или фикс',
+    monthly_revenue:'— (шаблон, готов к оператору)', monthly_costs:'$40/мес',
+    verified_status:'basic', is_demo:true,
+    short_description:'Оператор-ready AI-бот поддержки: обученная FAQ-база, логика эскалации, документы передачи и чеклист оператора. Деплой в Telegram или веб-чат. Код не нужен для работы.',
+    upside_paths:'Лицензировать нескольким магазинам. Добавить слой рекомендаций товаров. Апсейл на кастомное обучение под каждый магазин.',
+    transfer_notes:'Полная конфигурация бота и FAQ-датасет включены. Чеклист оператора и руководство по деплою. Звонок для настройки доступен. Пароли и личные данные клиентов не нужны.',
+    metrics:{ subscribers:'Шаблон', asset_age:'Готов к деплою' },
+    scores:{ traffic:1, revenue:1, automation:4, transferability:5, risk:5, operator:5, growth:3, overall:60 } },
 ];
 
 // ── Hardcoded fallback listings ────────────────────────────────────────────
@@ -2035,21 +3114,23 @@ function gradeLetter(ov) {
   if (ov >= 45) return 'C';
   return 'D';
 }
-const GRADE_META = { A:['Strong','gb-a'], B:['Interesting','gb-b'], C:['Early','gb-c'], D:['Not Ready','gb-d'] };
-const PIRATE_DIMS = ['📡 Demand Signal','📦 Asset Readiness','🧑‍✈️ Operator Fit','🚀 Upside Paths','🛡️ Risk & Proof'];
+const GRADE_META = { A:'gb-a', B:'gb-b', C:'gb-c', D:'gb-d' };
+const GRADE_SHORT = { A:'grade.a.short', B:'grade.b.short', C:'grade.c.short', D:'grade.d.short' };
+const PIRATE_DIM_KEYS = ['grade.dim1.name','grade.dim2.name','grade.dim3.name','grade.dim4.name','grade.dim5.name'];
 
 function gradeBlock(scores, isDemo, dealType) {
   if (dealType === 'bounty') {
-    return `<div class="lc-grade"><div class="lc-grade-header"><span class="grade-badge" style="background:rgba(96,165,250,.12);color:var(--blue-l);border:1px solid rgba(96,165,250,.2);">🎯 Bounty Request</span><span class="grade-note-sm">Example buyer request</span></div></div>`;
+    return `<div class="lc-grade"><div class="lc-grade-header"><span class="grade-badge" style="background:rgba(96,165,250,.12);color:var(--blue-l);border:1px solid rgba(96,165,250,.2);">${t('grade.bounty.label')}</span><span class="grade-note-sm">${t('grade.bounty.note')}</span></div></div>`;
   }
   const ov = scores.overall || 0;
   const letter = gradeLetter(ov);
-  const [label, cls] = GRADE_META[letter];
-  const dims = PIRATE_DIMS.map(d => `<span class="lc-grade-dim">${d}</span>`).join('');
+  const cls = GRADE_META[letter];
+  const label = t(GRADE_SHORT[letter]);
+  const dims = PIRATE_DIM_KEYS.map(k => `<span class="lc-grade-dim">${t(k)}</span>`).join('');
   return `<div class="lc-grade">
     <div class="lc-grade-header">
       <span class="grade-badge ${cls}">${letter} — ${label}</span>
-      ${isDemo ? '<span class="grade-note-sm">Demo listing</span>' : ''}
+      ${isDemo ? `<span class="grade-note-sm">${t('grade.demo.note')}</span>` : ''}
     </div>
     <div class="lc-grade-dims">${dims}</div>
   </div>`;
@@ -2062,8 +3143,8 @@ function openBuyerInquiry(name) {
 
 function assetNotesBlock(a) {
   if (!a.upside_paths && !a.transfer_notes) return '';
-  const up = a.upside_paths ? `<div class="lc-asset-note"><strong>🚀 Upside Paths:</strong> ${a.upside_paths}</div>` : '';
-  const tr = a.transfer_notes ? `<div class="lc-asset-note"><strong>📦 Transfer Notes:</strong> ${a.transfer_notes}</div>` : '';
+  const up = a.upside_paths ? `<div class="lc-asset-note"><strong>${t('card.upside')}</strong> ${a.upside_paths}</div>` : '';
+  const tr = a.transfer_notes ? `<div class="lc-asset-note"><strong>${t('card.transfer')}</strong> ${a.transfer_notes}</div>` : '';
   return `<div class="lc-asset-notes">${up}${tr}</div>`;
 }
 
@@ -2082,6 +3163,7 @@ function renderCard(a) {
       ${priceChip}
     </div>
     <div class="lc-badges">
+      <span class="verified-badge" style="background:rgba(100,116,139,.12);color:#64748b;border:1px solid rgba(100,116,139,.2);font-size:10px;">[EXAMPLE] Not for sale</span>
       ${vbadge(a.verified_status||'unverified')}
       ${dtag(a.deal_type||'sale')}
       ${a.is_demo ? `<span class="verified-badge vb-demo">${t('card.demo')}</span>` : ''}
@@ -2128,10 +3210,10 @@ function renderCategories() {
   document.getElementById('categories-grid').innerHTML = CATS.map(c => `
     <a href="${c.href}" class="cat-card">
       <div class="cat-icon">${c.icon}</div>
-      <div class="cat-name">${c.name}</div>
-      <div class="cat-desc">${c.desc}</div>
+      <div class="cat-name">${t(c.nameKey)}</div>
+      <div class="cat-desc">${t(c.descKey)}</div>
       <div class="cat-meta">
-        <span class="cat-count">${c.count}</span>
+        <span class="cat-count">${t('cats.count')}</span>
         <span class="cat-range">${c.range}</span>
       </div>
     </a>`).join('');
@@ -2143,31 +3225,82 @@ function renderBounties() {
     <div class="bounty-item">
       <div class="b-icon">${b.icon}</div>
       <div class="b-body">
-        <div class="b-title">${b.title}</div>
-        <div class="b-meta">${b.meta}</div>
+        <div class="b-title">${t(b.titleKey)}</div>
+        <div class="b-meta">${t(b.metaKey)}</div>
       </div>
-      <div class="b-budget">${b.budget}</div>
+      <div class="b-budget">${t(b.budgetKey)}</div>
     </div>`).join('');
 }
 
+// ── View toggle ────────────────────────────────────────────────────────────
+let _currentView = 'grid';
+function setListingsView(v) {
+  _currentView = v;
+  document.getElementById('vt-grid').classList.toggle('active', v==='grid');
+  document.getElementById('vt-list').classList.toggle('active', v==='list');
+  document.getElementById('listings-grid').style.display = v==='grid' ? '' : 'none';
+  const wrap = document.getElementById('listings-table-wrap');
+  const list = document.getElementById('listings-list');
+  if (v==='list') { wrap.classList.add('active'); list.classList.add('active'); }
+  else { wrap.classList.remove('active'); list.classList.remove('active'); }
+}
+
+// ── List row renderer ──────────────────────────────────────────────────────
+function renderListRow(a) {
+  const icon = CAT_ICONS[a.category] || '⚡';
+  const score = (a.scores&&a.scores.overall)||0;
+  const barW = Math.round(score);
+  const dealClass = 'deal-'+((a.deal_type||'sale').replace('_','-'));
+  const dealLabel = t('dt.'+(a.deal_type||'sale')) || a.deal_type;
+  return `<tr class="ll-row">
+    <td><div class="ll-name-cell"><span class="ll-icon">${icon}</span><div><div class="ll-name">${a.name}</div><div class="ll-tag">${a.tagline||''}</div></div></div></td>
+    <td><span class="ll-price">${a.asking_price||'—'}</span></td>
+    <td><span class="deal-tag ${dealClass}">${dealLabel}</span></td>
+    <td><div class="ll-score-wrap"><span class="ll-score">${score}</span><div class="ll-score-bar"><div class="ll-score-fill" style="width:${barW}%"></div></div></div></td>
+    <td><a href="#request-form" class="btn btn-outline btn-sm" onclick="openBuyerInquiry('${a.name.replace(/'/g,"\\'")}');">${t('card.request')}</a></td>
+  </tr>`;
+}
+
+// ── Filter + search ────────────────────────────────────────────────────────
+function applyListingsFilters() {
+  const lang = window._lang || 'en';
+  const data = _listingsCache[lang] || _getFallbackListings();
+  const q = (document.getElementById('listings-search')?.value||'').toLowerCase();
+  const type = document.getElementById('listings-type-filter')?.value||'';
+  const filtered = data.filter(a => {
+    const matchQ = !q || a.name.toLowerCase().includes(q) || (a.short_description||'').toLowerCase().includes(q) || (a.tagline||'').toLowerCase().includes(q);
+    const matchType = !type || a.deal_type === type;
+    return matchQ && matchType;
+  });
+  const countEl = document.getElementById('listings-count');
+  if (countEl) countEl.textContent = filtered.length + (filtered.length !== data.length ? ' / '+data.length : '') + ' assets';
+  document.getElementById('listings-grid').innerHTML = filtered.length ? filtered.map(renderCard).join('') : `<p style="color:var(--muted);text-align:center;grid-column:1/-1;padding:40px 0;">No assets match your filter.</p>`;
+  document.getElementById('listings-list-body').innerHTML = filtered.map(renderListRow).join('');
+}
+
 // ── Load listings ──────────────────────────────────────────────────────────
-let _listingsData = null;
+const _listingsCache = {};
+function _getFallbackListings() {
+  return (window._lang === 'ru') ? FALLBACK_LISTINGS_RU : FALLBACK_LISTINGS;
+}
 async function loadListings() {
-  const grid = document.getElementById('listings-grid');
-  if (!_listingsData) {
-    grid.innerHTML = `<p style="color:var(--muted);text-align:center;grid-column:1/-1;padding:40px 0;">${t('loading.listings')}</p>`;
-    _listingsData = FALLBACK_LISTINGS;
+  const lang = window._lang || 'en';
+  if (!_listingsCache[lang]) {
+    _listingsCache[lang] = _getFallbackListings();
+    applyListingsFilters();
     try {
-      const r = await fetch('listings.json');
-      if (r.ok) _listingsData = await r.json();
+      const file = lang === 'ru' ? 'listings_ru.json' : 'listings.json';
+      const r = await fetch(file);
+      if (r.ok) { _listingsCache[lang] = await r.json(); applyListingsFilters(); }
     } catch(_) {}
+  } else {
+    applyListingsFilters();
   }
-  grid.innerHTML = _listingsData.map(renderCard).join('');
 }
 
 // ── How tabs ───────────────────────────────────────────────────────────────
 function showHow(mode) {
-  const modes = ['buy','sell','manage'];
+  const modes = ['buy','sell','manage','partner'];
   document.querySelectorAll('.how-tab').forEach((t,i) => t.classList.toggle('active', modes[i]===mode));
   document.querySelectorAll('.how-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('how-'+mode).classList.add('active');
@@ -2236,7 +3369,7 @@ async function handleForm(e, type) {
 
   if (form.querySelector('[name="hp_website"]')?.value) return;
 
-  const errBoxId = type === 'submit' ? 'submit-errors' : type === 'bounty' ? 'bounty-errors' : type === 'watchlist' ? 'watchlist-errors' : 'operator-errors';
+  const errBoxId = type === 'submit' ? 'submit-errors' : type === 'fast_submit' ? 'fast-submit-errors' : type === 'bounty' ? 'bounty-errors' : type === 'watchlist' ? 'watchlist-errors' : type === 'partner' ? 'partner-errors' : type === 'partner_lead' ? 'partner-lead-errors' : 'operator-errors';
   clearFormErrors(form, errBoxId);
 
   const errors = validateForm(form);
@@ -2253,7 +3386,28 @@ async function handleForm(e, type) {
   let payload;
   let successMsg;
 
-  if (type === 'submit') {
+  if (type === 'fast_submit') {
+    payload = {
+      sheet:'Assets',
+      asset_name:raw.asset_name||'',
+      category:'', description:'', stage:'Fast Submit',
+      contact:raw.contact||'',
+      link:raw.link||'',
+      listing_preference:raw.listing_preference||'',
+      status:'New',
+      source:'aiasset-market-fast',
+      submitted_at:new Date().toISOString(),
+      ...getTracking()
+    };
+    logEvent('fast_asset_submit');
+    successMsg = 'Got it! We\'ll review and reach out within 48h.';
+    const sEl = document.getElementById('fast-submit-success');
+    if (sEl) { sEl.textContent = successMsg; sEl.style.display='block'; }
+    form.reset();
+    if (btn) { btn.disabled = false; btn.textContent = 'Get Free Pirate Grade →'; }
+    try { await fetch(APPS_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); } catch(_){}
+    return;
+  } else if (type === 'submit') {
     payload = {
       sheet:'Assets',
       asset_name:raw.asset_name||'',
@@ -2306,6 +3460,43 @@ async function handleForm(e, type) {
     };
     logEvent('watchlist_submit');
     successMsg = t('success.watchlist');
+  } else if (type === 'partner') {
+    payload = {
+      sheet:'DealPartners',
+      name:raw.name||'',
+      email:raw.email||'',
+      contact:raw.contact||'',
+      preferred_role:raw.preferred_role||'',
+      access_channels:raw.access_channels||'',
+      lead_types:raw.lead_types||'',
+      public_profiles:raw.public_profiles||'',
+      notes:raw.notes||'',
+      consent:raw.consent?'yes':'no',
+      status:'New',
+      source:'aiasset-market',
+      submitted_at:now,
+      ...getTracking()
+    };
+    logEvent('partner_submit');
+    successMsg = t('success.partner');
+  } else if (type === 'partner_lead') {
+    payload = {
+      sheet:'PartnerLeads',
+      partner_contact:raw.partner_contact||'',
+      lead_type:raw.lead_type||'',
+      lead_name:raw.lead_name||'',
+      lead_source_url:raw.lead_source_url||'',
+      lead_contact_method:raw.lead_contact_method||'',
+      why_relevant:raw.why_relevant||'',
+      proof_of_activity:raw.proof_of_activity||'',
+      notes:raw.notes||'',
+      status:'New',
+      source:'aiasset-market',
+      submitted_at:now,
+      ...getTracking()
+    };
+    logEvent('partner_lead_submit');
+    successMsg = t('success.partner_lead');
   } else {
     payload = {
       sheet:'Operators',
@@ -2339,7 +3530,7 @@ async function handleForm(e, type) {
     }
   } catch (_) {}
 
-  const sid = type === 'submit' ? 'submit-success' : type === 'bounty' ? 'bounty-success' : type === 'watchlist' ? 'watchlist-success' : 'operator-success';
+  const sid = type === 'submit' ? 'submit-success' : type === 'bounty' ? 'bounty-success' : type === 'watchlist' ? 'watchlist-success' : type === 'partner' ? 'partner-success' : type === 'partner_lead' ? 'partner-lead-success' : 'operator-success';
   form.style.display = 'none';
   const el = document.getElementById(sid);
   el.textContent = successMsg;

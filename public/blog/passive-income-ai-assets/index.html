@@ -193,8 +193,9 @@ nav ul a:hover,nav ul a.active{color:#fff}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -207,6 +208,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -239,9 +241,9 @@ nav ul a:hover,nav ul a.active{color:#fff}
 
 <h2>The transferability test</h2>
 <p>The single best predictor of whether an AI asset can run without you: can someone follow a written SOP and keep it running for 30 days? If the answer is no, it's not a passive asset yet — it's a project with passive income potential.</p>
-<p>When we review projects through the AI Asset Score, <strong>Transferability (0–15 points)</strong> and <strong>Operator Fit (0–15 points)</strong> together account for 30% of the total score. Most projects that fail the grade fail on these two criteria — not because the product doesn't work, but because no runbook exists.</p>
+<p>In the AI Asset Score, <strong>Transferability (0–20 points)</strong> and <strong>Automation (0–20 points)</strong> show whether the project can keep operating after a handoff. A working product can still score poorly when access, procedures, and exception handling exist only in the founder's head.</p>
 
-<div class="callout"><strong>What the AI Asset Score looks for</strong> A project that scores 70+ across all 5 dimensions (Utility, Monetization, Transferability, Operator Fit, Demand, Proof, Risk) qualifies as an Asset Candidate. Transferability alone doesn't make an asset — all seven have to clear a minimum threshold.</div>
+<div class="callout"><strong>What the AI Asset Score looks for</strong> A project that scores 70+ across all 5 dimensions (Traction, Revenue, Transferability, Automation, Risk) qualifies as an Asset Candidate. Transferability alone doesn't make an asset — the combined score must clear the relevant band threshold.</div>
 
 <h2>Platform risk: the silent killer</h2>
 <p>The most common reason AI assets stop being passive: the underlying platform changes. A GPT wrapper that repriced when OpenAI changed their API tier. A newsletter that lost 40% deliverability after a Gmail update. A Telegram bot whose hosting bill tripled.</p>
@@ -327,5 +329,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>

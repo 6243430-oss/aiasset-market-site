@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://aiasset.market/learn/seller/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Exit Your AI Project at Maximum Value — Seller Track | AIAsset.Market">
-<meta property="og:description" content="4 modules: AI Asset Score check, pricing with MRR multipliers, packaging for transfer, writing listings that convert. From the team that reviewed 47 projects.">
+<meta property="og:description" content="4 modules: AI Asset Score check, pricing with MRR multipliers, packaging for transfer, writing listings that convert. Built around the AI Asset Score methodology.">
 <meta property="og:url" content="https://aiasset.market/learn/seller/">
 <meta property="og:image" content="https://aiasset.market/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -250,8 +250,9 @@ nav ul a:hover,nav ul a.active{color:#fff}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -264,6 +265,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -305,25 +307,23 @@ nav ul a:hover,nav ul a.active{color:#fff}
 
     <p>Most AI builders who want to sell their project think the main question is "how much." The real first question is "is it ready" — and the answer changes what you do next.</p>
 
-    <p>We score AI projects on 5 dimensions, each worth 0–15 points (with one risk criterion worth up to -10). Total 0–100. This is the AI Asset Score.</p>
+    <p>We score AI projects on 5 dimensions, weighted as Traction 25, Revenue 25, Transferability 20, Automation 20, and Risk 10. Total 0–100. This is the AI Asset Score.</p>
 
     <table class="grade-table">
       <tr><th>Criterion</th><th>Max Score</th><th>What it measures</th></tr>
-      <tr><td><strong>Utility</strong></td><td>15</td><td>Does it solve a real, repeated problem?</td></tr>
-      <tr><td><strong>Monetization</strong></td><td>15</td><td>Is there real revenue right now?</td></tr>
-      <tr><td><strong>Transferability</strong></td><td>15</td><td>Can someone else run it without you?</td></tr>
-      <tr><td><strong>Operator Fit</strong></td><td>15</td><td>Is there a type of operator who could scale this?</td></tr>
-      <tr><td><strong>Demand</strong></td><td>15</td><td>Do people actively look for this?</td></tr>
-      <tr><td><strong>Proof</strong></td><td>15</td><td>Evidence the model holds: retention, reviews, referrals</td></tr>
-      <tr><td><strong>Risk</strong></td><td>–10</td><td>Dependencies, concentration, fragility points</td></tr>
+      <tr><td><strong>Traction</strong></td><td>25</td><td>Evidence of real demand, usage, and retention.</td></tr>
+      <tr><td><strong>Revenue</strong></td><td>25</td><td>Quality, durability, and proof of current revenue.</td></tr>
+      <tr><td><strong>Transferability</strong></td><td>20</td><td>Can a new owner take over without relying on the founder?</td></tr>
+      <tr><td><strong>Automation</strong></td><td>20</td><td>How much of the operation runs reliably without manual intervention?</td></tr>
+      <tr><td><strong>Risk</strong></td><td>10</td><td>Platform, legal, technical, and concentration risk.</td></tr>
     </table>
 
     <table class="grade-table">
-      <tr><th>Grade</th><th>Score</th><th>Meaning</th></tr>
-      <tr><td><span class="grade-a">Grade A</span></td><td>85–100</td><td>Operator-ready. Can list immediately.</td></tr>
-      <tr><td><span class="grade-b">Grade B</span></td><td>70–84</td><td>Needs minor packaging. 2-4 weeks of prep.</td></tr>
-      <tr><td><span class="grade-c">Grade C</span></td><td>50–69</td><td>Has potential. 1-3 months of work before listing.</td></tr>
-      <tr><td><span style="color:var(--red);font-weight:700">Below 50</span></td><td>&lt;50</td><td>Not market-ready. Focus on the product first.</td></tr>
+      <tr><th>Band</th><th>Score</th><th>Meaning</th></tr>
+      <tr><td><span class="grade-a">Approved Candidate</span></td><td>85–100</td><td>Strong evidence across all five dimensions.</td></tr>
+      <tr><td><span class="grade-b">Asset Candidate</span></td><td>70–84</td><td>Credible asset with identifiable packaging gaps.</td></tr>
+      <tr><td><span class="grade-c">Potential Asset</span></td><td>50–69</td><td>Working project that is not yet transfer-ready.</td></tr>
+      <tr><td><span style="color:var(--red);font-weight:700">Demo or Toy</span></td><td>&lt;50</td><td>Prove demand and operability before listing.</td></tr>
     </table>
 
     <h3>The fast self-check (do this now)</h3>
@@ -466,7 +466,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
 
     <div class="takeaway">
       <div class="t-label">Module takeaway</div>
-      <p>4 weeks of documentation work can add 30-60% to your sale price by moving you from Grade B to Grade A on the AI Asset Score. The ROI is massive. Don't rush to list — package first, list when it's actually ready. Buyers pay for certainty.</p>
+      <p>Documentation can materially improve transferability and reduce buyer uncertainty, but it does not guarantee a higher price or a sale. Package the asset before listing and let evidence support the valuation.</p>
     </div>
   </section>
 
@@ -601,6 +601,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>
-

@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-PUB = Path(r"C:\Users\62434\pirate_ai_assets\public")
+PUB = Path(__file__).resolve().parent / "public"
 
 HREF_RE = re.compile(r'href="(/[^"#?]*)', re.IGNORECASE)
 BAD_CTA_RE = re.compile(r'href="(?:https://aiasset\.market)?/#preview-grade"[^>]*>(Submit Similar|Browse Assets|Apply as Operator|Submit Your Asset)', re.IGNORECASE)

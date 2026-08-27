@@ -200,8 +200,9 @@ footer a:hover{color:#fff}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -214,6 +215,7 @@ footer a:hover{color:#fff}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -398,7 +400,7 @@ footer a:hover{color:#fff}
 <div class="container">
   <div class="cta-box">
     <h2>Find out what your AI SaaS is worth</h2>
-    <p>AI Asset Score — 7-dimension scorecard + price range estimate. Drop #2 opens July 28.</p>
+    <p>AI Asset Score — 5-dimension scorecard with an indicative price range.</p>
     <div class="cta-btns">
       <a href="https://aiasset.market/#preview-grade" class="btn btn-primary btn-lg">Get AI Asset Score →</a>
       <a href="https://aiasset.market/ai-saas-starter-for-sale/" class="btn btn-outline btn-lg">Buyer Perspective →</a>
@@ -468,6 +470,7 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>
 

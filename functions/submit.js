@@ -7,7 +7,7 @@ const ALLOWED_ORIGINS = [
 
 // Allow CF Pages preview deployments (each deploy gets a unique hash subdomain)
 function isAllowedOrigin(origin) {
-  if (isAllowedOrigin(origin)) return true;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
   if (/^https:\/\/[a-f0-9]+\.aiasset-market\.pages\.dev$/.test(origin)) return true;
   return false;
 }
@@ -18,6 +18,7 @@ const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 
 const MAX_FIELD_LEN = 2000;
+const MAX_BODY_BYTES = 200_000;
 
 // 2.6: strict sheet allowlist — reject unknown sheet values
 const ALLOWED_SHEETS = ['Assets', 'Bounties', 'Watchlist'];
@@ -165,7 +166,15 @@ export async function onRequest(context) {
 
   let payload;
   try {
-    payload = await request.json();
+    const contentLength = Number(request.headers.get('content-length') || 0);
+    if (contentLength > MAX_BODY_BYTES) {
+      return json({ error: 'Request too large' }, 413, origin);
+    }
+    const rawBody = await request.text();
+    if (new TextEncoder().encode(rawBody).byteLength > MAX_BODY_BYTES) {
+      return json({ error: 'Request too large' }, 413, origin);
+    }
+    payload = JSON.parse(rawBody);
   } catch {
     return json({ error: 'Invalid request' }, 400, origin);
   }
@@ -176,13 +185,6 @@ export async function onRequest(context) {
 
   if (payload.hp_website) {
     return json({ ok: true }, 200, origin);
-  }
-
-  if (payload._form_loaded) {
-    const loaded = new Date(payload._form_loaded).getTime();
-    if (!isNaN(loaded) && Date.now() - loaded < 3000) {
-      return json({ ok: true }, 200, origin);
-    }
   }
 
   for (const [k, v] of Object.entries(payload)) {

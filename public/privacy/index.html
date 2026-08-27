@@ -176,9 +176,9 @@ a:hover{text-decoration-color:var(--brand)}
 <section class="legal">
   <div class="sec-num">§ 06 · ЛОКАЛИЗАЦИЯ (ст. 18 ч. 5 152-ФЗ)</div>
   <h2>Где хранятся первичные базы данных</h2>
-  <p>Оператор обеспечивает запись, систематизацию, накопление, хранение, уточнение и извлечение персональных данных граждан Российской Федерации в базах данных, находящихся на территории Российской Федерации, в соответствии со ст. 18 ч. 5 152-ФЗ.</p>
+  <p>Конфигурация локализации персональных данных граждан Российской Федерации требует отдельного подтверждения владельцем проекта до начала соответствующей обработки.</p>
   <div class="callout">
-    <p><strong>Текущий статус (14.08.2026):</strong> первичное хранилище лидов мигрируется с Google Sheets (США) на российский облачный хостинг (Yandex Cloud / VK Cloud). До завершения миграции обработка на территории РФ обеспечивается локальным серверным экземпляром; данные из зарубежных сервисов дублируются в РФ-хранилище в течение 24 часов с момента получения.</p>
+    <p><strong>Текущий технический статус:</strong> формы сайта передают данные в Google Sheets. Утверждения о российском первичном хранилище и дублировании удалены до фактической настройки и проверки такой инфраструктуры.</p>
   </div>
 </section>
 
@@ -190,12 +190,12 @@ a:hover{text-decoration-color:var(--brand)}
     <thead><tr><th>Обработчик</th><th>Страна</th><th>Роль</th></tr></thead>
     <tbody>
       <tr><td>Cloudflare, Inc.</td><td>США</td><td>CDN, хостинг сайта, защита от DDoS</td></tr>
-      <tr><td>Google LLC</td><td>США</td><td>Резервное хранилище лидов (Google Sheets — до миграции на РФ-хостинг); доставка шрифтов (Google Fonts); CDN превью YouTube-видео (i.ytimg.com — загружается при открытии страницы); YouTube-плеер (при нажатии «Смотреть»)</td></tr>
-      <tr><td>OpenRouter, Inc.</td><td>США</td><td>LLM-обработка URL актива, описания, категории, метрик и до 4 КБ содержимого страницы при вызове AI Asset Score — не сохраняется после возврата ответа</td></tr>
+      <tr><td>Google LLC</td><td>США</td><td>Хранилище данных форм в Google Sheets; доставка шрифтов; CDN превью YouTube-видео; YouTube-плеер при нажатии «Смотреть»</td></tr>
+      <tr><td>OpenRouter, Inc.</td><td>США</td><td>LLM-обработка URL актива, описания, категории, метрик и до 4 КБ содержимого страницы при вызове AI Asset Score. Не отправляйте конфиденциальные данные; параметры хранения требуют отдельной проверки в настройках провайдера.</td></tr>
     </tbody>
   </table>
   <p>США не включены в перечень стран, обеспечивающих адекватную защиту прав субъектов ПД (Приказ МИД РФ от 15.11.2021 № 27321). Передача осуществляется на основании отдельного согласия субъекта по форме, размещённой на странице <a href="/consent/">aiasset.market/consent/</a>.</p>
-  <p>Уведомление Роскомнадзора о намерении осуществлять трансграничную передачу подано в соответствии со ст. 12 152-ФЗ.</p>
+  <p><strong>Статус уведомления Роскомнадзора не подтверждён.</strong> Реквизиты нельзя считать поданными или действующими до их публикации владельцем проекта.</p>
 </section>
 
 <section class="legal">
@@ -271,13 +271,13 @@ a:hover{text-decoration-color:var(--brand)}
   <p>To review your submission, grade your asset, contact you about it, deliver Weekly Drop if you subscribed, publish aggregated anonymized stats. No profiling, no automated decisions, no behavioral advertising.</p>
 
   <h3>Cross-border transfers</h3>
-  <p>Your data is transferred to processors in the United States: Cloudflare (CDN + hosting + analytics), Google (Fonts + Sheets backup during migration to RU cloud + YouTube thumbnail CDN on page load + YouTube embed on play), OpenRouter (AI Asset Score — receives your URL, description, metrics, and up to 4KB of page content; not stored after response). See <a href="/consent/">aiasset.market/consent/</a> for the separate consent form covering cross-border transfers.</p>
+  <p>Your data may be transferred to processors in the United States: Cloudflare (CDN, hosting, analytics), Google (Fonts, Google Sheets form storage, YouTube thumbnail and player), and OpenRouter (AI Asset Score processing of your URL, description, metrics, and up to 4KB of page content). Do not submit confidential information; provider-retention settings require separate verification. See <a href="/consent/">aiasset.market/consent/</a> for cross-border transfer information.</p>
 
   <h3>Your rights</h3>
   <p>You may request access to, correction of, or deletion of your data at any time. Write to <strong>hi@aiasset.market</strong>. We respond within 10 business days. If you're an EU resident, you have equivalent rights under GDPR (access, rectification, erasure, portability, restriction, objection).</p>
 
   <h3>Retention</h3>
-  <p>Form submissions: 3 years or until you revoke consent. Weekly Drop email: until you unsubscribe (one-click). AI Asset Score data: not stored at all. IP for rate-limit: 24 hours. Server logs: max 30 days.</p>
+  <p>Form submissions: up to 3 years or until you revoke consent. Mailing-list contact: until you unsubscribe. AI Asset Score request data is processed through OpenRouter; provider retention must be verified before claiming zero retention. IP rate-limit records: up to 24 hours. Hosting logs depend on the configured Cloudflare retention settings.</p>
 
   <h3>How to revoke consent</h3>
   <p>Email <strong>hi@aiasset.market</strong> with subject «Revoke consent». We stop processing on receipt and delete your data within 30 days.</p>

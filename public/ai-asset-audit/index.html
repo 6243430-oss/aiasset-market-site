@@ -164,8 +164,9 @@ td:first-child{color:var(--text);font-weight:600;}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -178,6 +179,7 @@ td:first-child{color:var(--text);font-weight:600;}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -187,7 +189,7 @@ td:first-child{color:var(--text);font-weight:600;}
 
     <div style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.4);border-radius:12px;padding:16px 24px;margin-bottom:32px;text-align:center;">
       <span style="font-size:13px;font-weight:700;color:#a78bfa;">⚓ Weekly Drop — active now</span>
-      <span style="font-size:13px;color:var(--muted);margin-left:8px;">Top-scoring tools get introduced to active buyers. Free grade for every submission.</span>
+      <span style="font-size:13px;color:var(--muted);margin-left:8px;">Automated scoring is available; buyer introductions are not guaranteed.</span>
       <a href="/community/" style="margin-left:12px;font-size:13px;font-weight:600;color:#a78bfa;text-decoration:none;">See details →</a>
     </div>
 
@@ -200,26 +202,24 @@ td:first-child{color:var(--text);font-weight:600;}
 
     <!-- What is a AI Asset Score -->
     <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:40px;">
-      <h2 style="font-size:20px;font-weight:800;margin-bottom:16px;">What is a AI Asset Score?</h2>
-      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">A AI Asset Score is a structured 7-dimension audit of an AI project. It scores 0–100 and answers one question: could someone other than the founder operate this, grow it, or buy it?</p>
-      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">Most AI projects fail on transferability — the founder is essential to the system working. A AI Asset Score makes that visible immediately, and tells you what it would take to fix it.</p>
-      <p style="font-size:15px;color:var(--text);line-height:1.8;font-weight:600;">Grade A (75+) projects get introduced to active buyers and operators. Grade B (60–74) projects go on the watchlist and improve with specific feedback.</p>
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:16px;">What is an AI Asset Score?</h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">An AI Asset Score is a structured 5-dimension audit of an AI project. It scores 0–100 and answers one question: could someone other than the founder operate this, grow it, or buy it?</p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">Many AI projects fail on transferability — the founder is essential to the system working. An AI Asset Score makes that visible and shows what it would take to improve.</p>
+      <p style="font-size:15px;color:var(--text);line-height:1.8;font-weight:600;">The result is an assessment, not a promise of a listing, buyer introduction, valuation, or sale.</p>
     </div>
 
     <!-- 5 dimensions table -->
     <div style="margin-bottom:40px;">
-      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">The 7 AI Asset Score criteria</h2>
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">The 5 AI Asset Score dimensions</h2>
       <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
         <table>
           <thead><tr><th>Criterion</th><th>Weight</th><th>What it checks</th></tr></thead>
           <tbody>
-            <tr><td>Works without the founder</td><td>×14</td><td>Can someone set it up and run it from documentation alone, without a call?</td></tr>
-            <tr><td>Documented customer type</td><td>×14</td><td>Is there a clear, specific customer profile — not "anyone who needs automation"?</td></tr>
-            <tr><td>Revenue or usage proof</td><td>×14</td><td>90+ days of consistent usage data, revenue logs, or Stripe exports — not a best-day screenshot</td></tr>
-            <tr><td>Simple operator onboarding</td><td>×14</td><td>One-page setup doc, .env file with explanations, no tribal knowledge required</td></tr>
-            <tr><td>Clear value metric</td><td>×14</td><td>Does the user know in one sentence what they get and why they pay?</td></tr>
-            <tr><td>Transferable IP</td><td>×14</td><td>Prompts, workflows, integrations — owned, documented, not locked to a personal account</td></tr>
-            <tr><td>Market evidence</td><td>×16</td><td>Comparable sales, buyer interest signals, category validation — not just "AI is big"</td></tr>
+            <tr><td>Traction</td><td>25</td><td>Evidence of real demand, adoption, retention, and repeat use.</td></tr>
+            <tr><td>Revenue</td><td>25</td><td>Quality, durability, and verifiability of current revenue.</td></tr>
+            <tr><td>Transferability</td><td>20</td><td>Whether a new owner can take over the accounts, documentation, IP, and operations.</td></tr>
+            <tr><td>Automation</td><td>20</td><td>How much of the operation runs reliably without the founder.</td></tr>
+            <tr><td>Risk</td><td>10</td><td>Platform, legal, technical, customer-concentration, and dependency risk.</td></tr>
           </tbody>
         </table>
       </div>
@@ -230,14 +230,13 @@ td:first-child{color:var(--text);font-weight:600;}
       <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">Grade scale and what each band means</h2>
       <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
         <table>
-          <thead><tr><th>Score</th><th>Grade</th><th>Status</th><th>What happens next</th></tr></thead>
+          <thead><tr><th>Score</th><th>Band</th><th>Meaning</th><th>Typical next step</th></tr></thead>
           <tbody>
-            <tr><td>85–100</td><td><span class="grade-badge grade-a">A+</span></td><td>Approved Candidate</td><td>Priority buyer intros, featured in Drop, price guidance</td></tr>
-            <tr><td>75–84</td><td><span class="grade-badge grade-a">A</span></td><td>Asset Grade</td><td>Buyer intros, added to Drop batch, watchlist</td></tr>
-            <tr><td>60–74</td><td><span class="grade-badge grade-b">B</span></td><td>Potential Asset</td><td>Watchlist, improvement roadmap, re-grade in 30 days</td></tr>
-            <tr><td>45–59</td><td><span class="grade-badge grade-c">C</span></td><td>Demo</td><td>Specific notes on 2–3 highest-impact fixes</td></tr>
-            <tr><td>30–44</td><td><span class="grade-badge grade-d">D</span></td><td>Early Stage</td><td>Honest feedback — what's missing and what it would take</td></tr>
-            <tr><td>0–29</td><td><span class="grade-badge grade-f">F</span></td><td>Toy / Concept</td><td>Not ready — here's why and what category it might fit</td></tr>
+            <tr><td>85–100</td><td><span class="grade-badge grade-a">Approved Candidate</span></td><td>Strong evidence across all five dimensions.</td><td>Verify evidence and prepare a complete transfer package.</td></tr>
+            <tr><td>70–84</td><td><span class="grade-badge grade-b">Asset Candidate</span></td><td>Credible asset with identifiable gaps.</td><td>Close the highest-risk documentation or proof gaps.</td></tr>
+            <tr><td>50–69</td><td><span class="grade-badge grade-c">Potential Asset</span></td><td>Working project that is not yet transfer-ready.</td><td>Build traction, proof, automation, or handoff documentation.</td></tr>
+            <tr><td>30–49</td><td><span class="grade-badge grade-d">Demo</span></td><td>Useful demonstration without sufficient asset evidence.</td><td>Prove repeat demand and make the operation transferable.</td></tr>
+            <tr><td>0–29</td><td><span class="grade-badge grade-f">Toy</span></td><td>Concept or experiment rather than an operating asset.</td><td>Validate the problem and build real usage first.</td></tr>
           </tbody>
         </table>
       </div>
@@ -299,7 +298,7 @@ td:first-child{color:var(--text);font-weight:600;}
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
           <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">2</div>
-          <div><div style="font-weight:700;margin-bottom:4px;">We run the AI Asset Score (24–48hrs)</div><div style="font-size:14px;color:var(--muted);">Score across all 7 dimensions. We check docs, setup complexity, customer type, usage proof, and market context.</div></div>
+          <div><div style="font-weight:700;margin-bottom:4px;">We run the AI Asset Score (24–48hrs)</div><div style="font-size:14px;color:var(--muted);">Score across all 5 dimensions. We check traction, revenue, transferability, automation, and risk.</div></div>
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
           <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">3</div>
@@ -307,7 +306,7 @@ td:first-child{color:var(--text);font-weight:600;}
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
           <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">4</div>
-          <div><div style="font-weight:700;margin-bottom:4px;">A grades go to buyer/operator intros</div><div style="font-size:14px;color:var(--muted);">If you score 75+, we match you with active buyers or operators in the current Drop window.</div></div>
+          <div><div style="font-weight:700;margin-bottom:4px;">Strong candidates can request a manual review</div><div style="font-size:14px;color:var(--muted);">A high automated score does not guarantee approval; supporting evidence is checked separately.</div></div>
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
           <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">5</div>
@@ -326,7 +325,7 @@ td:first-child{color:var(--text);font-weight:600;}
         </div>
         <div class="faq-item">
           <h3>How long does a grade take?</h3>
-          <p>Typically 24–48 hours. During an active Drop window (when weekly submissions are open), we prioritize grades so you can be included if you score 75+.</p>
+          <p>The automated score is returned after the analysis completes. Manual review timing depends on the evidence supplied and current capacity.</p>
         </div>
         <div class="faq-item">
           <h3>Do I have to be planning to sell to get graded?</h3>
@@ -399,5 +398,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>

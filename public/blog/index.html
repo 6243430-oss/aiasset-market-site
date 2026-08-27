@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — AIAsset.Market | AI Asset Buying, Selling & Grading</title>
-<meta name="description" content="Guides on selling AI tools, valuing AI projects, and understanding what makes an AI project a real asset. From the team that graded 47 AI projects.">
+<meta name="description" content="Guides on selling AI tools, valuing AI projects, and understanding what makes an AI project a real asset. Built around the AI Asset Score methodology.">
 <link rel="canonical" href="https://aiasset.market/blog/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog — AIAsset.Market">
@@ -210,8 +210,9 @@ nav ul a:hover,nav ul a.active{color:#fff}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -224,6 +225,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -232,7 +234,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
   <div class="container">
     <div class="label">AIAsset.Market Blog</div>
     <h1>AI projects are everywhere.<br>AI assets are rare.</h1>
-    <p>Guides on valuing, selling, and operating AI-native assets. Written by the team that graded 47 AI projects — and approved only 3.</p>
+    <p>Guides on valuing, selling, and operating AI-native assets. Practical guides built around one consistent AI Asset Score methodology.</p>
   </div>
 </section>
 
@@ -242,7 +244,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
     <div class="blog-card">
       <div class="blog-card-tag">Fundamentals</div>
       <h2><a href="/blog/ai-toy-vs-asset/">AI Toy vs AI Asset: Why 9 Out of 10 AI Projects Never Sell</a></h2>
-      <p>We reviewed 47 AI projects in Drop #2. Three qualified as assets. Here's what separated them — and what killed the other 44.</p>
+      <p>What separates a transferable AI asset from a demo — and which gaps matter most.</p>
       <div class="blog-card-meta">
         <span class="blog-card-date">Jul 29, 2026</span>
         <a href="/blog/ai-toy-vs-asset/" class="blog-card-read">Read →</a>
@@ -314,7 +316,7 @@ nav ul a:hover,nav ul a.active{color:#fff}
   <div class="cta-strip">
     <div>
       <h3>Is your AI project an asset or a toy?</h3>
-      <p>Get a free AI Asset Score (0–100 score) across 5 dimensions. We've reviewed 47 projects. Spots are limited.</p>
+      <p>Get an instant AI Asset Score across 5 dimensions. Automated results are indicative and do not guarantee manual review.</p>
     </div>
     <a href="/#preview-grade" class="btn btn-primary">Get a AI Asset Score →</a>
   </div>
@@ -382,6 +384,7 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>
 

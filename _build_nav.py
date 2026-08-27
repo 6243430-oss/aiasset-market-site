@@ -4,33 +4,17 @@ _build_nav.py — inject canonical nav v2 + footer v2 into all production pages.
 Run:  python _build_nav.py
 Safe to re-run: skips pages that already have nav-pill.
 
-LANGUAGE ARCHITECTURE (decided 2026-08-22)
-─────────────────────────────────────────
-Production language: English only.
-No /ru/ routes, no JS language toggle, no hreflang — until a full
-original RU content set exists and there is a real SEO reason.
-
-Russian audience → Telegram @Pirate_AI until then.
-
-FUTURE /ru/ ROUTE READINESS
-────────────────────────────
-When adding /ru/, this script should be extended to:
-  1. Read a TRANSLATIONS dict (slug → {en: str, ru: str}) for nav labels.
-  2. Write /ru/<slug>/index.html using a RU nav variant (NAV_HTML_RU).
-  3. Add hreflang to both EN and RU pages pointing at each other.
-  4. Add lang="ru" to the RU html element.
-
-The nav/footer HTML is already separated from page content — each page
-only needs its <header>/<footer> replaced. Adding /ru/ does NOT require
-rewriting page templates; only this script needs a new RU pass.
-
-DO NOT show a language switcher in the nav until /ru/ routes exist.
+LANGUAGE ARCHITECTURE (updated 2026-08-27)
+───────────────────────────────────────
+The full English site remains canonical. Localized overview pages live at
+/ru/, /es/ and /zh/ and are linked by the language switcher. They do not
+pretend that every deep page has already been translated.
 """
 
 import re
 from pathlib import Path
 
-BASE = Path(r"C:\Users\62434\pirate_ai_assets\public")
+BASE = Path(__file__).resolve().parent / "public"
 
 # Pages that have their own special nav (legal docs with nav-back)
 SKIP_DIRS = {"privacy", "consent", "terms"}
@@ -45,6 +29,9 @@ NAV_CSS = """
 .nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
 .nav-links a{font-size:14px;color:#6E758C;padding:8px 14px;border-radius:100px;transition:all .18s;text-decoration:none}
 .nav-links a:hover{color:#1D2340;background:#F7F8FC}
+.lang-switcher{display:flex;align-items:center;gap:2px;margin-right:10px}
+.lang-switcher a{font-size:11px;font-weight:700;color:#6E758C;padding:6px 7px;border-radius:100px;text-decoration:none}
+.lang-switcher a:hover,.lang-switcher a[aria-current="page"]{background:#EEF1FF;color:#4058D6}
 .nav-cta-link{background:#5B76FF;color:#fff!important;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
 .nav-cta-link:hover{background:#4A65EE;box-shadow:0 4px 16px rgba(91,118,255,.4)}
 .mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#1D2340;padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:inherit}
@@ -54,7 +41,7 @@ NAV_CSS = """
 .mob-nav a{display:block;padding:12px 16px;font-size:15px;color:#1D2340;border-radius:10px;text-decoration:none}
 .mob-nav a:hover{background:#F7F8FC}
 .mob-nav .nav-cta-link{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
-@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link{display:none}.mob-toggle{display:flex}}
+@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link,.nav-pill>.lang-switcher{display:none}.mob-toggle{display:flex}.mob-nav .lang-switcher{display:flex;margin:8px 8px 0}.mob-nav .lang-switcher a{display:inline-block;padding:8px 10px}}
 /* ─── Canonical Footer v2 ─── */
 .site-footer-v2{background:#1D2340;border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
 .site-footer-v2 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -79,8 +66,11 @@ NAV_HTML = """\
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language">
+      <a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a>
+    </div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -93,9 +83,12 @@ NAV_HTML = """\
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>"""
+
+NAV_SCRIPT_TAG = '<script src="/site-nav.js" defer></script>'
 
 FOOTER_HTML = """\
 <footer class="site-footer-v2">
@@ -126,8 +119,27 @@ FOOTER_RE   = re.compile(r'<footer[\s\S]*?</footer>', re.DOTALL)
 def process(fpath: Path) -> str:
     content = fpath.read_text(encoding="utf-8")
 
-    # Already updated
+    # Already updated: still repair the shared mobile-nav script reference.
     if "nav-pill" in content:
+        changed_existing = False
+        old_button = '<button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">'
+        new_button = '<button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">'
+        if old_button in content:
+            content = content.replace(old_button, new_button, 1)
+            changed_existing = True
+        if 'class="lang-switcher"' not in content:
+            desktop_switcher = '    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>\n'
+            content = content.replace('    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>', desktop_switcher + '    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>', 1)
+            mobile_contact = '    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>\n  </nav>'
+            mobile_switcher = '    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>\n'
+            content = content.replace(mobile_contact, mobile_switcher + mobile_contact, 1)
+            changed_existing = True
+        if NAV_SCRIPT_TAG not in content:
+            content = content.replace("</body>", NAV_SCRIPT_TAG + "\n</body>", 1)
+            changed_existing = True
+        if changed_existing:
+            fpath.write_text(content, encoding="utf-8")
+            return "repaired v2"
         return "skip (already v2)"
 
     # Old site-nav not present — nothing to replace
@@ -157,6 +169,8 @@ def process(fpath: Path) -> str:
         changed = True
 
     if changed:
+        if NAV_SCRIPT_TAG not in content:
+            content = content.replace("</body>", NAV_SCRIPT_TAG + "\n</body>", 1)
         fpath.write_text(content, encoding="utf-8")
         return "updated"
     return "no changes"

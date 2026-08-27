@@ -24,7 +24,7 @@
       "name": "Can I sell a pre-revenue AI tool?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Pre-revenue tools are graded and listed. They score lower on the Revenue Proof criterion but can still reach Grade B and attract operators who want revenue share rather than a flat acquisition. A tool with 200 active free users and a clear monetization path is sellable."
+        "text": "Yes. Pre-revenue tools can be evaluated. They score lower on Revenue, while verified traction, transferability, automation and controlled risk can still make them credible candidates. Listing and buyer interest are not guaranteed."
       }
     },
     {
@@ -48,7 +48,7 @@
       "name": "How long does it take to sell an AI tool?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Grade A tools in Weekly Drops typically receive buyer introductions within 7 days of the Drop closing. Deal timeline after introduction: 2–6 weeks depending on due diligence. The fastest deals have closed in 9 days."
+        "text": "Timing depends on evidence quality, buyer interest, due diligence, and transfer complexity. An AI Asset Score does not guarantee an introduction or sale."
       }
     },
     {
@@ -272,8 +272,9 @@ footer a:hover{color:var(--text)}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -286,6 +287,7 @@ footer a:hover{color:var(--text)}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -336,22 +338,22 @@ footer a:hover{color:var(--text)}
       <p class="sub">5 dimensions. 0–100 score. The grade tells you your multiple before you go to market.</p>
       <div class="grade-showcase">
         <div class="grade-card">
-          <div class="grade-label">A Grade</div>
-          <div class="grade-score a">75+</div>
-          <div class="grade-desc">Active buyer matching. Typical multiple: 12–20× MRR. Ready to close.</div>
+          <div class="grade-label">Approved Candidate</div>
+          <div class="grade-score a">85–100</div>
+          <div class="grade-desc">Strong evidence across all five dimensions. Evidence still requires verification.</div>
         </div>
         <div class="grade-card">
-          <div class="grade-label">B Grade</div>
-          <div class="grade-score b">60–74</div>
-          <div class="grade-desc">Operator matching available. Typical multiple: 6–12× MRR. Small gaps to address.</div>
+          <div class="grade-label">Asset Candidate</div>
+          <div class="grade-score b">70–84</div>
+          <div class="grade-desc">Credible asset with identifiable documentation, proof, or risk gaps.</div>
         </div>
         <div class="grade-card">
-          <div class="grade-label">C Grade</div>
-          <div class="grade-score c">Below 60</div>
-          <div class="grade-desc">Not acquisition-ready yet. Grade includes specific fixes to reach B or A in 2–4 weeks.</div>
+          <div class="grade-label">Potential Asset</div>
+          <div class="grade-score c">50–69</div>
+          <div class="grade-desc">Working project that is not yet ready for a reliable transfer.</div>
         </div>
       </div>
-      <p style="font-size:14px;color:var(--muted);text-align:center">Drop #1 range: 58–83/100. 3 tools at A grade. Buyer intros underway.</p>
+      <p style="font-size:14px;color:var(--muted);text-align:center">A score is an assessment, not a guarantee of valuation, buyer interest, or sale.</p>
     </div>
   </section>
 
@@ -370,14 +372,14 @@ footer a:hover{color:var(--text)}
         <div class="step-n">02</div>
         <div class="step-body">
           <h4>Close the grade gaps (if any)</h4>
-          <p>C-grade tools need specific fixes before going to market — usually documentation, credential separation, or one proof of value. Most C→B upgrades take 1–2 weeks. B→A can often happen in days. We tell you exactly what to fix.</p>
+          <p>Projects below Asset Candidate usually need better evidence, documentation, credential separation, or a clearer operating history. The report identifies the highest-impact gaps.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n">03</div>
         <div class="step-body">
-          <h4>Get featured in the Weekly Drop</h4>
-          <p>A and B grade tools get featured to active buyers in the next Weekly Drop. Drops happen weekly. Each drop has 10 slots. The Drop summary goes to buyers who have pre-registered acquisition briefs matching your tool type.</p>
+          <h4>Prepare the listing package</h4>
+          <p>Once the evidence and handoff are credible, prepare the operating documents, access map, financial proof, risks, and transfer terms a buyer would need to review.</p>
         </div>
       </div>
       <div class="step">
@@ -502,7 +504,7 @@ footer a:hover{color:var(--text)}
         </div>
         <div class="faq-item">
           <h4>How long does it take to sell?</h4>
-          <p>A-grade tools in Weekly Drops typically get buyer introductions within 7 days of the Drop closing. Deal timeline after intro: 2–6 weeks depending on due diligence. The fastest deals we've seen closed in 9 days.</p>
+          <p>Timing depends on evidence quality, buyer interest, due diligence, and transfer complexity. An AI Asset Score does not guarantee an introduction or sale.</p>
         </div>
         <div class="faq-item">
           <h4>Can I sell part of it? Or just find an operator?</h4>
@@ -589,6 +591,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>
-

@@ -141,8 +141,9 @@ a{color:inherit;text-decoration:none}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -155,6 +156,7 @@ a{color:inherit;text-decoration:none}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -163,7 +165,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="hub-label">Deals</div>
     <h1>Where AI assets get bought, sold, and picked up.</h1>
-    <p>Every week we grade new AI projects, list the ones that qualify, and match them with buyers, operators, or investors. Start here to browse listings, see what buyers want, or list your own.</p>
+    <p>We are building a process to evaluate AI projects and connect credible opportunities with buyers or operators. Start here to browse listings, see what buyers want, or list your own.</p>
   </div>
 </section>
 
@@ -190,7 +192,7 @@ a{color:inherit;text-decoration:none}
       <a href="/buyers-looking-for/" class="card">
         <span class="card-tag">Match</span>
         <h3>Buyers Looking For</h3>
-        <p>What active buyers are searching for right now. If you have an asset that matches, skip the listing queue — we'll intro you directly.</p>
+        <p>Example acquisition criteria and submitted buyer briefs. Availability and introductions are verified case by case.</p>
         <span class="card-link">See buy requests</span>
       </a>
 
@@ -292,5 +294,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>

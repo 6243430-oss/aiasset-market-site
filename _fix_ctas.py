@@ -14,7 +14,7 @@ CTAs that remain on /#preview-grade:
 import re
 from pathlib import Path
 
-BASE = Path(r"C:\Users\62434\pirate_ai_assets\public")
+BASE = Path(__file__).resolve().parent / "public"
 
 ANCHOR_RE = re.compile(
     r'(<a\s[^>]*href="(?:https://aiasset\.market)?/#preview-grade"[^>]*>)([\s\S]*?)(</a>)',

@@ -12,6 +12,11 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://aiasset.market/">
+<link rel="alternate" hreflang="en" href="https://aiasset.market/">
+<link rel="alternate" hreflang="ru" href="https://aiasset.market/ru/">
+<link rel="alternate" hreflang="es" href="https://aiasset.market/es/">
+<link rel="alternate" hreflang="zh-Hans" href="https://aiasset.market/zh/">
+<link rel="alternate" hreflang="x-default" href="https://aiasset.market/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -54,6 +59,9 @@ body{background:var(--bg);color:var(--navy)}
 .nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
 .nav-links a{font-size:14px;color:var(--secondary);padding:8px 14px;border-radius:100px;transition:all .18s}
 .nav-links a:hover{color:var(--navy);background:var(--bg)}
+.lang-switcher{display:flex;align-items:center;gap:2px;margin-right:10px}
+.lang-switcher a{font-size:11px;font-weight:700;color:var(--secondary);padding:6px 7px;border-radius:100px}
+.lang-switcher a:hover,.lang-switcher a[aria-current="page"]{background:#EEF1FF;color:#4058D6}
 .nav-cta{background:var(--accent);color:#fff;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap}
 .nav-cta:hover{background:var(--accent-h);box-shadow:0 4px 16px rgba(91,118,255,.4)}
 .mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--navy);padding:8px 14px;border-radius:100px}
@@ -63,6 +71,8 @@ body{background:var(--bg);color:var(--navy)}
 .mob-nav a{display:block;padding:12px 16px;font-size:15px;color:var(--navy);border-radius:10px}
 .mob-nav a:hover{background:var(--bg)}
 .mob-nav .nav-cta{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+.mob-nav .lang-switcher{display:flex;margin:8px 8px 0}
+.mob-nav .lang-switcher a{display:inline-block;padding:8px 10px}
 /* Hero */
 .s-hero{padding:72px 0 96px}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -158,7 +168,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
 @media(max-width:960px){
   .container{padding:0 24px}
   .site-header{padding:14px 24px}
-  .nav-links,.nav-cta{display:none}
+  .nav-links,.nav-pill>.nav-cta,.nav-pill>.lang-switcher{display:none}
   .mob-toggle{display:flex}
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .s-hero{padding:48px 0 64px}
@@ -247,6 +257,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta" href="mailto:hi@aiasset.market">Contact</a>
     <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -261,6 +272,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -421,8 +433,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
           </div>
         </div>
         <!-- CF Turnstile: replace data-sitekey with your key from CF Dashboard → Turnstile -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEcgS-PvWORBBpaP" data-theme="light" style="margin:12px 0"></div>
-        <button class="btn btn-primary" id="pg-submit-btn">Get My AI Asset Score →</button>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEcgS-PvWORBBpaP" data-theme="light" data-callback="pgTurnstileReady" data-expired-callback="pgTurnstileExpired" data-error-callback="pgTurnstileExpired" style="margin:12px 0"></div>
+        <button class="btn btn-primary" id="pg-submit-btn" disabled>Complete verification to continue</button>
         <p class="pg-note">10 requests per IP per 24 hours. No data stored.</p>
       </div>
       <div class="pg-loading hidden" id="pg-loading">
@@ -602,6 +614,17 @@ window.addEventListener('load',()=>{
     ['pg-url','pg-mrr','pg-users','pg-pitch','pg-type'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});
     countEl.textContent='0';
   };
+  let turnstileToken='';
+  window.pgTurnstileReady=function(token){
+    turnstileToken=token||'';
+    btn.disabled=!turnstileToken;
+    btn.textContent=turnstileToken?'Get My AI Asset Score →':'Complete verification to continue';
+  };
+  window.pgTurnstileExpired=function(){
+    turnstileToken='';
+    btn.disabled=true;
+    btn.textContent='Complete verification to continue';
+  };
   btn.addEventListener('click',async()=>{
     const url=document.getElementById('pg-url').value.trim();
     const asset_type=document.getElementById('pg-type').value;
@@ -609,12 +632,13 @@ window.addEventListener('load',()=>{
     const users=Number(document.getElementById('pg-users').value)||0;
     const pitch=pitchEl.value.trim();
     if(!url&&!pitch){alert('Please provide a project URL or pitch.');return}
+    if(!turnstileToken){alert('Please complete the human verification first.');return}
     formWrap.classList.add('hidden');loading.classList.remove('hidden');resultWrap.classList.add('hidden');
     try{
-      const res=await fetch('/api/preview-grade',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,asset_type,mrr,users,pitch,'cf-turnstile-response':document.querySelector('input[name="cf-turnstile-response"]')?.value||''})});
+      const res=await fetch('/api/preview-grade',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,asset_type,mrr,users,pitch,'cf-turnstile-response':turnstileToken})});
       const data=await res.json();
       loading.classList.add('hidden');
-      if(!res.ok||!data.ok){formWrap.classList.remove('hidden');alert(data.error||'Something went wrong. Please try again.');return}
+      if(!res.ok||!data.ok){formWrap.classList.remove('hidden');if(res.status===403){window.pgTurnstileExpired();if(window.turnstile)window.turnstile.reset()}alert(data.error||'Something went wrong. Please try again.');return}
       resultWrap.classList.remove('hidden');
       renderResult(data.grade);
     }catch(e){loading.classList.add('hidden');formWrap.classList.remove('hidden');alert('Network error. Please check your connection and try again.')}

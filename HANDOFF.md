@@ -1,5 +1,17 @@
 # AIAsset.Market — Developer Handoff
 
+## Codex update — 2026-08-27
+
+- Fixed the recursive CORS bug that made `/submit` fail, request-size handling, and form timing logic.
+- Fixed mobile navigation across generated pages with `public/site-nav.js`.
+- Standardized AI Asset Score v1.0 to five dimensions: Traction 25, Revenue 25, Transferability 20, Automation 20, Risk 10.
+- Removed unsupported traction, deal-flow, buyer, timing and paid-product claims.
+- Added honest localized overview routes `/ru/`, `/es/`, `/zh/`, language navigation and hreflang on the homepage. Deep content remains English.
+- Corrected privacy/consent disclosures; RKN filing and provider-retention status are no longer claimed as completed without confirmation.
+- Course and community pages now use waitlists and no longer imply that payment or paid access is live.
+- Static checks pass: JavaScript syntax, internal links, sitemap XML and `git diff --check`.
+- Still requires a Cloudflare preview deployment and one real submission per form to verify deployed secrets and the Google Sheets contract. No production deployment was performed.
+
 **Branch:** `claude-latest`  
 **Last deploy:** `https://bbba7c26.aiasset-market.pages.dev` (2026-08-27)  
 **Production:** https://aiasset.market  

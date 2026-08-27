@@ -194,8 +194,9 @@ footer a{color:var(--purple-l);text-decoration:none}
       <a href="/academy/">Academy</a>
       <a href="/methodology/">About</a>
     </div>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
-    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
       </svg>
@@ -208,6 +209,7 @@ footer a{color:var(--purple-l);text-decoration:none}
     <a href="/insights/">Research</a>
     <a href="/academy/">Academy</a>
     <a href="/methodology/">About</a>
+    <div class="lang-switcher" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/ru/">RU</a><a href="/es/">ES</a><a href="/zh/">中文</a></div>
     <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
   </nav>
 </header>
@@ -216,7 +218,7 @@ footer a{color:var(--purple-l);text-decoration:none}
   <div class="container">
     <div class="badge">Updated July 2026</div>
     <h1>What <span>Operators & Buyers</span><br>Are Looking For Right Now</h1>
-    <p>Active buyers in our network have capital ready and specific criteria. If your AI project matches any of these, submit it for a free review — we'll make the intro.</p>
+    <p>The briefs below describe acquisition criteria submitted to the project or used as illustrative examples. Any buyer status and introduction must be verified case by case.</p>
     <a href="/sell-ai-asset" class="btn btn-primary btn-lg">Submit Your Project for Review →</a>
   </div>
 </div>
@@ -230,16 +232,16 @@ footer a{color:var(--purple-l);text-decoration:none}
         <div class="stat-label">typical deal range</div>
       </div>
       <div class="stat">
-        <div class="stat-num">9 graded</div>
-        <div class="stat-label">tools scored this week</div>
+        <div class="stat-num">5 dimensions</div>
+        <div class="stat-label">in the published score</div>
       </div>
       <div class="stat">
-        <div class="stat-num">8–26x MRR</div>
-        <div class="stat-label">A-grade multiple range</div>
+        <div class="stat-num">0–100</div>
+        <div class="stat-label">score range</div>
       </div>
       <div class="stat">
-        <div class="stat-num">Jul 27</div>
-        <div class="stat-label">Weekly Drop #1 closes</div>
+        <div class="stat-num">Case by case</div>
+        <div class="stat-label">buyer verification</div>
       </div>
     </div>
 
@@ -251,9 +253,9 @@ footer a{color:var(--purple-l);text-decoration:none}
       <a href="https://t.me/Pirate_AI" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#7c3aed;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">Register as a buyer →</a>
     </div>
 
-    <div class="section-label">Active buyer briefs</div>
+    <div class="section-label">Buyer brief examples</div>
     <h2>Current operator requests</h2>
-    <p>These are real acquisition criteria from operators in our network. We update this page as new buyers join.</p>
+    <p>These briefs show the kinds of acquisition criteria the project can support. Treat each as illustrative unless its buyer status is confirmed directly.</p>
 
     <!-- Buyer 0 - e-commerce analytics -->
     <div class="buyer-card hot">
@@ -484,7 +486,7 @@ footer a{color:var(--purple-l);text-decoration:none}
       <div class="how-card">
         <div class="how-n">02</div>
         <h4>AI Asset Score review</h4>
-        <p>We score your project on 5 dimensions: transferability, documentation, revenue proof, niche clarity, and more.</p>
+        <p>We score your project on 5 dimensions: traction, revenue, transferability, automation, and risk.</p>
       </div>
       <div class="how-card">
         <div class="how-n">03</div>
@@ -500,7 +502,7 @@ footer a{color:var(--purple-l);text-decoration:none}
 
     <div class="cta-box">
       <h2>Have a project that might match?</h2>
-      <p>Weekly Drop #1 closes July 27. 10 slots. Submit for a free AI Asset Score — A and B-grade tools get direct buyer introductions.</p>
+      <p>Submit for an AI Asset Score. Scoring does not guarantee acceptance, an introduction, or a transaction.</p>
       <a href="/community/" class="btn btn-primary btn-lg">Join the Watchlist →</a>
       <a href="/methodology/" class="btn btn-outline btn-lg" style="margin-left:12px">How We Score Assets</a>
     </div>
@@ -570,6 +572,6 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<script src="/site-nav.js" defer></script>
 </body>
 </html>
-

@@ -1,0 +1,44 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.aiasset.market https://cloudflareinsights.com; frame-src https://www.youtube.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.aiasset.market; object-src 'none'; upgrade-insecure-requests
+
+/index.html
+  Cache-Control: public, max-age=1800, stale-while-revalidate=86400
+
+/
+  Cache-Control: public, max-age=1800, stale-while-revalidate=86400
+
+/sell-ai-tool/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/sell-ai-agent/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/sell-ai-asset/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/ai-assets-for-sale/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/ai-agents-for-sale/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/ai-business-for-sale/
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/blog/
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/blog/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.json
+  Cache-Control: public, max-age=60
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,21 @@
+# Secrets & local state
+.env
+.env.*
+*.secret
+*.key
+
+# Python
+__pycache__/
+*.pyc
+
+# Build artifacts & internal tools (not for deployment)
+listings.json
+assets.json
+assets/
+
+# Large local backups
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db

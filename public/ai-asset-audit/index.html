@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free AI Asset Audit | Get a AI Asset Score | AIAsset.Market</title>
+<meta name="description" content="Drop a link to your AI tool, bot, automation, channel, agent or microbusiness. Get a free AI Asset Score: is it a toy, demo, or real AI-native asset someone else could operate?">
+<meta property="og:title" content="Free AI Asset Audit | Get a AI Asset Score">
+<meta property="og:description" content="Most AI projects are toys. Drop a link. Get graded. Find out if yours is an asset.">
+<link rel="canonical" href="https://aiasset.market/ai-asset-audit/">
+<style>
+:root{--bg:#0d0d12;--bg-card:#13131a;--border:#1e1e2e;--text:#e8e8f0;--muted:#6b6b8a;--purple:#7c3aed;--purple-l:#a78bfa;--green:#22c55e;--red:#ef4444;--radius:14px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;min-height:100vh;}
+.container{max-width:860px;margin:0 auto;padding:0 20px;}
+nav{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;}
+.nav-logo span{color:var(--purple-l);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;border:none;}
+.btn-primary{background:var(--purple);color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+th{background:rgba(124,58,237,0.15);color:var(--purple-l);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;text-align:left;}
+td{padding:12px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td:first-child{color:var(--text);font-weight:600;}
+.grade-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;}
+.grade-a{background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.4);color:var(--purple-l);}
+.grade-b{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#4ade80;}
+.grade-c{background:rgba(234,179,8,0.12);border:1px solid rgba(234,179,8,0.3);color:#facc15;}
+.grade-d{background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);color:#fb923c;}
+.grade-f{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#f87171;}
+.pass-fail{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.pass-card{flex:1;min-width:220px;padding:20px;border-radius:12px;}
+.pass-card.pass{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);}
+.pass-card.fail{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);}
+.pass-card h4{font-size:13px;font-weight:700;margin-bottom:12px;}
+.pass-card.pass h4{color:#4ade80;}
+.pass-card.fail h4{color:#f87171;}
+.pass-card li{font-size:13px;color:var(--muted);margin-bottom:6px;list-style:none;padding-left:16px;position:relative;}
+.pass-card.pass li::before{content:"✓";position:absolute;left:0;color:#4ade80;}
+.pass-card.fail li::before{content:"✗";position:absolute;left:0;color:#f87171;}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-item h3{font-size:15px;font-weight:700;margin-bottom:10px;}
+.faq-item p{font-size:14px;color:var(--muted);line-height:1.7;}
+
+/* --- SITE NAV v2 (injected) --- */
+.site-nav{position:sticky!important;top:0;z-index:100;background:rgba(8,8,16,0.94)!important;backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)!important}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"▾";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;background:#7c3aed;color:#fff;border:none;border-radius:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+/* --- END SITE NAV v2 --- */
+
+/* ─── SITE NAV (v2 — mega menu) ─── */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,8,16,0.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"\25BE";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;display:inline-flex;align-items:center;gap:6px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;border:none;font-family:inherit;transition:background .15s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+/* end site-nav */
+
+/* ─── Canonical Nav v2 (injected by _build_nav.py) ─── */
+.site-header{padding:20px 40px;position:sticky;top:0;z-index:200;background:#F7F8FC}
+.nav-pill{max-width:1280px;margin:0 auto;background:#fff;border:1px solid #E4E8F2;border-radius:100px;padding:10px 16px 10px 24px;display:flex;align-items:center;box-shadow:0 2px 16px rgba(29,35,64,.06)}
+.nav-logo{font-size:16px;font-weight:600;color:#1D2340;letter-spacing:-.3px;margin-right:auto;white-space:nowrap;text-decoration:none}
+.nav-logo .ai{color:#5B76FF}
+.nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:14px;color:#6E758C;padding:8px 14px;border-radius:100px;transition:all .18s;text-decoration:none}
+.nav-links a:hover{color:#1D2340;background:#F7F8FC}
+.nav-cta-link{background:#5B76FF;color:#fff!important;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.nav-cta-link:hover{background:#4A65EE;box-shadow:0 4px 16px rgba(91,118,255,.4)}
+.mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#1D2340;padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:inherit}
+.mob-toggle:hover{background:#F7F8FC}
+.mob-nav{display:none;background:#fff;border:1px solid #E4E8F2;border-radius:20px;margin:8px 24px;padding:12px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:12px 16px;font-size:15px;color:#1D2340;border-radius:10px;text-decoration:none}
+.mob-nav a:hover{background:#F7F8FC}
+.mob-nav .nav-cta-link{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link{display:none}.mob-toggle{display:flex}}
+/* ─── Canonical Footer v2 ─── */
+.site-footer-v2{background:#1D2340;border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
+.site-footer-v2 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-footer-v2 .foot-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none}
+.site-footer-v2 .foot-logo .ai{color:#5B76FF}
+.site-footer-v2 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.site-footer-v2 .foot-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .18s;text-decoration:none}
+.site-footer-v2 .foot-links a:hover{color:rgba(255,255,255,.9)}
+.site-footer-v2 .foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+@media(max-width:640px){.site-footer-v2 .foot-inner{flex-direction:column;align-items:flex-start}.site-footer-v2{padding:24px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Main navigation">
+    <a class="nav-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="nav-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">About</a>
+    </div>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+      </svg>
+      Menu
+    </button>
+  </nav>
+  <nav class="mob-nav" id="mob-nav" aria-label="Mobile navigation">
+    <a href="/marketplace/">Deals</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/">Research</a>
+    <a href="/academy/">Academy</a>
+    <a href="/methodology/">About</a>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+  </nav>
+</header>
+
+<main style="padding:56px 0 80px;">
+  <div class="container">
+
+    <div style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.4);border-radius:12px;padding:16px 24px;margin-bottom:32px;text-align:center;">
+      <span style="font-size:13px;font-weight:700;color:#a78bfa;">⚓ Weekly Drop — active now</span>
+      <span style="font-size:13px;color:var(--muted);margin-left:8px;">Top-scoring tools get introduced to active buyers. Free grade for every submission.</span>
+      <a href="/community/" style="margin-left:12px;font-size:13px;font-weight:600;color:#a78bfa;text-decoration:none;">See details →</a>
+    </div>
+
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple-l);margin-bottom:12px;">Free AI Asset Audit</div>
+      <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;line-height:1.1;margin-bottom:16px;">Drop a link.<br>Get a AI Asset Score.</h1>
+      <p style="font-size:17px;color:var(--muted);max-width:580px;margin:0 auto 12px;line-height:1.7;">Built or found an AI project? Send us the link. We'll check if it looks like a toy, a demo, or a real AI-native asset someone else could operate — and tell you exactly why.</p>
+      <p style="font-size:14px;color:var(--muted);">Free for every submission. Honest feedback only. No sales call attached.</p>
+    </div>
+
+    <!-- What is a AI Asset Score -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:16px;">What is a AI Asset Score?</h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">A AI Asset Score is a structured 7-dimension audit of an AI project. It scores 0–100 and answers one question: could someone other than the founder operate this, grow it, or buy it?</p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">Most AI projects fail on transferability — the founder is essential to the system working. A AI Asset Score makes that visible immediately, and tells you what it would take to fix it.</p>
+      <p style="font-size:15px;color:var(--text);line-height:1.8;font-weight:600;">Grade A (75+) projects get introduced to active buyers and operators. Grade B (60–74) projects go on the watchlist and improve with specific feedback.</p>
+    </div>
+
+    <!-- 5 dimensions table -->
+    <div style="margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">The 7 AI Asset Score criteria</h2>
+      <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+        <table>
+          <thead><tr><th>Criterion</th><th>Weight</th><th>What it checks</th></tr></thead>
+          <tbody>
+            <tr><td>Works without the founder</td><td>×14</td><td>Can someone set it up and run it from documentation alone, without a call?</td></tr>
+            <tr><td>Documented customer type</td><td>×14</td><td>Is there a clear, specific customer profile — not "anyone who needs automation"?</td></tr>
+            <tr><td>Revenue or usage proof</td><td>×14</td><td>90+ days of consistent usage data, revenue logs, or Stripe exports — not a best-day screenshot</td></tr>
+            <tr><td>Simple operator onboarding</td><td>×14</td><td>One-page setup doc, .env file with explanations, no tribal knowledge required</td></tr>
+            <tr><td>Clear value metric</td><td>×14</td><td>Does the user know in one sentence what they get and why they pay?</td></tr>
+            <tr><td>Transferable IP</td><td>×14</td><td>Prompts, workflows, integrations — owned, documented, not locked to a personal account</td></tr>
+            <tr><td>Market evidence</td><td>×16</td><td>Comparable sales, buyer interest signals, category validation — not just "AI is big"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Grade scale -->
+    <div style="margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">Grade scale and what each band means</h2>
+      <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+        <table>
+          <thead><tr><th>Score</th><th>Grade</th><th>Status</th><th>What happens next</th></tr></thead>
+          <tbody>
+            <tr><td>85–100</td><td><span class="grade-badge grade-a">A+</span></td><td>Approved Candidate</td><td>Priority buyer intros, featured in Drop, price guidance</td></tr>
+            <tr><td>75–84</td><td><span class="grade-badge grade-a">A</span></td><td>Asset Grade</td><td>Buyer intros, added to Drop batch, watchlist</td></tr>
+            <tr><td>60–74</td><td><span class="grade-badge grade-b">B</span></td><td>Potential Asset</td><td>Watchlist, improvement roadmap, re-grade in 30 days</td></tr>
+            <tr><td>45–59</td><td><span class="grade-badge grade-c">C</span></td><td>Demo</td><td>Specific notes on 2–3 highest-impact fixes</td></tr>
+            <tr><td>30–44</td><td><span class="grade-badge grade-d">D</span></td><td>Early Stage</td><td>Honest feedback — what's missing and what it would take</td></tr>
+            <tr><td>0–29</td><td><span class="grade-badge grade-f">F</span></td><td>Toy / Concept</td><td>Not ready — here's why and what category it might fit</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- What passes / what fails -->
+    <div style="margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">What typically passes — and what fails</h2>
+      <div class="pass-fail">
+        <div class="pass-card pass">
+          <h4>✓ Passes</h4>
+          <ul>
+            <li>Has a working runbook someone else used</li>
+            <li>Revenue from multiple unrelated customers</li>
+            <li>90+ days of consistent usage or payment history</li>
+            <li>One clear customer type and why they pay</li>
+            <li>Setup completes in under 2 hours from docs alone</li>
+            <li>Prompts and workflows are exported/owned</li>
+          </ul>
+        </div>
+        <div class="pass-card fail">
+          <h4>✗ Fails</h4>
+          <ul>
+            <li>Founder is the only one who knows how it works</li>
+            <li>Revenue from one client who knows you personally</li>
+            <li>Best-month screenshot instead of consistent data</li>
+            <li>"Anyone who needs AI" as the customer definition</li>
+            <li>Setup requires a call with you to explain it</li>
+            <li>Core prompts stored in a personal ChatGPT account</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- What qualifies -->
+    <div style="margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:20px;">What asset types we grade</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">🤖 AI agents (internal / multi-client)</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">⚙️ n8n / Make / Zapier automations</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">💻 Micro-SaaS with paying users</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">📰 AI newsletters with subscribers</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">🎭 AI personas and UGC creators</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">📹 AI content engines (video / text)</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">🎯 Lead generation systems</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">📱 Telegram / social channels with growth</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">🔬 Research and monitoring agents</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--muted);">📋 Workflow templates with active users</div>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div style="margin-bottom:40px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">How the audit works</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">1</div>
+          <div><div style="font-weight:700;margin-bottom:4px;">Submit a link (takes 2 minutes)</div><div style="font-size:14px;color:var(--muted);">URL to your project, a short description of what it does, and any revenue or usage data you have available.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">2</div>
+          <div><div style="font-weight:700;margin-bottom:4px;">We run the AI Asset Score (24–48hrs)</div><div style="font-size:14px;color:var(--muted);">Score across all 7 dimensions. We check docs, setup complexity, customer type, usage proof, and market context.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">3</div>
+          <div><div style="font-weight:700;margin-bottom:4px;">Receive grade + specific notes</div><div style="font-size:14px;color:var(--muted);">0–100 score, dimension breakdown, what's holding the number down, and a realistic price range if relevant.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">4</div>
+          <div><div style="font-weight:700;margin-bottom:4px;">A grades go to buyer/operator intros</div><div style="font-size:14px;color:var(--muted);">If you score 75+, we match you with active buyers or operators in the current Drop window.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">5</div>
+          <div><div style="font-weight:700;margin-bottom:4px;">B grades get improvement roadmap</div><div style="font-size:14px;color:var(--muted);">Specific actions to raise your score. Most B projects can reach A in 2–4 weeks with the right 2–3 fixes.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-bottom:48px;">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">Frequently asked questions</h2>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:8px 24px;">
+        <div class="faq-item">
+          <h3>Is the AI Asset Score really free?</h3>
+          <p>Yes. Free for every submission. The grade is our cost of building trust with builders and founders. We earn when we facilitate a deal — not from charging for the audit.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does a grade take?</h3>
+          <p>Typically 24–48 hours. During an active Drop window (when weekly submissions are open), we prioritize grades so you can be included if you score 75+.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I have to be planning to sell to get graded?</h3>
+          <p>No. A grade is useful even if you're not selling yet. Most founders use it to understand what's missing before they approach buyers — or to decide whether to keep building or move on.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I score low?</h3>
+          <p>Low grades include specific notes on what's dragging the score down and what it would take to fix. A 45 today with clear feedback is more actionable than no information at all.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I submit something I found — not something I built?</h3>
+          <p>Yes. Scout submissions are welcome. If you find a project that looks like an asset and want to know if it qualifies, submit it. If it grades A and leads to a deal, scouts are credited.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does the grade tell me that I don't already know?</h3>
+          <p>It tells you what a buyer or operator would see — not what you, as the founder, know it could be. Those two views are usually very different, and the gap between them is what the grade measures.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;">
+      <a href="https://aiasset.market/#preview-grade" class="btn btn-primary" style="font-size:16px;padding:16px 32px;">Submit Your AI Project →</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px;">Free. No pitch. Honest score and specific notes.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+// Mobile nav: delegated tap to toggle dropdown (capture phase — beats other handlers)
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+<script>
+/* site-nav mobile toggle */
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+</body>
+</html>

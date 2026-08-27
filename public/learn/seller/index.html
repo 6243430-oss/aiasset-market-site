@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Track — How to Exit Your AI Project at Maximum Value | AIAsset.Market</title>
+<meta name="description" content="4-module course for AI builders: how to check if your project is sellable, price it correctly, package it for transfer, and write a listing that gets inquiries.">
+<link rel="canonical" href="https://aiasset.market/learn/seller/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Exit Your AI Project at Maximum Value — Seller Track | AIAsset.Market">
+<meta property="og:description" content="4 modules: AI Asset Score check, pricing with MRR multipliers, packaging for transfer, writing listings that convert. From the team that reviewed 47 projects.">
+<meta property="og:url" content="https://aiasset.market/learn/seller/">
+<meta property="og:image" content="https://aiasset.market/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aiasset_market">
+<meta name="twitter:creator" content="@aiasset_market">
+<meta name="twitter:image" content="https://aiasset.market/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text y='.9em' font-size='70' x='15'>⚡</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8fafc;--bg-card:#ffffff;
+  --border:#e2e8f0;
+  --text:#0f172a;--muted:#64748b;
+  --purple:#7c3aed;--purple-l:#8b5cf6;
+  --green:#059669;--red:#dc2626;--orange:#ea580c;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(8,8,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:28px;height:60px}
+.nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.nav-logo span{color:var(--purple-l)}
+nav ul{display:flex;list-style:none;gap:20px;margin:0}
+nav ul a{font-size:13px;font-weight:500;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .15s}
+nav ul a:hover,nav ul a.active{color:#fff}
+.nav-cta{margin-left:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;border:none;font-family:inherit}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:#6d28d9;transform:translateY(-1px)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:#c2410c;transform:translateY(-1px)}
+.btn-sm{padding:7px 14px;font-size:12px;border-radius:8px}
+
+.breadcrumb{padding:20px 0;font-size:13px;color:var(--muted)}
+.breadcrumb a{color:var(--orange)}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 6px}
+
+.course-hero{padding:48px 0 40px;border-bottom:1px solid var(--border)}
+.course-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);background:rgba(234,88,12,0.08);border:1px solid rgba(234,88,12,0.2);border-radius:100px;padding:4px 14px;margin-bottom:20px}
+.course-hero h1{font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
+.course-hero .lead{font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:24px}
+.meta-row{display:flex;gap:24px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.meta-row strong{color:var(--text)}
+
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin:36px 0}
+.toc-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.toc-list{list-style:none}
+.toc-list li{padding:6px 0;border-bottom:1px solid var(--border);font-size:14px}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--orange);font-weight:500}
+.toc-list a:hover{text-decoration:underline}
+.toc-num{color:var(--muted);margin-right:8px;font-size:12px}
+
+.module{padding:56px 0;border-bottom:1px solid var(--border)}
+.module:last-of-type{border-bottom:none}
+.module-header{margin-bottom:32px}
+.module-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.module h2{font-size:clamp(22px,4vw,32px);font-weight:900;line-height:1.2;letter-spacing:-0.8px;margin-bottom:12px}
+.module .pain{font-size:15px;color:var(--muted);line-height:1.65;font-style:italic;padding:16px 20px;border-left:3px solid var(--orange);background:rgba(234,88,12,0.04);border-radius:0 8px 8px 0;margin-bottom:24px}
+
+.module p{font-size:16px;line-height:1.75;color:var(--text);margin-bottom:20px}
+.module h3{font-size:19px;font-weight:800;letter-spacing:-0.3px;margin:32px 0 12px}
+.module ul,.module ol{padding-left:24px;margin-bottom:20px}
+.module li{font-size:15px;line-height:1.7;margin-bottom:8px;color:var(--text)}
+.module strong{font-weight:700}
+
+.grade-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.grade-table th{background:var(--text);color:#fff;padding:10px 16px;text-align:left;font-size:12px;letter-spacing:0.5px}
+.grade-table td{padding:10px 16px;border-bottom:1px solid var(--border)}
+.grade-table tr:hover td{background:rgba(234,88,12,0.03)}
+.grade-a{color:var(--green);font-weight:700}
+.grade-b{color:var(--orange);font-weight:700}
+.grade-c{color:var(--muted);font-weight:700}
+
+.highlight-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin:28px 0}
+.highlight-box.green{border-left:4px solid var(--green);background:rgba(5,150,105,0.04)}
+.highlight-box.red{border-left:4px solid var(--red);background:rgba(220,38,38,0.04)}
+.highlight-box.orange{border-left:4px solid var(--orange);background:rgba(234,88,12,0.04)}
+.highlight-box .box-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.highlight-box.green .box-title{color:var(--green)}
+.highlight-box.red .box-title{color:var(--red)}
+.highlight-box.orange .box-title{color:var(--orange)}
+.highlight-box ul{padding-left:20px;margin:0}
+.highlight-box li{font-size:14px;line-height:1.6;margin-bottom:6px}
+
+.formula{background:var(--text);color:#fff;border-radius:var(--radius);padding:24px 28px;margin:28px 0;font-family:monospace;font-size:15px;line-height:1.8}
+.formula .comment{color:rgba(255,255,255,0.4);font-size:13px}
+
+.week-list{list-style:none;padding:0;margin:20px 0}
+.week-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.week-item:last-child{border-bottom:none}
+.week-num{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--orange);width:56px;flex-shrink:0;padding-top:2px}
+.week-content h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.week-content p{font-size:14px;color:var(--muted);line-height:1.55;margin:0}
+
+.takeaway{background:linear-gradient(135deg,rgba(234,88,12,0.08),rgba(234,88,12,0.03));border:1px solid rgba(234,88,12,0.2);border-radius:var(--radius);padding:20px 24px;margin:32px 0}
+.takeaway .t-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.takeaway p{font-size:14px;line-height:1.6;margin:0}
+
+.cta-module{text-align:center;padding:20px 0 8px}
+.cta-module a{color:var(--orange);font-size:14px;font-weight:600}
+.cta-module a:hover{text-decoration:underline}
+
+.cta-strip{background:var(--text);color:#fff;border-radius:20px;padding:48px 40px;text-align:center;margin:64px 0}
+.cta-strip h2{font-size:28px;font-weight:900;letter-spacing:-0.5px;margin-bottom:12px}
+.cta-strip p{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+
+.site-footer{background:rgba(8,8,16,0.97);border-top:1px solid rgba(255,255,255,0.08);padding:40px 0;text-align:center;font-size:13px;color:rgba(255,255,255,0.4)}
+.site-footer a{color:rgba(255,255,255,0.5);margin:0 12px}
+.site-footer a:hover{color:#fff}
+
+@media(max-width:768px){
+  nav ul{display:none}
+  .cta-strip{padding:32px 24px}
+}
+
+/* --- SITE NAV v2 (injected) --- */
+.site-nav{position:sticky!important;top:0;z-index:100;background:rgba(8,8,16,0.94)!important;backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)!important}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"▾";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;background:#7c3aed;color:#fff;border:none;border-radius:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+/* --- END SITE NAV v2 --- */
+
+/* ─── SITE NAV (v2 — mega menu) ─── */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,8,16,0.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"\25BE";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;display:inline-flex;align-items:center;gap:6px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;border:none;font-family:inherit;transition:background .15s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+/* end site-nav */
+
+/* ─── Canonical Nav v2 (injected by _build_nav.py) ─── */
+.site-header{padding:20px 40px;position:sticky;top:0;z-index:200;background:#F7F8FC}
+.nav-pill{max-width:1280px;margin:0 auto;background:#fff;border:1px solid #E4E8F2;border-radius:100px;padding:10px 16px 10px 24px;display:flex;align-items:center;box-shadow:0 2px 16px rgba(29,35,64,.06)}
+.nav-logo{font-size:16px;font-weight:600;color:#1D2340;letter-spacing:-.3px;margin-right:auto;white-space:nowrap;text-decoration:none}
+.nav-logo .ai{color:#5B76FF}
+.nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:14px;color:#6E758C;padding:8px 14px;border-radius:100px;transition:all .18s;text-decoration:none}
+.nav-links a:hover{color:#1D2340;background:#F7F8FC}
+.nav-cta-link{background:#5B76FF;color:#fff!important;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.nav-cta-link:hover{background:#4A65EE;box-shadow:0 4px 16px rgba(91,118,255,.4)}
+.mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#1D2340;padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:inherit}
+.mob-toggle:hover{background:#F7F8FC}
+.mob-nav{display:none;background:#fff;border:1px solid #E4E8F2;border-radius:20px;margin:8px 24px;padding:12px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:12px 16px;font-size:15px;color:#1D2340;border-radius:10px;text-decoration:none}
+.mob-nav a:hover{background:#F7F8FC}
+.mob-nav .nav-cta-link{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link{display:none}.mob-toggle{display:flex}}
+/* ─── Canonical Footer v2 ─── */
+.site-footer-v2{background:#1D2340;border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
+.site-footer-v2 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-footer-v2 .foot-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none}
+.site-footer-v2 .foot-logo .ai{color:#5B76FF}
+.site-footer-v2 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.site-footer-v2 .foot-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .18s;text-decoration:none}
+.site-footer-v2 .foot-links a:hover{color:rgba(255,255,255,.9)}
+.site-footer-v2 .foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+@media(max-width:640px){.site-footer-v2 .foot-inner{flex-direction:column;align-items:flex-start}.site-footer-v2{padding:24px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Main navigation">
+    <a class="nav-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="nav-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">About</a>
+    </div>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+      </svg>
+      Menu
+    </button>
+  </nav>
+  <nav class="mob-nav" id="mob-nav" aria-label="Mobile navigation">
+    <a href="/marketplace/">Deals</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/">Research</a>
+    <a href="/academy/">Academy</a>
+    <a href="/methodology/">About</a>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="/learn/">Learn</a><span>›</span> Seller Track
+  </div>
+
+  <section class="course-hero">
+    <div class="course-tag">💰 Seller Track — 4 Modules</div>
+    <h1>How to Exit Your AI Project at Maximum Value</h1>
+    <p class="lead">You built something that makes money. Now you want out — or at least want to know what it's worth. This course takes you from "I have no idea what this is worth" to a priced, packaged, listed asset that attracts real buyers.</p>
+    <div class="meta-row">
+      <span><strong>4 modules</strong> · ~25 min read</span>
+      <span><strong>Level:</strong> For AI builders with a live product</span>
+      <span><strong>By:</strong> AIAsset.Market team</span>
+    </div>
+  </section>
+
+  <div class="toc">
+    <div class="toc-title">In this course</div>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span><a href="#module-1">Is Your Project Actually Sellable? The AI Asset Score Check</a></li>
+      <li><span class="toc-num">02</span><a href="#module-2">How to Price It Without Leaving Money on the Table</a></li>
+      <li><span class="toc-num">03</span><a href="#module-3">4 Weeks to Transfer-Ready: Packaging Your Asset</a></li>
+      <li><span class="toc-num">04</span><a href="#module-4">Writing a Listing That Gets Real Inquiries</a></li>
+    </ul>
+  </div>
+
+  <!-- MODULE 1 -->
+  <section class="module" id="module-1">
+    <div class="module-header">
+      <div class="module-label">Module 01</div>
+      <h2>Is Your Project Actually Sellable? The AI Asset Score Check</h2>
+      <p class="pain">"I built an AI tool. It has paying users. I think it's worth something. But I genuinely don't know if anyone would buy it, or for how much, or what I'd even need to do before listing it."</p>
+    </div>
+
+    <p>Most AI builders who want to sell their project think the main question is "how much." The real first question is "is it ready" — and the answer changes what you do next.</p>
+
+    <p>We score AI projects on 5 dimensions, each worth 0–15 points (with one risk criterion worth up to -10). Total 0–100. This is the AI Asset Score.</p>
+
+    <table class="grade-table">
+      <tr><th>Criterion</th><th>Max Score</th><th>What it measures</th></tr>
+      <tr><td><strong>Utility</strong></td><td>15</td><td>Does it solve a real, repeated problem?</td></tr>
+      <tr><td><strong>Monetization</strong></td><td>15</td><td>Is there real revenue right now?</td></tr>
+      <tr><td><strong>Transferability</strong></td><td>15</td><td>Can someone else run it without you?</td></tr>
+      <tr><td><strong>Operator Fit</strong></td><td>15</td><td>Is there a type of operator who could scale this?</td></tr>
+      <tr><td><strong>Demand</strong></td><td>15</td><td>Do people actively look for this?</td></tr>
+      <tr><td><strong>Proof</strong></td><td>15</td><td>Evidence the model holds: retention, reviews, referrals</td></tr>
+      <tr><td><strong>Risk</strong></td><td>–10</td><td>Dependencies, concentration, fragility points</td></tr>
+    </table>
+
+    <table class="grade-table">
+      <tr><th>Grade</th><th>Score</th><th>Meaning</th></tr>
+      <tr><td><span class="grade-a">Grade A</span></td><td>85–100</td><td>Operator-ready. Can list immediately.</td></tr>
+      <tr><td><span class="grade-b">Grade B</span></td><td>70–84</td><td>Needs minor packaging. 2-4 weeks of prep.</td></tr>
+      <tr><td><span class="grade-c">Grade C</span></td><td>50–69</td><td>Has potential. 1-3 months of work before listing.</td></tr>
+      <tr><td><span style="color:var(--red);font-weight:700">Below 50</span></td><td>&lt;50</td><td>Not market-ready. Focus on the product first.</td></tr>
+    </table>
+
+    <h3>The fast self-check (do this now)</h3>
+    <p>Answer these 7 questions honestly, score yourself 0–2 on each:</p>
+    <ul>
+      <li><strong>Revenue:</strong> Do I have at least 3 paying customers for 3+ consecutive months?</li>
+      <li><strong>Autonomy:</strong> Has the product run without my direct involvement for at least 2 weeks?</li>
+      <li><strong>Documentation:</strong> Is there a written handover document I could send someone today?</li>
+      <li><strong>Access list:</strong> Can I list every account, key, and credential needed to run this?</li>
+      <li><strong>Churn:</strong> Have I lost less than 5% of customers in the last 3 months?</li>
+      <li><strong>Scalability:</strong> Could someone add 50% more customers without rewriting the core?</li>
+      <li><strong>Transparency:</strong> Can a buyer verify everything I'm claiming?</li>
+    </ul>
+    <p><strong>10–14 out of 14:</strong> You're ready. Start Module 2.<br>
+    <strong>6–9:</strong> Get a free AI Asset Score — you need specifics on what to fix.<br>
+    <strong>Under 6:</strong> Focus on the product for 2-3 months, then come back.</p>
+
+    <div class="takeaway">
+      <div class="t-label">Module takeaway</div>
+      <p>Sellability is about transferability, not just revenue. A project that makes $3k/month but only works because you're there every day is worth much less than one that makes $1k/month and runs itself. Fix transferability first — it's what unlocks the valuation premium.</p>
+    </div>
+  </section>
+
+  <!-- MODULE 2 -->
+  <section class="module" id="module-2">
+    <div class="module-header">
+      <div class="module-label">Module 02</div>
+      <h2>How to Price It Without Leaving Money on the Table</h2>
+      <p class="pain">"Someone offered me $5,000 for my bot. It makes $600/month. I said yes without thinking. Later I found out I should have asked for $10,000–$15,000. I left half the value behind."</p>
+    </div>
+
+    <p>This story is common. AI builders systematically underprice their projects because they don't know the market benchmarks. Here's what the data actually shows.</p>
+
+    <h3>The standard valuation formula</h3>
+    <div class="formula">
+      Valuation = Net Monthly Revenue × Multiple<br><br>
+      <span class="comment">Standard multiple for AI assets: 12×–24× monthly net revenue</span><br>
+      <span class="comment">$800/month net → fair range: $9,600 – $19,200</span><br>
+      <span class="comment">$2,000/month net → fair range: $24,000 – $48,000</span>
+    </div>
+
+    <p>Net revenue means after API costs, hosting, and any contractor costs. Not gross.</p>
+
+    <h3>What moves you toward 24× (and above)</h3>
+    <ul>
+      <li>Churn below 2%/month</li>
+      <li>Revenue growing month-over-month for 4+ months</li>
+      <li>No single customer above 20% of MRR</li>
+      <li>Full documentation and clean codebase</li>
+      <li>No hard dependency on a single API provider</li>
+      <li>Proven operator fit (someone non-technical can run it)</li>
+    </ul>
+
+    <h3>What moves you toward 12× (and below)</h3>
+    <ul>
+      <li>High churn (5%+/month)</li>
+      <li>Flat or declining revenue trend</li>
+      <li>One customer is 40%+ of revenue</li>
+      <li>No documentation exists</li>
+      <li>Revenue tied to your personal brand or direct sales</li>
+      <li>Technical fragility (one API change kills it)</li>
+    </ul>
+
+    <h3>How to anchor your price correctly</h3>
+    <p>Don't start with a number — start with the story. Present your financials as a timeline: "Here are the last 6 months of MRR. Here's the churn. Here's what it costs to run. At current numbers, you're looking at a 17-month payback, which is well inside the healthy 12-24 month range."</p>
+    <p>Then name your price. Anchored to data, not to what you feel you deserve or what you need to replace your income. Buyers pay for math, not for your sunk cost.</p>
+
+    <div class="highlight-box orange">
+      <div class="box-title">Common pricing mistakes</div>
+      <ul>
+        <li>Pricing at "cost to rebuild" — buyers don't care what it cost you</li>
+        <li>Asking 36×+ MRR and defending it with "growth potential"</li>
+        <li>Undisclosing costs to make MRR look higher</li>
+        <li>Pricing based on one good month, not the 6-month average</li>
+        <li>Not having a written number ready — leads to lowball offers accepted under pressure</li>
+      </ul>
+    </div>
+
+    <div class="takeaway">
+      <div class="t-label">Module takeaway</div>
+      <p>Your price is Net MRR × (12–24). Where you land in that range depends on your churn, trend, concentration, and documentation quality. Know your number before you talk to any buyer — and know how to justify it with data, not feelings.</p>
+    </div>
+  </section>
+
+  <!-- MODULE 3 -->
+  <section class="module" id="module-3">
+    <div class="module-header">
+      <div class="module-label">Module 03</div>
+      <h2>4 Weeks to Transfer-Ready: Packaging Your Asset</h2>
+      <p class="pain">"Everything is in my head. The code is a mess I never cleaned up. I have Notion docs half-started but they're outdated. I don't know where to begin."</p>
+    </div>
+
+    <p>Packaging is the single highest-ROI activity a seller can do. Proper documentation doesn't just make transfer possible — it raises your valuation by 30-60% and cuts time-to-close from months to weeks. Here's the 4-week plan.</p>
+
+    <ul class="week-list">
+      <li class="week-item">
+        <div class="week-num">Week 1</div>
+        <div class="week-content">
+          <h4>The Credentials Audit</h4>
+          <p>List every single account, API key, domain, server, and service the product depends on. Organize into a spreadsheet: service name, URL, login method, current cost. This is your transfer manifest. If you can't complete it in a week, the product is not ready to sell.</p>
+        </div>
+      </li>
+      <li class="week-item">
+        <div class="week-num">Week 2</div>
+        <div class="week-content">
+          <h4>The Technical Handover Doc</h4>
+          <p>Write a README-level document: how does this work? What does each part do? How do you restart it if it crashes? What are the main dependencies? Have a non-technical friend read it. If they can't follow the logic, it needs more work.</p>
+        </div>
+      </li>
+      <li class="week-item">
+        <div class="week-num">Week 3</div>
+        <div class="week-content">
+          <h4>The Customer Map</h4>
+          <p>List every paying customer: name, email, plan, how long they've been paying, any notes about their usage or requests. Identify your top 3 by value. Note any at risk. This document is gold to a buyer — it shows you know your customers and the relationships can transfer.</p>
+        </div>
+      </li>
+      <li class="week-item">
+        <div class="week-num">Week 4</div>
+        <div class="week-content">
+          <h4>The Operations Playbook</h4>
+          <p>How do you run this thing day-to-day? What do you check in the morning? What does support look like? What are the 10 most common customer questions and their answers? Write the operations manual an intelligent non-technical person can follow from day one.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="highlight-box green">
+      <div class="box-title">✅ Transfer-ready checklist</div>
+      <ul>
+        <li>All credentials documented and transferable</li>
+        <li>Technical overview written and reviewed by non-technical reader</li>
+        <li>Customer list with full data</li>
+        <li>30-day operations playbook written</li>
+        <li>Last 6 months of financial statements</li>
+        <li>Known issues or risks documented honestly</li>
+        <li>Code repository accessible and readable</li>
+      </ul>
+    </div>
+
+    <p>The last point matters: <strong>known issues documented honestly</strong>. Hiding problems doesn't work — buyers find them during due diligence or after close, and both outcomes are worse than disclosing upfront. Transparency at packaging stage builds trust that closes deals.</p>
+
+    <div class="takeaway">
+      <div class="t-label">Module takeaway</div>
+      <p>4 weeks of documentation work can add 30-60% to your sale price by moving you from Grade B to Grade A on the AI Asset Score. The ROI is massive. Don't rush to list — package first, list when it's actually ready. Buyers pay for certainty.</p>
+    </div>
+  </section>
+
+  <!-- MODULE 4 -->
+  <section class="module" id="module-4">
+    <div class="module-header">
+      <div class="module-label">Module 04</div>
+      <h2>Writing a Listing That Gets Real Inquiries</h2>
+      <p class="pain">"I posted on Indie Hackers. I posted on Twitter. I got questions from people with no money and no intention of buying. Zero serious inquiries. I don't know what I'm doing wrong."</p>
+    </div>
+
+    <p>Most AI project listings fail for one reason: they describe the product instead of the opportunity. Buyers don't want to understand your tech. They want to understand: can I make money with this, and is it safe?</p>
+
+    <h3>The 5 elements of a listing that converts</h3>
+    <ol>
+      <li>
+        <strong>The hook (1 sentence):</strong> What does a buyer get? Not what the product does — what the buyer's life looks like after. Example: "A productized HR screening bot with 23 active clients and $2,800 MRR — runs without you, owner moving on."
+      </li>
+      <li>
+        <strong>The math (3 numbers):</strong> Asking price, monthly net revenue, payback period. Always show the math. Never make the buyer calculate it themselves.
+      </li>
+      <li>
+        <strong>The proof (2 pieces of evidence):</strong> Churn rate + trend, or customer count + retention. Something that shows this isn't going to collapse.
+      </li>
+      <li>
+        <strong>The transfer story:</strong> What does the handover look like? "30-day transition support, full documentation, all credentials transfer, seller stays available for questions." Buyers pay for certainty.
+      </li>
+      <li>
+        <strong>The buyer profile:</strong> Who is this right for? "Ideal for: a solo operator, a small agency, or a buyer with B2B SaaS background." Specificity attracts qualified buyers and filters time-wasters.
+      </li>
+    </ol>
+
+    <h3>What to never put in a listing</h3>
+    <div class="highlight-box red">
+      <div class="box-title">🚩 Listing language that kills serious buyers</div>
+      <ul>
+        <li>"Huge potential" — this means current revenue doesn't justify the price</li>
+        <li>"Easy to scale" — show the scaling path, don't just say it exists</li>
+        <li>"The right person could 10x this" — buyers price what exists, not what you imagine</li>
+        <li>Revenue without costs — show net, not gross</li>
+        <li>Vague terms like "significant," "strong," "loyal" — use numbers always</li>
+      </ul>
+    </div>
+
+    <h3>Where to list</h3>
+    <p>Channels in order of quality for AI assets in $5k–$100k range:</p>
+    <ol>
+      <li><strong>AIAsset.Market</strong> — vetted buyer base specifically looking for AI assets</li>
+      <li><strong>Indie Hackers</strong> — community of builders, some buyers (high noise, low conversion)</li>
+      <li><strong>MicroAcquire / Acquire.com</strong> — larger platform, more competition, lower signal below $50k</li>
+      <li><strong>Telegram communities</strong> — high engagement, buyers often move fast but may want to negotiate hard</li>
+      <li><strong>Twitter/X</strong> — good for awareness, not for closing — expect tire-kickers</li>
+    </ol>
+
+    <div class="takeaway">
+      <div class="t-label">Module takeaway</div>
+      <p>Your listing is marketing for a financial product. Write it like an investor memo, not a product launch post. Lead with the outcome for the buyer, support it with real numbers, and give enough detail that a serious buyer can evaluate without asking 20 questions first. The best listings attract 2-3 serious buyers, not 50 curious ones.</p>
+    </div>
+
+    <div class="cta-module">
+      ← <a href="/learn/">Back to all tracks</a> &nbsp;|&nbsp; Ready to sell? <a href="/sell-ai-asset/">Submit your asset →</a>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Get your free AI Asset Score first.</h2>
+    <p>Before you list, know what you're working with. We score your project across 5 dimensions and tell you where to focus your packaging effort for maximum sale price.</p>
+    <a href="/#preview-grade" class="btn btn-orange" style="margin-top:8px">Get a AI Asset Score →</a>
+  </div>
+
+</div>
+
+<footer class="site-footer-v2">
+  <div class="foot-inner">
+    <a class="foot-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="foot-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/consent/">Data Consent</a>
+      <a href="mailto:hi@aiasset.market">hi@aiasset.market</a>
+    </div>
+    <span class="foot-copy">© 2026 AIAsset.Market</span>
+  </div>
+</footer>
+
+<script>
+// Mobile nav: delegated tap to toggle dropdown (capture phase — beats other handlers)
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+<script>
+/* site-nav mobile toggle */
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+</body>
+</html>
+

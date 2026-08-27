@@ -1,0 +1,21 @@
+name = "aiasset-market"
+compatibility_date = "2025-04-01"
+pages_build_output_dir = "public"
+
+# KV namespace for rate limiting.
+# Production and preview use SEPARATE namespaces to avoid rate-limit bleed.
+# Setup:
+#   1. wrangler kv:namespace create RATE_LIMIT          → copy id here
+#   2. wrangler kv:namespace create RATE_LIMIT --preview → copy id to preview_id
+#   3. CF Dashboard → Pages → aiasset-market → Settings → Functions → KV namespace bindings
+#      Add binding: RATE_KV → production namespace
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "6ee5535ef5d544689fa3c231da5128ba"
+preview_id = "0d0849caa7fb42d9bda4f32bfcf072c2"
+
+# Cloudflare Turnstile (bot protection on AI Asset Score + all public forms)
+# Steps to activate:
+#   1. CF Dashboard → Turnstile → Add Site → copy Site Key into HTML data-sitekey attributes
+#   2. wrangler secret put TURNSTILE_SECRET  → paste the Secret Key
+# Until TURNSTILE_SECRET is set, verification is bypassed (safe for local dev).

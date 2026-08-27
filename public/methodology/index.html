@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Asset Score Methodology v1.0 | AIAsset.Market</title>
+<meta name="description" content="How we evaluate AI-native businesses. AI Asset Score v1.0 — 5 fixed dimensions, 0–100 score, paired with a 10-section Deal Memo. One methodology, one version, applied consistently.">
+<link rel="canonical" href="https://aiasset.market/methodology/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Valuation Methodology for AI-Native Assets">
+<meta property="og:description" content="93% rejection rate. 100-point AI Asset Score + 10-section VC memo. No commission distortion. Calibrated on real listings.">
+<meta property="og:url" content="https://aiasset.market/methodology/">
+<meta property="og:image" content="https://aiasset.market/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text y='.9em' font-size='70' x='15'>⚡</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a12;--bg-card:#111118;--bg-card2:#161623;--border:#1e1e2e;--border-h:#7c3aed;--text:#e2e8f0;--muted:#64748b;--purple:#7c3aed;--purple-l:#8b5cf6;--green:#059669;--radius:14px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;border:none;font-family:inherit}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:#6d28d9;transform:translateY(-1px)}
+
+.hub-hero{padding:80px 0 48px;border-bottom:1px solid var(--border)}
+.hub-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple-l);margin-bottom:16px}
+.hub-hero h1{font-size:clamp(30px,4.5vw,48px);font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:20px;color:#fff}
+.hub-hero p{font-size:17px;color:var(--muted);max-width:640px;line-height:1.65}
+
+.section{padding:56px 0;border-bottom:1px solid var(--border)}
+.section h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-0.3px}
+.section .sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.section p{margin-bottom:14px;color:var(--text)}
+.section strong{color:#fff}
+
+.criterion{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;margin-bottom:14px}
+.criterion-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.criterion h3{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.2px}
+.criterion-weight{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--purple-l);background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.3);border-radius:20px;padding:4px 10px}
+.criterion p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.criterion .examples{font-size:13px;color:var(--muted);padding-left:16px}
+.criterion .examples li{margin-bottom:4px}
+.criterion .examples li::marker{color:var(--purple-l)}
+
+.bands-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.band{padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;border:1px solid}
+.band-toy{background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.3);color:#f87171}
+.band-demo{background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.3);color:#fb923c}
+.band-potential{background:rgba(234,179,8,0.08);border-color:rgba(234,179,8,0.3);color:#facc15}
+.band-candidate{background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.3);color:#4ade80}
+.band-approved{background:rgba(124,58,237,0.12);border-color:rgba(124,58,237,0.4);color:var(--purple-l)}
+
+.honesty-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
+.honesty-card .icon{font-size:22px;flex-shrink:0}
+.honesty-card h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.honesty-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+.compare-table{width:100%;border-collapse:collapse;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:16px 0}
+.compare-table th,.compare-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:13px}
+.compare-table th{background:rgba(124,58,237,0.06);color:var(--purple-l);font-weight:700;letter-spacing:0.5px;text-transform:uppercase;font-size:11px}
+.compare-table td:first-child{font-weight:600;color:#fff}
+.compare-table tr:last-child td{border-bottom:none}
+.tick{color:#4ade80;font-weight:800}
+.cross{color:#f87171;font-weight:800}
+
+.calib-card{background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(139,92,246,0.02));border:1px solid rgba(124,58,237,0.25);border-radius:16px;padding:24px 26px;margin-top:16px}
+.calib-note{font-size:12px;color:var(--muted);font-style:italic;margin-top:12px}
+
+.cta-strip{background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(139,92,246,0.04));border:1px solid rgba(124,58,237,0.25);border-radius:var(--radius);padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:32px 0 80px}
+.cta-strip h3{font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.3px;margin-bottom:6px}
+.cta-strip p{font-size:14px;color:var(--muted)}
+.site-footer{background:rgba(8,8,16,0.97);border-top:1px solid var(--border);padding:40px 0;text-align:center;font-size:13px;color:var(--muted)}
+.site-footer a{color:var(--muted);margin:0 12px}
+.site-footer a:hover{color:#fff}
+@media(max-width:600px){.cta-strip{flex-direction:column;text-align:center}}
+
+/* --- SITE NAV v2 --- */
+.site-nav{position:sticky!important;top:0;z-index:100;background:rgba(8,8,16,0.94)!important;backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)!important}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"▾";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;background:#7c3aed;color:#fff;border:none;border-radius:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+
+/* ─── Canonical Nav v2 (injected by _build_nav.py) ─── */
+.site-header{padding:20px 40px;position:sticky;top:0;z-index:200;background:#F7F8FC}
+.nav-pill{max-width:1280px;margin:0 auto;background:#fff;border:1px solid #E4E8F2;border-radius:100px;padding:10px 16px 10px 24px;display:flex;align-items:center;box-shadow:0 2px 16px rgba(29,35,64,.06)}
+.nav-logo{font-size:16px;font-weight:600;color:#1D2340;letter-spacing:-.3px;margin-right:auto;white-space:nowrap;text-decoration:none}
+.nav-logo .ai{color:#5B76FF}
+.nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:14px;color:#6E758C;padding:8px 14px;border-radius:100px;transition:all .18s;text-decoration:none}
+.nav-links a:hover{color:#1D2340;background:#F7F8FC}
+.nav-cta-link{background:#5B76FF;color:#fff!important;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.nav-cta-link:hover{background:#4A65EE;box-shadow:0 4px 16px rgba(91,118,255,.4)}
+.mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#1D2340;padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:inherit}
+.mob-toggle:hover{background:#F7F8FC}
+.mob-nav{display:none;background:#fff;border:1px solid #E4E8F2;border-radius:20px;margin:8px 24px;padding:12px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:12px 16px;font-size:15px;color:#1D2340;border-radius:10px;text-decoration:none}
+.mob-nav a:hover{background:#F7F8FC}
+.mob-nav .nav-cta-link{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link{display:none}.mob-toggle{display:flex}}
+/* ─── Canonical Footer v2 ─── */
+.site-footer-v2{background:#1D2340;border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
+.site-footer-v2 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-footer-v2 .foot-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none}
+.site-footer-v2 .foot-logo .ai{color:#5B76FF}
+.site-footer-v2 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.site-footer-v2 .foot-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .18s;text-decoration:none}
+.site-footer-v2 .foot-links a:hover{color:rgba(255,255,255,.9)}
+.site-footer-v2 .foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+@media(max-width:640px){.site-footer-v2 .foot-inner{flex-direction:column;align-items:flex-start}.site-footer-v2{padding:24px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Main navigation">
+    <a class="nav-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="nav-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">About</a>
+    </div>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+      </svg>
+      Menu
+    </button>
+  </nav>
+  <nav class="mob-nav" id="mob-nav" aria-label="Mobile navigation">
+    <a href="/marketplace/">Deals</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/">Research</a>
+    <a href="/academy/">Academy</a>
+    <a href="/methodology/">About</a>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+  </nav>
+</header>
+
+<section class="hub-hero">
+  <div class="container">
+    <div class="hub-label">AI Asset Score · Methodology v1.0</div>
+    <h1>One methodology. One score. Applied the same way every time.</h1>
+    <p>Every asset we evaluate gets two outputs: an <strong style="color:#fff">AI Asset Score</strong> (0–100 across 5 fixed dimensions) and a <strong style="color:#fff">Deal Memo</strong> (10-section structured write-up covering Thesis, Traction, Risks, Model Dependency, and Handoff SOP). No seller overrides. Same rubric on every asset.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;font-size:13px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px 18px;"><strong style="color:#fff;font-size:20px;display:block;">5</strong><span style="color:var(--muted);">Dimensions · fixed rubric every time</span></div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px 18px;"><strong style="color:#fff;font-size:20px;display:block;">0–100</strong><span style="color:var(--muted);">Score scale · Toy → Approved Candidate</span></div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px 18px;"><strong style="color:#fff;font-size:20px;display:block;">0%</strong><span style="color:var(--muted);">Sale commission · we don't touch the deal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Two layers, one asset</h2>
+    <p class="sub">Every asset that clears the initial filter gets two deliverables. Not one, not three. Two.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:8px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Layer 1 — Numeric</div>
+        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:8px;">AI Asset Score · 0–100</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">Five fixed dimensions, fixed weights. A number a buyer can compare across assets and a seller can defend. Version-stamped: every score carries the methodology version used. This is the summary.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Layer 2 — Narrative</div>
+        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:8px;">Deal Memo · 10 sections</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">A structured evaluation memo — Thesis, Market, Traction, Team, Moat, Risks & Mitigations, Model Dependency, Deal Terms, Handoff SOP, Post-Deal Monitoring. This is the story behind the number.</p>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-top:16px;">The number alone hides too much. The memo alone doesn't scale. We ship both, always paired, timestamped together.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>AI Asset Score v1.0 — 5 dimensions</h2>
+    <p class="sub">Five fixed dimensions, fixed weights. Total = 0–100. Every score is version-stamped so buyers know exactly which rubric was applied. Nothing subjective — every point is tied to concrete, verifiable evidence.</p>
+
+    <div class="criterion">
+      <div class="criterion-head"><h3>1. Traction</h3><span class="criterion-weight">Max 25</span></div>
+      <p>Evidence of real demand and user adoption — not the creator's opinion. Active users, organic traffic, retention curves, payment history.</p>
+      <ul class="examples">
+        <li><strong>25/25:</strong> 500+ MAU with organic growth, verified analytics, 3+ months of consistent usage.</li>
+        <li><strong>12/25:</strong> Small but engaged early base (50–100 users), some organic signals.</li>
+        <li><strong>3/25:</strong> Just the creator and their beta group, no independent demand evidence.</li>
+      </ul>
+    </div>
+
+    <div class="criterion">
+      <div class="criterion-head"><h3>2. Revenue</h3><span class="criterion-weight">Max 25</span></div>
+      <p>Quality and durability of current revenue. Recurring beats one-time. Verified screenshots (Stripe, Gumroad, LemonSqueezy) beat self-reported numbers.</p>
+      <ul class="examples">
+        <li><strong>25/25:</strong> $500+ MRR with 3+ months of receipts, low churn, diversified customer base.</li>
+        <li><strong>12/25:</strong> Intermittent revenue or strong intent-to-pay signals without consistent receipts.</li>
+        <li><strong>2/25:</strong> No revenue, no verifiable monetization path.</li>
+      </ul>
+    </div>
+
+    <div class="criterion">
+      <div class="criterion-head"><h3>3. Transferability</h3><span class="criterion-weight">Max 20</span></div>
+      <p>Can a new owner run this without the creator on call? SOPs, credentials vault, no personal account lock-in, documented edge cases. This is where most AI assets fail.</p>
+      <ul class="examples">
+        <li><strong>20/20:</strong> Full SOP + Loom walkthrough + credentials vault + zero personal account dependencies.</li>
+        <li><strong>10/20:</strong> Basic docs exist; buyer needs creator available for the first few weeks.</li>
+        <li><strong>2/20:</strong> Only works because the founder tweaks it manually — non-transferable in practice.</li>
+      </ul>
+    </div>
+
+    <div class="criterion">
+      <div class="criterion-head"><h3>4. Automation</h3><span class="criterion-weight">Max 20</span></div>
+      <p>Level of operating leverage. How much does the asset run without active human input? Higher automation = lower ongoing cost for the acquirer.</p>
+      <ul class="examples">
+        <li><strong>20/20:</strong> Fully automated: payments, delivery, support all handled without daily intervention.</li>
+        <li><strong>10/20:</strong> Some manual tasks remain (weekly maintenance, occasional support).</li>
+        <li><strong>2/20:</strong> Requires daily operator effort to function — effectively a freelance contract, not an asset.</li>
+      </ul>
+    </div>
+
+    <div class="criterion">
+      <div class="criterion-head"><h3>5. Risk</h3><span class="criterion-weight">Max 10</span></div>
+      <p>Deductive — we score what could impair or kill this asset within 12–24 months. Lower risk = higher score. Platform lock-in, model API dependency, single-customer concentration, legal grey zones.</p>
+      <ul class="examples">
+        <li><strong>10/10:</strong> Diversified revenue, own infrastructure, no platform risk, no compliance concerns.</li>
+        <li><strong>5/10:</strong> Depends on one AI model API — technically swappable but adds transition risk.</li>
+        <li><strong>0/10:</strong> One customer represents 60%+ of revenue, or active grey-area TOS situation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Score bands</h2>
+    <p class="sub">Total score maps to a public band. This is what buyers see next to the listing.</p>
+    <div class="bands-grid">
+      <div class="band band-toy">0–29 · Toy</div>
+      <div class="band band-demo">30–49 · Demo</div>
+      <div class="band band-potential">50–69 · Potential Asset</div>
+      <div class="band band-candidate">70–84 · Asset Candidate</div>
+      <div class="band band-approved">85–100 · Approved Candidate</div>
+    </div>
+    <p style="font-size:14px;color:var(--muted);"><strong style="color:var(--text)">Toy / Demo (below 50):</strong> Not sellable as-is. We tell you exactly what would need to change. <strong style="color:var(--text)">Potential Asset (50–69):</strong> Fixable. Usually a documentation / proof gap. <strong style="color:var(--text)">Asset Candidate (70–84):</strong> Ready to list with minor packaging. <strong style="color:var(--text)">Approved (85+):</strong> Featured in the next Weekly Drop.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>The Full Memo — 10 sections</h2>
+    <p class="sub">Every accepted asset gets a 1-page memo built the way venture firms write theirs. Buyers get to read the same document the IC voted on.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+      <div class="criterion"><h3 style="margin-bottom:6px;">1. Thesis</h3><p>Two sentences: why this asset is worth someone's time and money. If we can't write it in two, we reject.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">2. Market</h3><p>Realistic addressable audience — not TAM slides. Where the buyers actually are and how they're reachable today.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">3. Product</h3><p>What was built, in one paragraph and one screenshot. Stack, dependencies, hosted-vs-owned components.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">4. Traction</h3><p>Verified revenue (Stripe / Gumroad screenshots), verified usage (analytics), retention shape. Nothing self-reported without proof.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">5. Team fit</h3><p>Who built it, why they're selling, and whether the buyer needs any of them post-sale. Founder-dependent assets get flagged.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">6. Moat &amp; Model Dependency</h3><p>What stops a competitor cloning this in a weekend. Foundation-model exposure gets its own subsection — see below.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">7. Risks &amp; Mitigations</h3><p>Three to five candid failure modes with likelihood and mitigation. The section VC memos always have and marketplace listings never do.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">8. Deal Terms</h3><p>Two valuations (operator / strategic), the delta explained, and what price would move the deal from Pass to Buy.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">9. Handoff SOP</h3><p>Concrete transfer checklist: domains, credentials, analytics, payments, API keys, docs. Empire-Flippers-style migration plan promised as a deliverable.</p></div>
+      <div class="criterion"><h3 style="margin-bottom:6px;">10. Post-Deal Monitoring</h3><p>Optional 90-day check-ins on the same metrics that drove the grade. Because "sold and gone" is how brokerages lose the next customer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Model Dependency — the AI-specific risk layer</h2>
+    <p class="sub">The one section that separates an AI-asset memo from a generic SaaS memo. Every listing gets scored on four sub-factors inside Risk.</p>
+
+    <table class="compare-table">
+      <thead><tr><th>Sub-factor</th><th>Best case</th><th>Worst case</th></tr></thead>
+      <tbody>
+        <tr><td>Provider concentration</td><td>Model-agnostic — swappable between 3+ providers with a config change</td><td>Hard-coded to one API, prompt-tuned to that model's quirks</td></tr>
+        <tr><td>Switch cost</td><td>&lt; 1 day of engineering + re-benchmark</td><td>Weeks of prompt re-engineering + regression on user-facing quality</td></tr>
+        <tr><td>Policy exposure</td><td>Use case allowed under all major providers' TOS</td><td>Grey-area use case (scraping, PII, generation of restricted content) at risk of overnight ban</td></tr>
+        <tr><td>Feature absorption risk</td><td>Value is in distribution / data / workflow — not the model call</td><td>Value is a thin wrapper around a capability the foundation model could ship natively next quarter</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:14px;font-size:14px;color:var(--muted);">A worst-case profile across all four caps operator value at the low end of the 1–2× band regardless of current revenue. Two absorptions of adjacent wrapper categories have already happened in the last 18 months — we price that in.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Evaluation Committee — how a grade actually happens</h2>
+    <p class="sub">No single-reviewer grades. Every published AI Asset Score + Memo has been through at least two sets of eyes over 1–4 weeks.</p>
+
+    <ol style="font-size:14px;color:var(--text);padding-left:22px;line-height:1.8;">
+      <li><strong style="color:#fff">Intake (day 0).</strong> Seller submits via the submission form. An automated AI Asset Score runs; obvious no-go flags trigger a same-day rejection with reasons.</li>
+      <li><strong style="color:#fff">Evidence request (day 1–3).</strong> If the asset clears intake, we ask for the concrete proof set — Stripe / Gumroad screenshots, analytics access, API-billing statements, transfer readiness notes.</li>
+      <li><strong style="color:#fff">Draft memo (day 3–10).</strong> Lead reviewer writes the 10-section memo end-to-end. Numbers get double-entered from primary sources, not seller assertions.</li>
+      <li><strong style="color:#fff">IC review (day 10–20).</strong> Second reviewer challenges the draft on Risks, Model Dependency, and Deal Terms. Disagreements are logged in the memo, not smoothed over.</li>
+      <li><strong style="color:#fff">Publish or reject (day 14–28).</strong> Approved memos go into the Weekly Drop rotation. Rejected memos get a private write-up back to the seller with the exact gap to close.</li>
+    </ol>
+
+    <p style="margin-top:14px;font-size:14px;color:var(--muted);">Most submissions do not reach the Deal Memo stage. The bar is intentional — it keeps the signal clean for buyers.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Why our grade is honest</h2>
+    <p class="sub">Six structural guarantees. Not marketing — actual mechanisms.</p>
+
+    <div class="honesty-card"><div class="icon">🚫</div><div>
+      <h4>We take zero commission on sales</h4>
+      <p>Traditional marketplaces earn 5–15% of the transaction. That means high scores = more revenue for them, which distorts the grade. We don't touch the sale — we charge for packaging services separately.</p>
+    </div></div>
+
+    <div class="honesty-card"><div class="icon">📊</div><div>
+      <h4>Same rubric every time — no seller overrides</h4>
+      <p>The 5 dimensions are fixed. Weights are fixed. Even if the seller pays for the Packaging Sprint, the final score is still calculated from the same rubric — the Sprint just helps them earn more points legitimately.</p>
+    </div></div>
+
+    <div class="honesty-card"><div class="icon">🔍</div><div>
+      <h4>Every claim must be verifiable</h4>
+      <p>Revenue = Stripe screenshot. Users = analytics dashboard. Testimonials = named contact. If we can't verify it, it doesn't count toward the score.</p>
+    </div></div>
+
+    <div class="honesty-card"><div class="icon">📉</div><div>
+      <h4>Grades expire in 90 days</h4>
+      <p>An AI asset scored 82 in January can drop to 65 by April if the market moved or usage fell. Grades are timestamped and re-scored on request. Buyers see the freshness.</p>
+    </div></div>
+
+    <div class="honesty-card"><div class="icon">📢</div><div>
+      <h4>Failing grades are published (with consent)</h4>
+      <p>We keep a public log of scored projects that failed to sell — and why. Sellers can opt out, but most agree because it's how the market learns.</p>
+    </div></div>
+
+    <div class="honesty-card"><div class="icon">🔁</div><div>
+      <h4>Buyer feedback loops into the rubric</h4>
+      <p>Buyers report post-purchase: was the transfer smooth? Did revenue hold up? These signals adjust the weights on Transferability and Proof over time.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Compared to other marketplaces</h2>
+    <p class="sub">Not a smear — just where we differ structurally.</p>
+    <table class="compare-table">
+      <thead><tr><th></th><th>AIAsset.Market</th><th>Flippa</th><th>MicroAcquire</th></tr></thead>
+      <tbody>
+        <tr><td>Takes commission on sale</td><td class="cross">No</td><td class="tick">10%</td><td class="tick">Optional 4%</td></tr>
+        <tr><td>Public rubric with weights</td><td class="tick">Yes</td><td class="cross">No</td><td class="cross">No</td></tr>
+        <tr><td>Score expires / requires re-audit</td><td class="tick">90 days</td><td class="cross">No</td><td class="cross">No</td></tr>
+        <tr><td>Verifies revenue claims</td><td class="tick">Yes (required)</td><td class="tick">Partial</td><td class="tick">Self-report</td></tr>
+        <tr><td>AI-native asset focus</td><td class="tick">Only AI</td><td class="cross">Everything</td><td class="cross">Mostly SaaS</td></tr>
+        <tr><td>Free grade available</td><td class="tick">Yes</td><td class="cross">No</td><td class="cross">No</td></tr>
+        <tr><td>High-bar curation</td><td class="tick">Yes</td><td class="cross">No</td><td class="cross">No</td></tr>
+        <tr><td>Full VC-style memo per listing</td><td class="tick">Yes — 10 sections</td><td class="cross">Listing form only</td><td class="cross">Listing form only</td></tr>
+        <tr><td>Evaluation Committee review</td><td class="tick">Yes</td><td class="cross">Single seller-facing agent</td><td class="cross">Automated + optional broker</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Why 12–24 month payback (not 3–5 years like Flippa)</h2>
+    <p class="sub">Every valuation multiple on this site assumes a 1–2× annual profit payback. Here's the reasoning.</p>
+
+    <p>Traditional business marketplaces (Flippa, MicroAcquire, Empire Flippers) use <strong>3–5× annual profit</strong> as the default. That's fine for a boring SaaS or an Amazon FBA — the market moves slowly, moats hold, and a buyer can plan 4–5 years ahead. For an AI asset, that assumption breaks in ways that are already visible today:</p>
+
+    <ul style="font-size:14px;color:var(--muted);padding-left:20px;margin-bottom:20px;">
+      <li style="margin-bottom:6px;"><strong style="color:#fff">API prices reprice quarterly.</strong> A wrapper making $5k/mo on GPT-4 at old pricing can lose 40% of margin in one OpenAI announcement.</li>
+      <li style="margin-bottom:6px;"><strong style="color:#fff">Foundation models absorb features.</strong> The moment Anthropic ships "Claude Analysis" or OpenAI adds a "Data Interpreter" tab, an entire category of wrappers becomes redundant. This has already happened twice in 18 months.</li>
+      <li style="margin-bottom:6px;"><strong style="color:#fff">Competitors launch in a weekend.</strong> A wrapper with no proprietary data or distribution has effectively zero switching cost.</li>
+      <li>You can't underwrite 4 years of cash flow on infrastructure that reprices every 90 days. So we don't pretend to.</li>
+    </ul>
+
+    <p style="font-weight:700;color:#fff;margin-bottom:10px;">Our multiplier by asset type:</p>
+    <table class="compare-table">
+      <thead><tr><th>Asset type</th><th>Payback</th><th>Multiple (annual profit)</th></tr></thead>
+      <tbody>
+        <tr><td>AI wrapper (GPT/Claude API)</td><td>12–18 months</td><td><strong>1.0 – 1.5×</strong></td></tr>
+        <tr><td>AI SaaS with proprietary data or brand</td><td>18–24 months</td><td><strong>1.5 – 2×</strong></td></tr>
+        <tr><td>AI with distribution + low platform risk</td><td>up to 30 months</td><td><strong>up to 2.5×</strong></td></tr>
+        <tr><td>Classic SaaS with corporate contracts</td><td>3–5 years</td><td>3–5× <em style="color:var(--muted);font-size:11px;">(not AI, comparison only)</em></td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:14px;">If a seller quotes a Flippa-style 4–5× multiple on an AI asset, we mark it as overpriced and recommend Pass — or renegotiate to 1.5–2× before proceeding.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Calibration case #1 — Flippa listing #12103259</h2>
+    <p class="sub">Real Flippa listing tested through our AI Asset Score — August 2026.</p>
+
+    <div class="calib-card">
+      <p style="font-weight:700;color:#fff;margin-bottom:12px;">The listing:</p>
+      <ul style="font-size:14px;color:var(--muted);padding-left:20px;margin-bottom:16px;">
+        <li>SaaS · Automotive · Netherlands · 4 years old</li>
+        <li>Monthly profit: €1,103 · Annual revenue ≈ €666k</li>
+        <li>4 active subscribers · 0% churn</li>
+        <li>1 major client contract: €2M over 3 years (€1.33M backlog remaining)</li>
+        <li>IP licenses: €5M in gaming / merchandising</li>
+        <li>Inventory included in sale: $948k</li>
+        <li><strong style="color:#fff">Asking price: $3,195,155</strong></li>
+      </ul>
+
+      <p style="font-weight:700;color:#fff;margin-bottom:12px;">Our AI Asset Score output:</p>
+      <ul style="font-size:14px;color:var(--muted);padding-left:20px;margin-bottom:16px;">
+        <li>Score: <strong style="color:#fff">74 / 100 · Asset Candidate</strong></li>
+        <li>Operator value (buy-and-run, 1–2× annual profit including revenue diversification): <strong style="color:#fff">$144k – $288k</strong></li>
+        <li>Strategic value (with contract backlog at 60–80% + IP at 20–40%): <strong style="color:#fff">$1.33M – $2.0M</strong></li>
+        <li>One-liner: <em>"Strong contract & IP, but low user base"</em></li>
+      </ul>
+
+      <p style="font-weight:700;color:#fff;margin-bottom:8px;">Our verdict:</p>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:12px;">Asking $3.2M is <strong style="color:#fff">60–140% above</strong> our strategic-value ceiling and <strong style="color:#fff">11–22× above</strong> our operator-value ceiling. Buy only if seller drops to $2M for a strategic play, or $288k for operator run. Otherwise Pass.</p>
+      <p class="calib-note">This is exactly the honesty gap traditional marketplaces avoid — because they earn commission on the sale.</p>
+    </div>
+
+    <p style="font-size:14px;color:var(--muted);margin-top:20px;">We'll publish a running Calibration Report as more listings are scored. If you have a specific listing you'd like tested — <a href="/#preview-grade" style="color:var(--purple-l);">try the AI Asset Score widget</a>.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-strip">
+    <div>
+      <h3>Have an asset? Or looking for one?</h3>
+      <p>Sellers — try the instant AI Asset Score widget or submit for a full Deal Memo evaluation. Buyers — tell us what you're looking for and we'll match you with relevant assets.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="/#preview-grade" class="btn btn-primary">Grade my asset →</a>
+      <a href="/buyers-looking-for/" class="btn" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);">I'm looking to buy →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer-v2">
+  <div class="foot-inner">
+    <a class="foot-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="foot-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/consent/">Data Consent</a>
+      <a href="mailto:hi@aiasset.market">hi@aiasset.market</a>
+    </div>
+    <span class="foot-copy">© 2026 AIAsset.Market</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+</body>
+</html>

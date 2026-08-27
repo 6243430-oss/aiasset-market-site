@@ -1,0 +1,50 @@
+# Force apex (drop www + http)
+https://www.aiasset.market/* https://aiasset.market/:splat 301
+http://www.aiasset.market/* https://aiasset.market/:splat 301
+http://aiasset.market/* https://aiasset.market/:splat 301
+
+# Canonical bounty route (remove duplicate)
+/post-a-bounty/ /post-ai-bounty/ 301
+/post-a-bounty /post-ai-bounty/ 301
+
+# Legacy route — Packaging Sprint merged into Services
+/ai-asset-packaging-sprint/ /services/ 301
+/ai-asset-packaging-sprint /services/ 301
+
+# Grade cards → Methodology (outdated nav, noindexed)
+/grades/* /methodology/ 301
+/grades/ /methodology/ 301
+/grades /methodology/ 301
+
+# Historical drop campaigns → Community
+/weekly-drop/* /community/ 301
+/weekly-drop/ /community/ 301
+/weekly-drop /community/ 301
+/weekly-drop-2/* /community/ 301
+/weekly-drop-2/ /community/ 301
+/weekly-drop-2 /community/ 301
+
+# Removed pages → nearest relevant destination
+/badges/* /community/ 301
+/badges/ /community/ 301
+/badges /community/ 301
+/partners/* /community/ 301
+/partners/ /community/ 301
+/partners /community/ 301
+
+# Block sensitive files — NOTE: CF Pages _redirects only supports 301/302/303/307/308.
+# These 301s redirect to 404 page as a defence-in-depth measure.
+# Real protection: these files must not be present in the deploy directory at all.
+/.env /404.html 301
+/.env.* /404.html 301
+/.git/* /404.html 301
+/.gitignore /404.html 301
+/.DS_Store /404.html 301
+/wrangler.toml /404.html 301
+/*.bak /404.html 301
+/index_pre_*.html /404.html 301
+/index_backup_*.html /404.html 301
+/index_v1_*.html /404.html 301
+/temp_*.html /404.html 301
+/PRODUCT.md /404.html 301
+/.wrangler/* /404.html 301

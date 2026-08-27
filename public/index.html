@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIAsset.Market — AI Asset Boutique &amp; Advisory</title>
+<meta name="description" content="We source, evaluate and package AI-native businesses for acquisition. Research, advisory and AI Asset Score for the emerging AI Asset Economy.">
+<meta property="og:title" content="AIAsset.Market — AI Asset Boutique &amp; Advisory">
+<meta property="og:description" content="Source, evaluate and package AI-native businesses for acquisition. Research, advisory and AI Asset Score.">
+<meta property="og:image" content="https://aiasset.market/og-image.png">
+<meta property="og:url" content="https://aiasset.market/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aiasset.market/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;font-family:'Inter',system-ui,sans-serif}
+a{text-decoration:none;color:inherit}
+img,svg{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:root{
+  --bg:#F7F8FC;--navy:#1D2340;--accent:#5B76FF;--accent-h:#4A65EE;
+  --secondary:#6E758C;--border:#E4E8F2;--card:#FFFFFF;--lavender:#F3F1FF;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--w:1280px;
+}
+.container{max-width:var(--w);margin:0 auto;padding:0 40px}
+body{background:var(--bg);color:var(--navy)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500;border-radius:14px;padding:13px 24px;transition:all .2s;border:1.5px solid transparent}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-h);border-color:var(--accent-h);box-shadow:0 4px 20px rgba(91,118,255,.35);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--border)}
+.btn-outline:hover{border-color:var(--navy);background:rgba(29,35,64,.04);transform:translateY(-1px)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-outline-light:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+/* Cookie */
+.cookie-bar{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;border-radius:16px;padding:16px 24px;display:flex;align-items:center;gap:16px;font-size:13px;z-index:900;max-width:600px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(29,35,64,.25)}
+.cookie-bar.hidden{display:none}
+.hidden{display:none!important}
+.cookie-bar p{flex:1;line-height:1.55;color:rgba(255,255,255,.8)}
+.cookie-bar a{color:#A5B4FF;text-decoration:underline}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0}
+.c-accept,.c-reject{border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;border:none}
+.c-accept{background:var(--accent);color:#fff}
+.c-reject{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+/* Header */
+.site-header{padding:20px 40px;position:sticky;top:0;z-index:200;background:var(--bg)}
+.nav-pill{max-width:var(--w);margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 16px 10px 24px;display:flex;align-items:center;box-shadow:0 2px 16px rgba(29,35,64,.06)}
+.nav-logo{font-size:16px;font-weight:600;color:var(--navy);letter-spacing:-.3px;margin-right:auto;white-space:nowrap}
+.nav-logo .ai{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:14px;color:var(--secondary);padding:8px 14px;border-radius:100px;transition:all .18s}
+.nav-links a:hover{color:var(--navy);background:var(--bg)}
+.nav-cta{background:var(--accent);color:#fff;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--accent-h);box-shadow:0 4px 16px rgba(91,118,255,.4)}
+.mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--navy);padding:8px 14px;border-radius:100px}
+.mob-toggle:hover{background:var(--bg)}
+.mob-nav{display:none;background:var(--card);border:1px solid var(--border);border-radius:20px;margin:8px 24px;padding:12px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:12px 16px;font-size:15px;color:var(--navy);border-radius:10px}
+.mob-nav a:hover{background:var(--bg)}
+.mob-nav .nav-cta{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+/* Hero */
+.s-hero{padding:72px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-left{display:flex;flex-direction:column;gap:28px}
+.hero-h1{font-family:var(--serif);font-size:clamp(40px,4.5vw,62px);font-weight:500;line-height:1.1;letter-spacing:-.5px;color:var(--navy)}
+.hero-h1 em{color:var(--accent);font-style:italic}
+.hero-sub{font-size:17px;line-height:1.7;color:var(--secondary);max-width:400px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-right{display:flex;flex-direction:column;gap:16px}
+/* Video */
+.video-card{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;cursor:pointer;box-shadow:0 8px 40px rgba(29,35,64,.15);background:linear-gradient(135deg,#232B52 0%,#364080 55%,#2A3A6A 100%);display:flex;align-items:center;justify-content:center}
+.video-arch{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.video-play{position:relative;z-index:2;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
+.video-card:hover .video-play{transform:scale(1.07);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.video-label{position:absolute;bottom:14px;left:14px;z-index:2;font-size:12px;font-weight:500;color:rgba(255,255,255,.9);background:rgba(0,0,0,.35);backdrop-filter:blur(4px);padding:5px 11px;border-radius:100px;letter-spacing:.2px}
+/* Score card */
+.score-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px 24px;box-shadow:0 4px 24px rgba(29,35,64,.07)}
+.score-label{font-size:12px;font-weight:600;color:var(--secondary);letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.score-body{display:flex;align-items:center;gap:20px}
+.score-ring{position:relative;flex-shrink:0}
+.score-ring svg{display:block}
+.score-ring-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;line-height:1}
+.score-big{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--navy)}
+.score-denom{font-size:11px;color:var(--secondary);margin-top:1px}
+.score-metrics{flex:1;display:flex;flex-direction:column;gap:9px}
+.score-row{display:flex;align-items:center;gap:8px}
+.score-name{font-size:12px;color:var(--secondary);width:88px;display:flex;align-items:center;gap:5px;flex-shrink:0}
+.score-bar{flex:1;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
+.score-fill{height:100%;border-radius:2px;background:var(--accent)}
+.score-fill.risk{background:#E8637A}
+.score-val{font-size:12px;font-weight:600;color:var(--navy);width:22px;text-align:right}
+/* What we do */
+.s-what{padding:80px 0;background:var(--card)}
+.s-what h2{font-family:var(--serif);font-size:36px;font-weight:500;margin-bottom:36px}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.what-card{background:var(--bg);border:1px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s}
+.what-card:hover{box-shadow:0 6px 28px rgba(29,35,64,.08)}
+.what-icon{width:48px;height:48px;background:var(--lavender);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.what-card h3{font-size:19px;font-weight:600;color:var(--navy)}
+.what-card p{font-size:14px;line-height:1.65;color:var(--secondary)}
+.learn-more{font-size:14px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:4px;margin-top:auto;transition:gap .15s}
+.learn-more:hover{gap:8px}
+/* Score methodology */
+.s-method{padding:80px 0;background:var(--lavender)}
+.s-method .eyebrow{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+.s-method h2{font-family:var(--serif);font-size:40px;font-weight:500;margin-bottom:56px}
+.criteria{display:flex;align-items:flex-start;position:relative}
+.criteria-line{position:absolute;top:24px;left:calc(10% + 24px);right:calc(10% + 24px);height:0;border-top:1.5px dashed var(--border);z-index:0}
+.criterion{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;z-index:1;padding:0 8px}
+.crit-icon{width:48px;height:48px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(29,35,64,.06)}
+.criterion h4{font-size:14px;font-weight:600;color:var(--navy)}
+.criterion p{font-size:12px;line-height:1.55;color:var(--secondary);max-width:140px}
+/* Research */
+.s-research{padding:80px 0;background:var(--bg)}
+.research-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.research-top h2{font-family:var(--serif);font-size:36px;font-weight:500}
+.research-top a{font-size:14px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:4px;transition:gap .15s}
+.research-top a:hover{gap:8px}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.r-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.r-card:hover{box-shadow:0 8px 36px rgba(29,35,64,.1);transform:translateY(-3px)}
+.r-thumb{height:156px;overflow:hidden;position:relative}
+.r-body{padding:22px;display:flex;flex-direction:column;gap:8px}
+.r-tag{font-size:11px;font-weight:600;letter-spacing:.8px;color:var(--secondary)}
+.r-card h3{font-size:16px;font-weight:600;color:var(--navy);line-height:1.4;transition:color .18s}
+.r-card:hover h3{color:var(--accent)}
+/* CTA */
+.s-cta{padding:80px 0;background:var(--navy);overflow:hidden}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.cta-left{display:flex;flex-direction:column;gap:24px}
+.cta-left h2{font-family:var(--serif);font-size:clamp(34px,3.5vw,50px);font-weight:500;color:#fff;line-height:1.15}
+.cta-left p{font-size:16px;line-height:1.65;color:rgba(255,255,255,.6)}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-right{display:flex;align-items:center;justify-content:center}
+/* Footer */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
+.foot-inner{max-width:var(--w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.6)}
+.foot-logo .ai{color:var(--accent)}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .18s}
+.foot-links a:hover{color:rgba(255,255,255,.9)}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:800;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-bg.open{opacity:1;pointer-events:all}
+.modal-box{background:#000;border-radius:16px;overflow:hidden;max-width:380px;width:90%;position:relative}
+.modal-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.18);color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;z-index:2;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s}
+.modal-close:hover{background:rgba(255,255,255,.32)}
+.modal-video-wrap{aspect-ratio:9/16;width:100%}
+.modal-video-wrap iframe{width:100%;height:100%;border:none;display:block}
+/* Responsive */
+@media(max-width:960px){
+  .container{padding:0 24px}
+  .site-header{padding:14px 24px}
+  .nav-links,.nav-cta{display:none}
+  .mob-toggle{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .s-hero{padding:48px 0 64px}
+  .what-grid{grid-template-columns:1fr}
+  .criteria{flex-direction:column;align-items:flex-start;gap:24px}
+  .criteria-line{display:none}
+  .criterion{flex-direction:row;text-align:left;gap:16px;width:100%;padding:0}
+  .criterion p{max-width:none}
+  .research-grid{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-right{display:none}
+  .foot-inner{flex-direction:column;align-items:flex-start}
+  footer{padding:24px}
+}
+@media(max-width:600px){
+  .hero-btns,.cta-btns{flex-direction:column}
+  .hero-h1{font-size:36px}
+  .cookie-bar{flex-direction:column;align-items:flex-start}
+  .cookie-btns{width:100%;display:flex}
+  .c-accept,.c-reject{flex:1;text-align:center}
+  .pg-row{grid-template-columns:1fr}
+  .pg-valuation{grid-template-columns:1fr}
+}
+/* AI Asset Score Widget */
+.pg-widget{margin-top:40px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.03);padding:32px}
+.pg-widget h3{font-size:20px;font-weight:800;margin:0 0 4px}
+.pg-widget-sub{color:var(--muted);font-size:14px;margin:0 0 24px}
+.pg-fields{display:flex;flex-direction:column;gap:16px;margin-bottom:24px}
+.pg-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.pg-field label{display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.pg-field .opt{font-weight:400;text-transform:none;letter-spacing:0}
+.pg-field input,.pg-field select,.pg-field textarea{width:100%;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;box-sizing:border-box;transition:border-color .15s}
+.pg-field input:focus,.pg-field select:focus,.pg-field textarea:focus{outline:none;border-color:var(--purple)}
+.pg-field select option{background:#1a1a2e;color:#e2e8f0}
+.pg-field textarea{resize:vertical;min-height:80px}
+.pg-char-count{font-size:11px;color:var(--muted);text-align:right;margin-top:4px}
+.pg-note{font-size:11px;color:var(--muted);margin-top:12px}
+.pg-loading{text-align:center;padding:48px 0;color:var(--muted)}
+.pg-spinner{width:40px;height:40px;border:3px solid rgba(91,118,255,.2);border-top-color:#5B76FF;border-radius:50%;animation:pg-spin .8s linear infinite;margin:0 auto 16px}
+@keyframes pg-spin{to{transform:rotate(360deg)}}
+.pg-score-row{display:flex;align-items:flex-start;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+.pg-score-num{font-size:56px;font-weight:900;color:#fff;line-height:1}
+.pg-score-denom{font-size:20px;color:var(--muted);font-weight:400;display:inline}
+.pg-band{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.04em;margin-bottom:8px}
+.band-toy{background:#ef4444;color:#fff}
+.band-demo{background:#f97316;color:#fff}
+.band-potential{background:#eab308;color:#000}
+.band-candidate{background:#22c55e;color:#fff}
+.band-approved{background:#5B76FF;color:#fff}
+.pg-oneliner{font-size:14px;color:var(--muted);margin:0}
+.pg-dims{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.pg-dim{display:flex;align-items:center;gap:12px}
+.pg-dim-name{font-size:12px;font-weight:600;width:110px;flex-shrink:0;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.pg-dim-bar-wrap{flex:1;background:rgba(255,255,255,.08);border-radius:4px;height:6px}
+.pg-dim-bar{height:6px;border-radius:4px;background:linear-gradient(90deg,#5B76FF,#7c3aed);width:0;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.pg-dim-val{font-size:12px;color:var(--muted);width:36px;text-align:right;flex-shrink:0}
+.pg-valuation{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.pg-val-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px}
+.pg-val-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.pg-val-range{font-size:16px;font-weight:800;color:#fff}
+.pg-val-note{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.pg-next{background:rgba(91,118,255,.1);border:1px solid rgba(91,118,255,.2);border-radius:8px;padding:14px;margin-bottom:20px}
+.pg-next-label{font-size:11px;font-weight:600;color:#5B76FF;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.pg-next p{font-size:14px;color:var(--text);margin:0}
+.pg-reset{background:none;border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 20px;color:var(--muted);font-size:13px;cursor:pointer;transition:border-color .15s;margin-top:4px}
+.pg-reset:hover{border-color:rgba(255,255,255,.3);color:var(--text)}
+</style>
+</head>
+<body>
+
+<div class="cookie-bar hidden" id="cookie-bar">
+  <p>We use cookies to improve your experience. See our <a href="/privacy/">Privacy Policy</a>.</p>
+  <div class="cookie-btns">
+    <button class="c-reject" onclick="setCookieConsent('rejected')">Reject</button>
+    <button class="c-accept" onclick="setCookieConsent('accepted')">Accept</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <nav class="nav-pill">
+    <a class="nav-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="nav-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">About</a>
+    </div>
+    <a class="nav-cta" href="mailto:hi@aiasset.market">Contact</a>
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+      </svg>
+      Menu
+    </button>
+  </nav>
+  <nav class="mob-nav" id="mob-nav">
+    <a href="/marketplace/">Deals</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/">Research</a>
+    <a href="/academy/">Academy</a>
+    <a href="/methodology/">About</a>
+    <a class="nav-cta" href="mailto:hi@aiasset.market">Contact</a>
+  </nav>
+</header>
+
+<section class="s-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-h1">Together,<br>We Build the<br><em>AI Asset</em> Economy.</h1>
+        <p class="hero-sub">We source, evaluate and package AI-native businesses for acquisition, ownership and growth.</p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" href="/marketplace/">I want to acquire →</a>
+          <a class="btn btn-outline" href="/sell-ai-asset/">I own an asset →</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="video-card" onclick="openModal(this)" role="button" tabindex="0" aria-label="Watch intro video" onkeydown="if(event.key==='Enter'||event.key===' ')openModal(this)" style="background-image:url('https://i.ytimg.com/vi/VZ09NYqBjdI/hqdefault.jpg');background-size:cover;background-position:center">
+          <svg class="video-arch" viewBox="0 0 560 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="100" y="40" width="360" height="240" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="130" y="70" width="300" height="180" rx="4" fill="rgba(255,255,255,0.03)"/>
+            <rect x="210" y="50" width="140" height="270" rx="4" fill="rgba(255,255,255,0.05)"/>
+            <circle cx="280" cy="155" r="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <circle cx="280" cy="155" r="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="0" y1="230" x2="560" y2="230" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="0" y1="260" x2="560" y2="260" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+          </svg>
+          <div class="video-play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 3.5L14.5 9L6 14.5V3.5Z" fill="#1D2340"/></svg>
+          </div>
+          <span class="video-label">Watch 1:16</span>
+        </div>
+        <div class="score-card">
+          <div class="score-label">AI Asset Score</div>
+          <div class="score-body">
+            <div class="score-ring">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <defs>
+                  <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#5B76FF"/><stop offset="100%" stop-color="#8FA4FF"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="42" cy="42" r="34" fill="none" stroke="#E4E8F2" stroke-width="6"/>
+                <circle id="score-ring" cx="42" cy="42" r="34" fill="none" stroke="url(#rg)" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" transform="rotate(-90 42 42)"/>
+              </svg>
+              <div class="score-ring-num"><div class="score-big">82</div><div class="score-denom">/100</div></div>
+            </div>
+            <div class="score-metrics">
+              <div class="score-row"><span class="score-name"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 10 10"><polyline points="0,7 3,3 6,5 10,1"/></svg>Traction</span><div class="score-bar"><div class="score-fill" style="width:85%"></div></div><span class="score-val">85</span></div>
+              <div class="score-row"><span class="score-name"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 10 10"><path d="M1 5h8M6 2l3 3-3 3M4 2L1 5l3 3"/></svg>Transferability</span><div class="score-bar"><div class="score-fill" style="width:82%"></div></div><span class="score-val">82</span></div>
+              <div class="score-row"><span class="score-name"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4"/><path d="M5 3v2.3l1.5 1"/></svg>Revenue</span><div class="score-bar"><div class="score-fill" style="width:78%"></div></div><span class="score-val">78</span></div>
+              <div class="score-row"><span class="score-name"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 10 10"><rect x="1" y="4" width="3" height="3"/><rect x="7" y="4" width="3" height="3"/><line x1="4" y1="5.5" x2="6" y2="5.5"/></svg>Automation</span><div class="score-bar"><div class="score-fill" style="width:88%"></div></div><span class="score-val">88</span></div>
+              <div class="score-row"><span class="score-name"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 10 10"><path d="M5 1L9.3 8.5H.7L5 1z"/><line x1="5" y1="4.5" x2="5" y2="6"/></svg>Risk</span><div class="score-bar"><div class="score-fill risk" style="width:35%"></div></div><span class="score-val">35</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-what">
+  <div class="container">
+    <h2>What we do</h2>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-icon">
+          <svg width="22" height="22" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" stroke-dasharray="2.5 3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <h3>Acquire</h3>
+        <p>Access curated AI-native businesses and off-market opportunities.</p>
+        <a class="learn-more" href="/marketplace/">Learn more →</a>
+      </div>
+      <div class="what-card">
+        <div class="what-icon">
+          <svg width="22" height="22" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="15" width="18" height="5" rx="1.5"/><rect x="5" y="9.5" width="14" height="5" rx="1.5"/><rect x="7" y="4" width="10" height="5" rx="1.5"/></svg>
+        </div>
+        <h3>Sell &amp; Package</h3>
+        <p>Prepare, structure and position AI assets for transfer and sale.</p>
+        <a class="learn-more" href="/sell-ai-asset/">Learn more →</a>
+      </div>
+      <div class="what-card">
+        <div class="what-icon">
+          <svg width="22" height="22" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="7,15 10,10 13,13 17,8"/></svg>
+        </div>
+        <h3>Research &amp; Advisory</h3>
+        <p>Use intelligence, scoring and analysis to make better acquisition decisions.</p>
+        <a class="learn-more" href="/insights/">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-method" id="preview-grade">
+  <div class="container">
+    <p class="eyebrow">HOW WE EVALUATE AN AI ASSET</p>
+    <h2>AI Asset Score</h2>
+    <div class="criteria">
+      <div class="criteria-line"></div>
+      <div class="criterion">
+        <div class="crit-icon"><svg width="20" height="20" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="2,18 8,12 12,16 18,8 22,11"/></svg></div>
+        <div><h4>Traction</h4><p>Evidence of demand and user adoption.</p></div>
+      </div>
+      <div class="criterion">
+        <div class="crit-icon"><svg width="20" height="20" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l2.5 2"/></svg></div>
+        <div><h4>Revenue</h4><p>Quality and durability of current revenue.</p></div>
+      </div>
+      <div class="criterion">
+        <div class="crit-icon"><svg width="20" height="20" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><path d="M7 16l5-8 5 8"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div><h4>Transferability</h4><p>Ease of transfer and owner independence.</p></div>
+      </div>
+      <div class="criterion">
+        <div class="crit-icon"><svg width="20" height="20" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="10" width="4" height="11"/><rect x="9.5" y="6" width="4" height="15"/><rect x="16" y="13" width="4" height="8"/></svg></div>
+        <div><h4>Automation</h4><p>Level of automation and operating leverage.</p></div>
+      </div>
+      <div class="criterion">
+        <div class="crit-icon"><svg width="20" height="20" fill="none" stroke="#5B76FF" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3L21.5 20H2.5L12 3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r="0.9" fill="#5B76FF"/></svg></div>
+        <div><h4>Risk</h4><p>Concentration, compliance and technical risk.</p></div>
+      </div>
+    </div>
+
+    <div class="pg-widget">
+      <div id="pg-form-wrap">
+        <h3>Score your project</h3>
+        <p class="pg-widget-sub">Instant AI Asset Score — no signup, no commitment.</p>
+        <div class="pg-fields">
+          <div class="pg-field">
+            <label for="pg-url">Project URL <span class="opt">(optional — we'll analyse the page)</span></label>
+            <input type="url" id="pg-url" placeholder="https://your-project.com" autocomplete="off">
+          </div>
+          <div class="pg-row">
+            <div class="pg-field">
+              <label for="pg-type">Asset Type</label>
+              <select id="pg-type">
+                <option value="">Select…</option>
+                <option value="micro-saas">Micro-SaaS</option>
+                <option value="ai-agent">AI Agent</option>
+                <option value="automation">Automation (n8n / Make)</option>
+                <option value="newsletter">Newsletter</option>
+                <option value="data-product">Data Product / API</option>
+                <option value="ai-tool">AI Tool / Wrapper</option>
+                <option value="content-engine">Content Engine</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="pg-field">
+              <label for="pg-mrr">Monthly Profit (USD)</label>
+              <input type="number" id="pg-mrr" placeholder="0" min="0" max="9999999">
+            </div>
+            <div class="pg-field">
+              <label for="pg-users">Users / Subscribers</label>
+              <input type="number" id="pg-users" placeholder="0" min="0" max="9999999">
+            </div>
+          </div>
+          <div class="pg-field">
+            <label for="pg-pitch">Pitch <span class="opt">(revenue sources, growth, transferability)</span></label>
+            <textarea id="pg-pitch" rows="3" placeholder="Describe what you've built — key revenue sources, active users, what's documented, what's automated…" maxlength="2000"></textarea>
+            <div class="pg-char-count"><span id="pg-count">0</span> / 2000</div>
+          </div>
+        </div>
+        <!-- CF Turnstile: replace data-sitekey with your key from CF Dashboard → Turnstile -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEcgS-PvWORBBpaP" data-theme="light" style="margin:12px 0"></div>
+        <button class="btn btn-primary" id="pg-submit-btn">Get My AI Asset Score →</button>
+        <p class="pg-note">10 requests per IP per 24 hours. No data stored.</p>
+      </div>
+      <div class="pg-loading hidden" id="pg-loading">
+        <div class="pg-spinner"></div>
+        <p>Evaluating your asset…</p>
+      </div>
+      <div class="hidden" id="pg-result-wrap"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="s-research">
+  <div class="container">
+    <div class="research-top">
+      <h2>Research &amp; Intelligence</h2>
+      <a href="/insights/">View all research →</a>
+    </div>
+    <div class="research-grid">
+      <a class="r-card" href="/blog/how-to-buy-ai-business/">
+        <div class="r-thumb" style="background:linear-gradient(135deg,#D6E0FF 0%,#BFD0FF 60%,#E8EDFF 100%)">
+          <svg width="100%" height="100%" viewBox="0 0 360 156" fill="none" preserveAspectRatio="xMidYMid slice">
+            <path d="M0 78C60 55 120 100 180 78S300 55 360 78L360 156H0Z" fill="rgba(91,118,255,.13)"/>
+            <path d="M0 100C80 77 160 120 240 100S320 78 360 100L360 156H0Z" fill="rgba(91,118,255,.08)"/>
+            <circle cx="80" cy="55" r="42" fill="rgba(91,118,255,.07)"/>
+            <circle cx="290" cy="45" r="58" fill="rgba(139,159,255,.09)"/>
+          </svg>
+        </div>
+        <div class="r-body"><span class="r-tag">INSIGHTS · 7 MIN READ</span><h3>What Makes an AI Business Transferable?</h3></div>
+      </a>
+      <a class="r-card" href="/blog/ai-toy-vs-asset/">
+        <div class="r-thumb" style="background:linear-gradient(135deg,#E6D8FF 0%,#D4BFFF 60%,#F0EAFF 100%)">
+          <svg width="100%" height="100%" viewBox="0 0 360 156" fill="none" preserveAspectRatio="xMidYMid slice">
+            <circle cx="90" cy="60" r="38" fill="rgba(139,92,246,.12)"/>
+            <circle cx="195" cy="80" r="58" fill="rgba(109,72,216,.08)"/>
+            <circle cx="300" cy="48" r="48" fill="rgba(139,92,246,.1)"/>
+            <circle cx="150" cy="130" r="22" fill="rgba(139,92,246,.06)"/>
+            <circle cx="260" cy="130" r="30" fill="rgba(109,72,216,.07)"/>
+          </svg>
+        </div>
+        <div class="r-body"><span class="r-tag">INSIGHTS · 6 MIN READ</span><h3>AI Agents vs AI Assets</h3></div>
+      </a>
+      <a class="r-card" href="/blog/ai-asset-valuation/">
+        <div class="r-thumb" style="background:linear-gradient(135deg,#D4E8FF 0%,#B8D8FF 60%,#E4F0FF 100%)">
+          <svg width="100%" height="100%" viewBox="0 0 360 156" fill="none" preserveAspectRatio="xMidYMid slice">
+            <rect x="36" y="56" width="44" height="100" rx="5" fill="rgba(59,130,246,.12)"/>
+            <rect x="96" y="36" width="44" height="120" rx="5" fill="rgba(59,130,246,.09)"/>
+            <rect x="156" y="66" width="44" height="90" rx="5" fill="rgba(59,130,246,.07)"/>
+            <rect x="216" y="26" width="44" height="130" rx="5" fill="rgba(59,130,246,.1)"/>
+            <rect x="276" y="46" width="44" height="110" rx="5" fill="rgba(59,130,246,.08)"/>
+          </svg>
+        </div>
+        <div class="r-body"><span class="r-tag">INSIGHTS · 8 MIN READ</span><h3>How to Value an AI-Native Microbusiness</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="s-cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <h2>Build. Buy. Own<br>what comes next.</h2>
+        <p>Join the emerging market for AI assets as a buyer, builder or owner.</p>
+        <div class="cta-btns">
+          <a class="btn btn-primary" href="mailto:hi@aiasset.market">Talk to us →</a>
+          <a class="btn btn-outline-light" href="/sell-ai-asset/">Submit an asset →</a>
+        </div>
+      </div>
+      <div class="cta-right">
+        <svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;opacity:.75">
+          <rect x="50" y="200" width="280" height="52" rx="5" fill="rgba(255,255,255,.04)"/>
+          <rect x="70" y="155" width="240" height="48" rx="5" fill="rgba(255,255,255,.055)"/>
+          <rect x="90" y="110" width="200" height="48" rx="5" fill="rgba(255,255,255,.065)"/>
+          <rect x="110" y="65" width="160" height="48" rx="5" fill="rgba(255,255,255,.08)"/>
+          <rect x="130" y="20" width="120" height="48" rx="5" fill="rgba(255,255,255,.1)"/>
+          <ellipse cx="190" cy="18" rx="72" ry="16" fill="rgba(91,118,255,.18)"/>
+          <line x1="190" y1="0" x2="190" y2="70" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+          <line x1="160" y1="0" x2="130" y2="70" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+          <line x1="220" y1="0" x2="250" y2="70" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <a class="foot-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="foot-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/consent/">Data Consent</a>
+      <a href="mailto:hi@aiasset.market">hi@aiasset.market</a>
+    </div>
+    <span class="foot-copy">© 2026 AIAsset.Market</span>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-label="AI Asset Score — video" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn" aria-label="Close video" onclick="closeModal()">✕</button>
+    <div class="modal-video-wrap">
+      <iframe id="yt-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="AIAsset.Market video"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+function initCookieBar(){if(!localStorage.getItem('cookie_consent'))document.getElementById('cookie-bar').classList.remove('hidden')}
+function setCookieConsent(v){localStorage.setItem('cookie_consent',JSON.stringify({v,ts:Date.now()}));document.getElementById('cookie-bar').classList.add('hidden')}
+setTimeout(initCookieBar,700);
+function toggleMob(){document.getElementById('mob-nav').classList.toggle('open')}
+var _modalTrigger=null;
+function openModal(trigger){_modalTrigger=trigger||document.activeElement;var bg=document.getElementById('modal-bg');bg.classList.add('open');document.body.style.overflow='hidden';document.getElementById('yt-iframe').src='https://www.youtube.com/embed/VZ09NYqBjdI?autoplay=1&rel=0';setTimeout(function(){var btn=document.getElementById('modal-close-btn');if(btn)btn.focus();},50);}
+function closeModal(e){if(e&&e.type==='click'&&e.target!==document.getElementById('modal-bg')&&!e.target.classList.contains('modal-close'))return;document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow='';document.getElementById('yt-iframe').src='';if(_modalTrigger&&_modalTrigger.focus)_modalTrigger.focus();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('modal-bg').classList.contains('open'))closeModal();});
+window.addEventListener('load',()=>{
+  const ring=document.getElementById('score-ring');
+  if(!ring)return;
+  ring.style.transition='stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1)';
+  setTimeout(()=>{ring.style.strokeDashoffset=213.6-(82/100)*213.6},400);
+});
+
+// AI Asset Score widget
+(function(){
+  const formWrap=document.getElementById('pg-form-wrap');
+  const loading=document.getElementById('pg-loading');
+  const resultWrap=document.getElementById('pg-result-wrap');
+  const btn=document.getElementById('pg-submit-btn');
+  const pitchEl=document.getElementById('pg-pitch');
+  const countEl=document.getElementById('pg-count');
+  if(!btn)return;
+  pitchEl.addEventListener('input',()=>{countEl.textContent=pitchEl.value.length});
+  function fmt(n){if(n>=1e6)return'$'+(n/1e6).toFixed(1)+'M';if(n>=1000)return'$'+Math.round(n/1000)+'k';return'$'+n}
+  function bandCls(band){
+    if(!band)return'';
+    const b=band.toLowerCase();
+    if(b.includes('approved'))return'band-approved';
+    if(b.includes('candidate'))return'band-candidate';
+    if(b.includes('potential'))return'band-potential';
+    if(b.includes('demo'))return'band-demo';
+    return'band-toy';
+  }
+  function renderResult(g){
+    const dims=g.dimensions||{};
+    const maxes={traction:25,revenue:25,transferability:20,automation:20,risk:10};
+    const dimHTML=Object.entries(dims).map(([k,v])=>{
+      const max=maxes[k]||25;
+      const pct=Math.round((v/max)*100);
+      return`<div class="pg-dim"><div class="pg-dim-name">${k}</div><div class="pg-dim-bar-wrap"><div class="pg-dim-bar" data-pct="${pct}"></div></div><div class="pg-dim-val">${v}/${max}</div></div>`;
+    }).join('');
+    const ov=g.operator_value||{};const sv=g.strategic_value||{};
+    resultWrap.innerHTML=`<div class="pg-result">
+      <div class="pg-score-row">
+        <div><span class="pg-score-num">${g.total}</span><span class="pg-score-denom">/100</span></div>
+        <div><div class="pg-band ${bandCls(g.band)}">${g.band||''}</div><p class="pg-oneliner">${g.one_liner||''}</p></div>
+      </div>
+      <div class="pg-dims">${dimHTML}</div>
+      ${ov.low?`<div class="pg-valuation">
+        <div class="pg-val-box"><div class="pg-val-label">Operator Value</div><div class="pg-val-range">${fmt(ov.low)} – ${fmt(ov.high)}</div></div>
+        <div class="pg-val-box"><div class="pg-val-label">Strategic Value</div><div class="pg-val-range">${fmt(sv.low)} – ${fmt(sv.high)}</div>${g.value_note?`<div class="pg-val-note">${g.value_note}</div>`:''}</div>
+      </div>`:''}
+      ${g.next_step?`<div class="pg-next"><div class="pg-next-label">Next Step</div><p>${g.next_step}</p></div>`:''}
+      <button class="pg-reset" onclick="pgReset()">← Score another project</button>
+    </div>`;
+    setTimeout(()=>{resultWrap.querySelectorAll('.pg-dim-bar').forEach(b=>{b.style.width=b.dataset.pct+'%'})},50);
+  }
+  window.pgReset=function(){
+    resultWrap.classList.add('hidden');resultWrap.innerHTML='';
+    formWrap.classList.remove('hidden');
+    ['pg-url','pg-mrr','pg-users','pg-pitch','pg-type'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});
+    countEl.textContent='0';
+  };
+  btn.addEventListener('click',async()=>{
+    const url=document.getElementById('pg-url').value.trim();
+    const asset_type=document.getElementById('pg-type').value;
+    const mrr=Number(document.getElementById('pg-mrr').value)||0;
+    const users=Number(document.getElementById('pg-users').value)||0;
+    const pitch=pitchEl.value.trim();
+    if(!url&&!pitch){alert('Please provide a project URL or pitch.');return}
+    formWrap.classList.add('hidden');loading.classList.remove('hidden');resultWrap.classList.add('hidden');
+    try{
+      const res=await fetch('/api/preview-grade',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,asset_type,mrr,users,pitch,'cf-turnstile-response':document.querySelector('input[name="cf-turnstile-response"]')?.value||''})});
+      const data=await res.json();
+      loading.classList.add('hidden');
+      if(!res.ok||!data.ok){formWrap.classList.remove('hidden');alert(data.error||'Something went wrong. Please try again.');return}
+      resultWrap.classList.remove('hidden');
+      renderResult(data.grade);
+    }catch(e){loading.classList.add('hidden');formWrap.classList.remove('hidden');alert('Network error. Please check your connection and try again.')}
+  });
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+</html>

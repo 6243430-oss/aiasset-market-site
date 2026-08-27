@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Grade cards have outdated nav — exclude from crawl until rebuilt
+Disallow: /grades/
+
+# Historical drop pages — low-quality SEO, completed campaigns
+Disallow: /weekly-drop/
+Disallow: /weekly-drop-2/
+
+Sitemap: https://aiasset.market/sitemap.xml

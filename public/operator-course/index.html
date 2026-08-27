@@ -1,0 +1,568 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Asset Operator Course — Learn to Run AI Businesses You Didn't Build</title>
+<meta name="description" content="Learn how to evaluate, take over and monetize AI projects built by others. The skill set that turns abandoned AI demos into real income.">
+<link rel="canonical" href="https://aiasset.market/operator-course/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Asset Operator Course — AIAsset.Market">
+<meta property="og:description" content="Thousands of AI projects get abandoned every month. Learn how to pick them up, run them, and turn them into income.">
+<meta property="og:url" content="https://aiasset.market/operator-course/">
+<meta property="og:image" content="https://aiasset.market/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aiasset_market">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text y='.9em' font-size='70' x='15'>⚡</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a12;--bg-card:#111118;--border:#1e1e2e;--text:#e2e8f0;--muted:#64748b;--purple:#7c3aed;--purple-l:#8b5cf6;--green:#059669;--radius:14px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;border:none;font-family:inherit}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:#6d28d9;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid rgba(124,58,237,0.5)}
+.btn-outline:hover{border-color:var(--purple-l);color:var(--purple-l)}
+.btn-sm{padding:7px 14px;font-size:12px;border-radius:8px}
+.btn-lg{padding:16px 32px;font-size:17px;border-radius:12px;font-weight:700}
+/* ─── SITE NAV (v2 — mega menu) ─── */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,8,16,0.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.nav-logo span{color:var(--purple-l)}
+.nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.nav-menu > li > a:hover,.nav-menu > li.active > a{color:#fff}
+.nav-menu > li.has-dd > a::after{content:"▾";font-size:9px;margin-left:2px;opacity:0.6}
+.dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.nav-menu > li.has-dd:hover .dropdown,.nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:var(--purple);color:#fff;border-radius:4px;vertical-align:middle}
+.nav-cta{margin-left:auto;flex-shrink:0}
+.nav-cta .btn{padding:8px 16px;font-size:13px}
+li.nav-cta-mobile{display:none!important}
+/* Mobile toggle */
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .nav-inner{gap:0}
+  .nav-toggle{display:block;margin-left:auto}
+  .nav-menu{position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(8,8,16,0.98);backdrop-filter:blur(24px);flex-direction:column;align-items:stretch;gap:0;padding:16px 20px 40px;overflow-y:auto;transform:translateX(100%);transition:transform .25s ease-out;height:auto}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .nav-menu > li.dd-open .dropdown{display:block}
+  .dropdown a{padding:12px 8px;font-size:15px}
+  .nav-cta{display:none}
+  .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  .site-nav.is-open{position:fixed;top:0;left:0;right:0}
+  body.nav-locked{overflow:hidden}
+}
+.label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple-l);margin-bottom:16px}
+.divider{height:1px;background:var(--border);margin:48px 0}
+.module{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;display:flex;gap:20px;align-items:flex-start}
+.module-num{font-size:13px;font-weight:800;color:var(--purple-l);min-width:28px;margin-top:2px}
+.check-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.check-item:last-child{margin-bottom:0}
+.check{color:var(--purple-l);font-size:16px;margin-top:2px;min-width:20px}
+
+/* ─── SITE NAV (v2 — mega menu) ─── */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,8,16,0.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.site-nav .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .nav-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0}
+.site-nav .nav-logo span{color:#8b5cf6}
+.site-nav .nav-menu{display:flex;list-style:none;gap:4px;margin:0;padding:0;height:100%;align-items:center}
+.site-nav .nav-menu > li{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .nav-menu > li > a{display:flex;align-items:center;gap:4px;padding:0 14px;height:100%;font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .15s;white-space:nowrap;cursor:pointer}
+.site-nav .nav-menu > li > a:hover,.site-nav .nav-menu > li.active > a{color:#fff}
+.site-nav .nav-menu > li.has-dd > a::after{content:"\25BE";font-size:9px;margin-left:2px;opacity:0.6}
+.site-nav .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:rgba(15,15,25,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:200}
+.site-nav .nav-menu > li.has-dd:hover .dropdown,.site-nav .nav-menu > li.has-dd:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav .dropdown a{display:block;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.site-nav .dropdown a:hover{background:rgba(124,58,237,0.15);color:#fff}
+.site-nav .dropdown a .badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:10px;font-weight:700;background:#7c3aed;color:#fff;border-radius:4px;vertical-align:middle}
+.site-nav .nav-cta{margin-left:auto;flex-shrink:0}
+.site-nav .nav-cta .btn{padding:8px 16px;font-size:13px;display:inline-flex;align-items:center;gap:6px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;border:none;font-family:inherit;transition:background .15s}
+.site-nav .nav-cta .btn:hover{background:#6d28d9}
+.site-nav li.nav-cta-mobile{display:none!important}
+.site-nav .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:6px 10px;line-height:1}
+@media(max-width:900px){
+  .site-nav .nav-inner{gap:0}
+  .site-nav .nav-toggle{display:block;margin-left:auto}
+  .site-nav .nav-menu{position:fixed!important;top:60px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:calc(100vh - 60px)!important;background:rgba(8,8,16,0.98)!important;backdrop-filter:blur(24px);flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:16px 20px 40px!important;overflow-y:auto!important;transform:translateX(100%);transition:transform .25s ease-out;display:flex!important}
+  .site-nav.is-open .nav-menu{transform:translateX(0)}
+  .site-nav .nav-menu > li{height:auto;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .site-nav .nav-menu > li > a{padding:16px 4px;font-size:16px;color:#fff;height:auto;justify-content:space-between}
+  .site-nav .nav-menu > li.has-dd > a::after{font-size:14px;transition:transform .2s}
+  .site-nav .nav-menu > li.dd-open > a::after{transform:rotate(180deg)}
+  .site-nav .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:none;border:none;box-shadow:none;padding:0 0 12px 12px;display:none;min-width:0}
+  .site-nav .nav-menu > li.dd-open .dropdown{display:block}
+  .site-nav .dropdown a{padding:12px 8px;font-size:15px}
+  .site-nav .nav-cta{display:none}
+  .site-nav .nav-cta-mobile{display:block;border:none;margin-top:20px;padding:0}
+  .site-nav .nav-cta-mobile .btn{width:100%;padding:14px;font-size:15px;justify-content:center;text-align:center}
+  body.nav-locked{overflow:hidden}
+}
+/* end site-nav */
+
+/* ─── Canonical Nav v2 (injected by _build_nav.py) ─── */
+.site-header{padding:20px 40px;position:sticky;top:0;z-index:200;background:#F7F8FC}
+.nav-pill{max-width:1280px;margin:0 auto;background:#fff;border:1px solid #E4E8F2;border-radius:100px;padding:10px 16px 10px 24px;display:flex;align-items:center;box-shadow:0 2px 16px rgba(29,35,64,.06)}
+.nav-logo{font-size:16px;font-weight:600;color:#1D2340;letter-spacing:-.3px;margin-right:auto;white-space:nowrap;text-decoration:none}
+.nav-logo .ai{color:#5B76FF}
+.nav-links{display:flex;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:14px;color:#6E758C;padding:8px 14px;border-radius:100px;transition:all .18s;text-decoration:none}
+.nav-links a:hover{color:#1D2340;background:#F7F8FC}
+.nav-cta-link{background:#5B76FF;color:#fff!important;border-radius:100px;padding:10px 22px;font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.nav-cta-link:hover{background:#4A65EE;box-shadow:0 4px 16px rgba(91,118,255,.4)}
+.mob-toggle{display:none;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#1D2340;padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:inherit}
+.mob-toggle:hover{background:#F7F8FC}
+.mob-nav{display:none;background:#fff;border:1px solid #E4E8F2;border-radius:20px;margin:8px 24px;padding:12px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:12px 16px;font-size:15px;color:#1D2340;border-radius:10px;text-decoration:none}
+.mob-nav a:hover{background:#F7F8FC}
+.mob-nav .nav-cta-link{display:block;text-align:center;margin-top:8px;border-radius:12px;padding:12px}
+@media(max-width:768px){.site-header{padding:16px}.nav-links,.nav-pill>.nav-cta-link{display:none}.mob-toggle{display:flex}}
+/* ─── Canonical Footer v2 ─── */
+.site-footer-v2{background:#1D2340;border-top:1px solid rgba(255,255,255,.07);padding:28px 40px}
+.site-footer-v2 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-footer-v2 .foot-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none}
+.site-footer-v2 .foot-logo .ai{color:#5B76FF}
+.site-footer-v2 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.site-footer-v2 .foot-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .18s;text-decoration:none}
+.site-footer-v2 .foot-links a:hover{color:rgba(255,255,255,.9)}
+.site-footer-v2 .foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+@media(max-width:640px){.site-footer-v2 .foot-inner{flex-direction:column;align-items:flex-start}.site-footer-v2{padding:24px}}
+</style>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"0ef52dc3744a4e498cb345255359a86b"}'></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Main navigation">
+    <a class="nav-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="nav-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">About</a>
+    </div>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+    <button class="mob-toggle" onclick="toggleMob()" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+      </svg>
+      Menu
+    </button>
+  </nav>
+  <nav class="mob-nav" id="mob-nav" aria-label="Mobile navigation">
+    <a href="/marketplace/">Deals</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/">Research</a>
+    <a href="/academy/">Academy</a>
+    <a href="/methodology/">About</a>
+    <a class="nav-cta-link" href="mailto:hi@aiasset.market">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="padding:80px 0 56px;">
+  <div class="container">
+    <div class="label">AI Asset Operator</div>
+    <h1 style="font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.15;margin-bottom:20px;color:#fff;">
+      Thousands of AI projects get abandoned every month.
+    </h1>
+    <p style="font-size:20px;color:var(--muted);line-height:1.7;margin-bottom:12px;">
+      Learn how to pick them up, run them, and turn them into income.
+    </p>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:40px;max-width:600px;">
+      Most AI builders are great at building. Almost none of them know how to operate, grow, or sell what they've built. That's where operators come in — and that gap is widening every month.
+    </p>
+    <a href="#buy" class="btn btn-primary btn-lg">Get the Course — $97 →</a>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px;">One-time payment. Instant access. 30-day refund guarantee.</p>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- FOR WHO -->
+<section style="padding:0 0 56px;">
+  <div class="container">
+    <h2 style="font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:28px;color:#fff;">This is for you if:</h2>
+
+    <div class="check-item">
+      <span class="check">✦</span>
+      <p style="color:var(--text);">You're a marketer, freelancer or operator who wants to add AI assets to your income streams — without building from scratch.</p>
+    </div>
+    <div class="check-item">
+      <span class="check">✦</span>
+      <p style="color:var(--text);">You've seen AI projects on Reddit, ProductHunt, or GitHub that look like they could make money — but you didn't know how to evaluate or take one over.</p>
+    </div>
+    <div class="check-item">
+      <span class="check">✦</span>
+      <p style="color:var(--text);">You want to buy or operate an AI business for under $5,000 — and actually know what you're getting into.</p>
+    </div>
+    <div class="check-item">
+      <span class="check">✦</span>
+      <p style="color:var(--text);">You have skills (writing, marketing, operations, client management) but no technical background — and want to use them on AI assets.</p>
+    </div>
+
+    <div style="margin-top:32px;padding:20px 24px;border:1px solid rgba(100,116,139,0.2);border-radius:12px;">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:8px;font-weight:600;">Not for you if:</p>
+      <p style="font-size:14px;color:var(--muted);">You're looking for a get-rich-quick scheme, passive income with zero work, or a magic prompt to generate revenue overnight. This is a real operational skill set — not a shortcut.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- MODULES -->
+<section style="padding:0 0 56px;">
+  <div class="container">
+    <h2 style="font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:8px;color:#fff;">What's inside</h2>
+    <p style="color:var(--muted);margin-bottom:32px;">5 modules · 18 lessons · templates and worksheets. Tap any module to expand.</p>
+
+    <style>
+      details.mod{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:12px;transition:border-color .2s}
+      details.mod[open]{border-color:rgba(124,58,237,0.35)}
+      details.mod summary{padding:22px 24px;cursor:pointer;list-style:none;display:flex;gap:18px;align-items:flex-start}
+      details.mod summary::-webkit-details-marker{display:none}
+      .mod-num{font-size:13px;font-weight:800;color:var(--purple-l);min-width:28px;margin-top:2px}
+      .mod-head{flex:1}
+      .mod-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px}
+      .mod-goal{font-size:13px;color:var(--muted);font-style:italic}
+      .mod-toggle{color:var(--purple-l);font-size:22px;line-height:1;margin-top:-2px}
+      details.mod[open] .mod-toggle{transform:rotate(45deg)}
+      .mod-body{padding:0 24px 22px 70px;border-top:1px solid var(--border);padding-top:20px;margin-top:2px}
+      .lesson{margin-bottom:14px}
+      .lesson-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+      .lesson-title .num{color:var(--purple-l);margin-right:6px}
+      .lesson-desc{font-size:13px;color:var(--muted);line-height:1.6}
+      .deliverable{margin-top:16px;padding:12px 16px;background:rgba(124,58,237,0.08);border-radius:8px;font-size:13px;color:var(--text)}
+      .deliverable strong{color:var(--purple-l);font-weight:700}
+      @media(max-width:600px){.mod-body{padding-left:24px}}
+    </style>
+
+    <details class="mod">
+      <summary>
+        <div class="mod-num">01</div>
+        <div class="mod-head">
+          <div class="mod-title">What is an AI Asset · 4 lessons</div>
+          <div class="mod-goal">Goal: stop wasting time on projects that can't become income.</div>
+        </div>
+        <div class="mod-toggle">+</div>
+      </summary>
+      <div class="mod-body">
+        <div class="lesson"><div class="lesson-title"><span class="num">1.1</span>The Demo–Asset gap</div><div class="lesson-desc">The 7 attributes that separate a real asset from a toy: revenue, docs, transferability, moat, ops, ownership, compliance.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">1.2</span>The 7 asset types operators can run</div><div class="lesson-desc">Chatbot · agent workflow (n8n, Make) · newsletter · TG/Discord bot · micro-SaaS · UGC persona · lead-gen automation. What each pays, what each demands.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">1.3</span>How to read a AI Asset Score</div><div class="lesson-desc">Decode the 100-point score, what A/B/C actually means for a buyer, and how to spot inflated scores.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">1.4</span>Which asset type fits YOU</div><div class="lesson-desc">Operator Fit self-assessment: skills × time × capital → best asset match.</div></div>
+        <div class="deliverable"><strong>Deliverable:</strong> filled Operator Fit worksheet</div>
+      </div>
+    </details>
+
+    <details class="mod">
+      <summary>
+        <div class="mod-num">02</div>
+        <div class="mod-head">
+          <div class="mod-title">How to Evaluate an AI Asset · 4 lessons</div>
+          <div class="mod-goal">Goal: never pay for a broken project.</div>
+        </div>
+        <div class="mod-toggle">+</div>
+      </summary>
+      <div class="mod-body">
+        <div class="lesson"><div class="lesson-title"><span class="num">2.1</span>Where to hunt</div><div class="lesson-desc">12 sources ranked by deal quality: AIAsset.Market, Acquire.com, MicroAcquire, Flippa, Reddit r/SaaS, ProductHunt graveyard, GitHub abandoned repos, IndieHackers, Telegram channels, direct outreach.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">2.2</span>The 15-minute pre-screen</div><div class="lesson-desc">First-pass filter: does it have MRR, docs, transferable stack, real users. Kills 80% of leads fast.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">2.3</span>Deep due diligence</div><div class="lesson-desc">The 40-point acquisition checklist: revenue verification, churn analysis, tech stack audit, API cost review, legal/IP, contracts.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">2.4</span>Red flags & deal-killers</div><div class="lesson-desc">12 patterns that always mean walk away: fake MRR, single-customer risk, model lock-in, undocumented prompts, creator can't step away.</div></div>
+        <div class="deliverable"><strong>Deliverable:</strong> Acquisition Scorecard template (Google Sheets)</div>
+      </div>
+    </details>
+
+    <details class="mod">
+      <summary>
+        <div class="mod-num">03</div>
+        <div class="mod-head">
+          <div class="mod-title">How to Take Over Operations · 4 lessons</div>
+          <div class="mod-goal">Goal: run it solo within 30 days without the builder on call.</div>
+        </div>
+        <div class="mod-toggle">+</div>
+      </summary>
+      <div class="mod-body">
+        <div class="lesson"><div class="lesson-title"><span class="num">3.1</span>The handover call script</div><div class="lesson-desc">45 questions to ask the seller BEFORE signing: access, dependencies, edge cases, "what breaks when...".</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">3.2</span>Transfer Notes template</div><div class="lesson-desc">The doc that protects you when the creator disappears: credentials, SOPs, prompts, escalation paths.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">3.3</span>First 7 days playbook</div><div class="lesson-desc">Audit access, ping customers, break nothing, understand cash flow.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">3.4</span>First 30 days playbook</div><div class="lesson-desc">First optimizations, first customer conversations, first "your fault" moment.</div></div>
+        <div class="deliverable"><strong>Deliverable:</strong> filled Transfer Notes template + 30-day checklist</div>
+      </div>
+    </details>
+
+    <details class="mod">
+      <summary>
+        <div class="mod-num">04</div>
+        <div class="mod-head">
+          <div class="mod-title">How to Grow It · 4 lessons</div>
+          <div class="mod-goal">Goal: turn a dormant asset into a growing one.</div>
+        </div>
+        <div class="mod-toggle">+</div>
+      </summary>
+      <div class="mod-body">
+        <div class="lesson"><div class="lesson-title"><span class="num">4.1</span>The distribution audit</div><div class="lesson-desc">Where traffic is coming from today, where it SHOULD come from, gap analysis.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">4.2</span>Telegram / LinkedIn / X playbooks</div><div class="lesson-desc">3 posting formats that work for AI assets — proof-of-work, teardown, before/after. Cadence and tools.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">4.3</span>The content engine for non-writers</div><div class="lesson-desc">Repurposing, AI-assisted drafting, using Klap.app and HeyGen for video without a studio.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">4.4</span>Pricing & packaging tweaks</div><div class="lesson-desc">5 pricing experiments that add 20–40% MRR without new customers: annual plans, tier upsell, done-for-you add-ons.</div></div>
+        <div class="deliverable"><strong>Deliverable:</strong> 30-day growth plan for your asset</div>
+      </div>
+    </details>
+
+    <details class="mod">
+      <summary>
+        <div class="mod-num">05</div>
+        <div class="mod-head">
+          <div class="mod-title">How to Monetize or Sell It · 4 lessons</div>
+          <div class="mod-goal">Goal: know your exit before you buy.</div>
+        </div>
+        <div class="mod-toggle">+</div>
+      </summary>
+      <div class="mod-body">
+        <div class="lesson"><div class="lesson-title"><span class="num">5.1</span>Revenue models that work for AI assets</div><div class="lesson-desc">Subscription, usage-based, licensing, done-for-you services, affiliate — with real numbers per model.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">5.2</span>The AI Asset Score re-scoring</div><div class="lesson-desc">How to bump your asset from B to A before listing: proof, docs, transferability wins.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">5.3</span>Packaging for resale</div><div class="lesson-desc">The listing package: Loom demo, financials, tech stack doc, Transfer Notes, customer list.</div></div>
+        <div class="lesson"><div class="lesson-title"><span class="num">5.4</span>Exit options & pricing</div><div class="lesson-desc">Flip fast (3–6 mo, 8–12× MRR) vs hold-and-grow (12+ mo, 15–20× MRR). Where to list, how to negotiate.</div></div>
+        <div class="deliverable"><strong>Deliverable:</strong> exit-ready listing package outline</div>
+      </div>
+    </details>
+
+    <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:22px;margin-top:20px;">
+      <p style="font-size:13px;font-weight:700;color:var(--purple-l);margin-bottom:10px;letter-spacing:1px;text-transform:uppercase;">Bonus included</p>
+      <div class="check-item" style="margin-bottom:8px;">
+        <span class="check" style="font-size:14px;">✦</span>
+        <p style="font-size:14px;color:var(--text);">Transfer Notes template — the handover doc that protects you when taking over any AI asset</p>
+      </div>
+      <div class="check-item">
+        <span class="check" style="font-size:14px;">✦</span>
+        <p style="font-size:14px;color:var(--text);">Operator Fit Score checklist — know before you start if you're the right operator for this asset</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- OUTCOMES -->
+<section style="padding:0 0 56px;">
+  <div class="container">
+    <h2 style="font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:8px;color:#fff;">After this course you can:</h2>
+    <p style="color:var(--muted);margin-bottom:32px;">Practical outcomes — not theory. These are the decisions you'll be able to make with confidence.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;">
+        <div style="font-size:22px;margin-bottom:10px;">🎯</div>
+        <p style="font-weight:700;color:#fff;margin-bottom:6px;font-size:15px;">Spot a real asset in 20 minutes</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;">Browse a marketplace, GitHub, or Reddit listing and know within one read whether it's worth your time.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;">
+        <div style="font-size:22px;margin-bottom:10px;">📋</div>
+        <p style="font-weight:700;color:#fff;margin-bottom:6px;font-size:15px;">Run a due diligence call</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;">Ask the right questions, get the SOP, spot red flags before you commit a dollar.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;">
+        <div style="font-size:22px;margin-bottom:10px;">🚀</div>
+        <p style="font-weight:700;color:#fff;margin-bottom:6px;font-size:15px;">Take over and ship in 30 days</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;">Use the handover template to get up to speed fast — without needing the original builder on call.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;">
+        <div style="font-size:22px;margin-bottom:10px;">💰</div>
+        <p style="font-weight:700;color:#fff;margin-bottom:6px;font-size:15px;">Flip or hold with a clear strategy</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;">Know when to grow, when to exit, and how to price an asset you've improved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- SOCIAL PROOF -->
+<section style="padding:0 0 56px;">
+  <div class="container">
+    <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:20px;padding:36px 40px;text-align:center;">
+      <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--purple-l);margin-bottom:16px;">Early Access</p>
+      <p style="font-size:28px;font-weight:900;color:#fff;margin-bottom:8px;">47 AI projects graded.<br>3 passed. We know what works.</p>
+      <p style="font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 24px;line-height:1.7;">
+        This course is built from real deal flow — not theory. Every lesson is based on patterns we've seen across hundreds of AI asset reviews on AIAsset.Market.
+      </p>
+      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:32px;font-weight:900;color:#fff;">47</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">AI projects reviewed</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:32px;font-weight:900;color:#fff;">$2.8k</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">avg monthly revenue of assets we list</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:32px;font-weight:900;color:#fff;">Active</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">community in our Telegram</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- FAQ -->
+<section style="padding:0 0 56px;">
+  <div class="container">
+    <h2 style="font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:32px;color:#fff;">Common questions</h2>
+
+    <div style="display:flex;flex-direction:column;gap:2px;">
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          Do I need a technical background?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">No. The course is built for operators — people who run and grow things, not engineers who build them. You need basic digital literacy: you can use tools, read dashboards, and communicate with developers. That's it.</p>
+      </details>
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);margin-top:2px;">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          When does payment open?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">We're finalizing payment processing now. Join the Telegram waitlist and you'll be the first to know — plus you'll get the course at the early-access price ($97 before it goes up).</p>
+      </details>
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);margin-top:2px;">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          How long does it take to complete?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">Most people finish in one focused weekend. The material is dense and practical — no filler, no fluff. You can also go module by module over 5 evenings.</p>
+      </details>
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);margin-top:2px;">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          How much money do I need to start operating AI assets?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">Depends on your strategy. Some operators start by taking over abandoned projects for free (the builder is happy someone will maintain it). Others buy assets in the $500–$5,000 range. The course covers both paths — and how to evaluate risk at each level.</p>
+      </details>
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);margin-top:2px;">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          What makes an AI asset different from a regular SaaS?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">AI assets often depend heavily on their creator — the prompts, the workflow, the specific model choice. If those aren't documented and transferable, you're not buying an asset, you're buying a demo. This course teaches you exactly how to tell the difference before you sign anything.</p>
+      </details>
+
+      <details style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-card);margin-top:2px;">
+        <summary style="padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          Is there a refund policy?
+          <span style="color:var(--purple-l);font-size:20px;line-height:1;">+</span>
+        </summary>
+        <p style="padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7;">Yes — 30-day full refund, no questions asked. If you go through the material and feel it wasn't worth it, email us and we'll refund you same day.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- BUY -->
+<section id="buy" style="padding:0 0 80px;">
+  <div class="container">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:48px 40px;text-align:center;">
+      <div class="label">Get instant access</div>
+      <h2 style="font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px;color:#fff;">AI Asset Operator</h2>
+      <p style="font-size:16px;color:var(--muted);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">5 modules · 18 lessons · 2 templates. Everything you need to evaluate, take over, and monetize AI assets.</p>
+
+      <div style="font-size:48px;font-weight:900;color:#fff;margin-bottom:8px;">$97</div>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:36px;">One-time payment. No subscription.</p>
+
+      <a href="https://t.me/Pirate_AI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="width:100%;max-width:360px;justify-content:center;">
+        Join the Waitlist →
+      </a>
+
+      <p style="font-size:13px;color:var(--muted);margin-top:20px;">
+        Payment launching soon. DM us on Telegram to reserve your spot at the early-access price.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer-v2">
+  <div class="foot-inner">
+    <a class="foot-logo" href="/"><span class="ai">AI</span>Asset.Market</a>
+    <div class="foot-links">
+      <a href="/marketplace/">Deals</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/">Research</a>
+      <a href="/academy/">Academy</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/consent/">Data Consent</a>
+      <a href="mailto:hi@aiasset.market">hi@aiasset.market</a>
+    </div>
+    <span class="foot-copy">© 2026 AIAsset.Market</span>
+  </div>
+</footer>
+
+<script>
+// Mobile nav: delegated tap to toggle dropdown (capture phase — beats other handlers)
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+<script>
+/* site-nav mobile toggle */
+// Nav toggle + mobile dropdown — delegated & capture-phase
+document.addEventListener('click', function(e){
+  var t = e.target.closest && e.target.closest('.site-nav .nav-toggle');
+  if (t) {
+    e.preventDefault();
+    var nav = document.querySelector('.site-nav');
+    var opened = nav.classList.toggle('is-open');
+    document.body.classList.toggle('nav-locked', opened);
+    t.textContent = opened ? '✕' : '☰';
+    return;
+  }
+  var a = e.target.closest && e.target.closest('.site-nav .nav-menu > li.has-dd > a');
+  if (!a) return;
+  if (window.matchMedia('(max-width:900px)').matches) {
+    e.preventDefault();
+    e.stopPropagation();
+    a.parentElement.classList.toggle('dd-open');
+  }
+}, true);
+</script>
+</body>
+</html>

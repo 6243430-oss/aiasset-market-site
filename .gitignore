@@ -19,3 +19,6 @@ assets/
 # OS
 .DS_Store
 Thumbs.db
+
+# Wrangler local cache
+.wrangler/
